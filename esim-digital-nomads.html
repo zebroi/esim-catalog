@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eSIM для диджитал-номадов: как выбрать интернет для удалённой работы и долгих поездок</title>
+  <meta name="description" content="Гид по выбору eSIM для цифровых кочевников: стратегии подключения при долгих стоянках и частых переездах, сравнение провайдеров Holafly, Airalo, Ubigi, Saily и Nomad.">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/esim-digital-nomads.html">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+  <style>
+    :root{
+      --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;
+      --accent:#10b981;
+      --bg:#f8fafc;--card:#ffffff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;
+      --radius:12px;--shadow-sm:0 1px 3px rgba(15,23,42,.08);--shadow-md:0 12px 30px rgba(15,23,42,.12);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+    nav{background:#fff;border-bottom:1px solid var(--border);height:62px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;box-shadow:var(--shadow-sm);transition:transform .3s;}
+    .nav-logo{font-size:1.1rem;font-weight:800;color:var(--primary);text-decoration:none;}
+    .nav-links{display:flex;gap:24px;list-style:none;}
+    .nav-links a{font-size:.9rem;color:var(--text);font-weight:500;}
+    .nav-links a:hover{color:var(--primary);text-decoration:none;}
+    .nav-cta{background:var(--primary);color:#fff !important;padding:7px 14px;border-radius:8px;}
+    .nav-cta:hover{background:var(--primary-dark);text-decoration:none !important;}
+    .nav-dropdown{position:relative;}
+    .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);min-width:180px;list-style:none;padding:6px 0;z-index:60;}
+    .dropdown li a{display:block;padding:8px 14px;font-size:.86rem;color:var(--text);}
+    .dropdown li a:hover{background:var(--bg);color:var(--primary);text-decoration:none;}
+    .nav-dropdown:hover .dropdown{display:block;}
+
+    .breadcrumbs{background:#fff;border-bottom:1px solid var(--border);font-size:.83rem;color:var(--muted);padding:10px 0;}
+    .breadcrumbs a{color:var(--muted);}
+    .breadcrumbs a:hover{color:var(--primary);}
+    .breadcrumbs span{font-weight:600;color:var(--text);}
+
+    .hero{background:#020617;color:#e5e7eb;padding:40px 0 34px;}
+    .hero-inner{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;}
+    .hero-main{flex:1 1 260px;min-width:0;}
+    .hero-side{flex:1 1 220px;max-width:340px;}
+    .hero-kicker{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;padding:5px 10px;border-radius:999px;background:rgba(16,185,129,.2);border:1px solid rgba(16,185,129,.6);color:#6ee7b7;margin-bottom:10px;}
+    .hero-main h1{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:900;letter-spacing:-.03em;margin-bottom:6px;}
+    .hero-sub{font-size:.97rem;color:#9ca3af;max-width:540px;margin-bottom:14px;}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+    .hero-tag{font-size:.78rem;border-radius:999px;padding:4px 10px;border:1px solid #1f2937;color:#9ca3af;background:#020617;}
+    .hero-cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
+    .btn-main{background:var(--accent);color:#fff;padding:11px 22px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;display:inline-flex;flex-direction:column;}
+    .btn-main span{font-size:.78rem;color:#bbf7d0;font-weight:500;margin-top:1px;}
+    .btn-secondary{border-radius:10px;border:1px solid #374151;color:#e5e7eb;padding:10px 18px;font-size:.9rem;font-weight:600;text-decoration:none;}
+    .hero-box{border-radius:16px;border:1px solid #1f2937;background:#020617;padding:16px 18px;font-size:.86rem;color:#9ca3af;}
+    .hero-box h2{font-size:.9rem;font-weight:700;margin-bottom:8px;color:#e5e7eb;}
+    .hero-box ul{list-style:none;}
+    .hero-box li{margin:5px 0;padding-left:14px;position:relative;}
+    .hero-box li::before{content:"→";position:absolute;left:0;color:#10b981;font-size:.8rem;}
+
+    .section{padding:46px 0 36px;}
+    .section-header{margin-bottom:16px;}
+    .section-header h2{font-size:1.4rem;font-weight:800;}
+    .section-header p{font-size:.95rem;color:var(--muted);margin-top:4px;}
+    .muted{color:var(--muted);font-size:.93rem;}
+
+    .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px;}
+    .card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:16px 18px;font-size:.9rem;box-shadow:var(--shadow-sm);}
+    .card h3{font-size:.98rem;font-weight:700;margin-bottom:6px;}
+    .card p{color:var(--muted);margin-bottom:6px;font-size:.88rem;}
+    .card ul{margin:4px 0 0 16px;color:var(--muted);}
+    .card li{margin:3px 0;font-size:.88rem;}
+    .card.accent{border-color:var(--primary);background:var(--primary-light);}
+
+    .providers-table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:18px;background:var(--card);border-radius:var(--radius);overflow:hidden;}
+    .providers-table th,.providers-table td{border:1px solid var(--border);padding:9px 10px;text-align:left;vertical-align:top;}
+    .providers-table th{background:#f1f5f9;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+    .providers-table td strong{font-weight:700;}
+
+    .tip-box{background:#f0fdf4;border-left:4px solid #10b981;border-radius:0 var(--radius) var(--radius) 0;padding:12px 16px;margin-top:16px;font-size:.9rem;color:#166534;}
+    .tip-box strong{display:block;margin-bottom:3px;}
+
+    .faq{padding:30px 0 44px;}
+    .faq-list{display:flex;flex-direction:column;gap:10px;margin-top:10px;}
+    .faq-item{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);}
+    .faq-q{width:100%;background:none;border:none;padding:14px 16px;font-size:.95rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:var(--text);}
+    .faq-q .icon{font-size:1.3rem;color:var(--primary);transition:transform .25s;flex-shrink:0;}
+    .faq-item.open .icon{transform:rotate(45deg);}
+    .faq-a{display:none;padding:0 16px 14px;font-size:.9rem;color:var(--muted);line-height:1.65;}
+    .faq-item.open .faq-a{display:block;}
+
+    .cta{background:linear-gradient(135deg,#1e40af,#2563eb);border-radius:16px;color:#e5e7eb;padding:20px 18px;margin-top:20px;}
+    .cta h2{font-size:1.2rem;font-weight:800;margin-bottom:4px;}
+    .cta p{font-size:.93rem;margin-bottom:10px;max-width:520px;}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:10px;}
+    .cta-main{background:#f97316;color:#0f172a !important;padding:8px 18px;border-radius:999px;font-weight:700;font-size:.9rem;text-decoration:none;}
+    .cta-alt{border-radius:999px;border:1px solid rgba(226,232,240,.8);padding:8px 18px;color:#e5e7eb;font-size:.9rem;font-weight:600;text-decoration:none;}
+
+    footer{background:#0f172a;color:#94a3b8;padding:40px 20px 26px;margin-top:32px;}
+    .footer-grid{max-width:1120px;margin:0 auto 26px;display:grid;grid-template-columns:2fr repeat(3,1fr);gap:26px;}
+    .footer-brand .logo{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:8px;}
+    .footer-brand p{font-size:.84rem;max-width:260px;}
+    .footer-col h4{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#e2e8f0;margin-bottom:10px;}
+    .footer-col ul{list-style:none;}
+    .footer-col li{margin:4px 0;}
+    .footer-col a{color:#94a3b8;font-size:.85rem;}
+    .footer-col a:hover{color:#fff;text-decoration:none;}
+    .footer-bottom{max-width:1120px;margin:0 auto;border-top:1px solid #1e293b;padding-top:14px;font-size:.8rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+
+    #backTop{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border-radius:50%;border:none;background:var(--primary);color:#fff;font-size:1.1rem;cursor:pointer;box-shadow:var(--shadow-md);opacity:0;pointer-events:none;transition:opacity .25s;}
+
+    @media(max-width:900px){
+      .hero-inner{flex-direction:column;}
+      .hero-side{max-width:none;}
+      .footer-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none;}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+    <li><a href="index.html#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div class="hero-kicker">Для удалённой работы, долгих стоянок и постоянного движения</div>
+        <h1>eSIM для диджитал-номадов: стратегия подключения в 2026 году</h1>
+        <p class="hero-sub">
+          Для цифровых кочевников eSIM — это не просто «купить тариф в аэропорту», а продуманная стратегия: нужны стабильные скорости для Zoom, hotspot на ноутбук, гибкость при смене страны и контроль расходов.
+        </p>
+        <div class="hero-tags">
+          <span class="hero-tag">Стабильный интернет для Zoom и Slack</span>
+          <span class="hero-tag">Hotspot на ноутбук и планшет</span>
+          <span class="hero-tag">Долгосрочные и гибкие планы</span>
+          <span class="hero-tag">Работает в Бали, Таиланде, Европе, LATAM</span>
+        </div>
+        <div class="hero-cta-row">
+          <a href="rating.html" class="btn-main">
+            Подобрать eSIM для номада
+            <span>Сравнение провайдеров 2026</span>
+          </a>
+          <a href="esim-vs-roaming.html" class="btn-secondary">eSIM vs роуминг</a>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <div class="hero-box">
+          <h2>Три стратегии номада</h2>
+          <ul>
+            <li>Долгая стоянка (1–3 месяца) → локальная eSIM или SIM, максимальная скорость и объём.</li>
+            <li>Частые переезды по региону → региональная eSIM, одна на весь маршрут.</li>
+            <li>Постоянное движение по миру → глобальная eSIM или подписка (Holafly, Ubigi).</li>
+          </ul>
+          <p style="margin-top:8px;font-size:.83rem;">Подробности и провайдеры — ниже.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="index.html">Главная</a> &nbsp;›&nbsp;
+    <a href="esim-for-tourists.html">eSIM для туристов</a> &nbsp;›&nbsp;
+    <span>eSIM для диджитал-номадов</span>
+  </div>
+</div>
+
+<div class="container">
+  <section class="section">
+    <div class="section-header">
+      <h2>Три сценария: какая стратегия подходит вашему стилю движения</h2>
+      <p>Выбор eSIM для номада зависит прежде всего от того, как долго вы остаётесь в одном месте.</p>
+    </div>
+
+    <p class="muted">
+      В гайдах для номадов 2026 года отмечают, что универсального провайдера не существует: стратегия зависит от того, проводите ли вы месяцы в одном месте или меняете страны каждые две недели.
+    </p>
+
+    <div class="two-col">
+      <div class="card accent">
+        <h3>Сценарий A: долгая стоянка (30–90 дней)</h3>
+        <p>Чанг Май, Бали, Барселона, Тбилиси, Медельин — вы живёте, а не путешествуете.</p>
+        <ul>
+          <li>Лучший выбор — <strong>локальная страновая eSIM</strong> или физическая SIM местного оператора.</li>
+          <li>Приоритет: максимальный объём данных, стабильный hotspot для ноутбука, долгий срок действия (30–90 дней).</li>
+          <li>Коворкинг + eSIM как резерв для кафе и дороги — классическая номадская схема.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Сценарий B: быстрые переезды по региону</h3>
+        <p>Страна в неделю, несколько стран Европы или ЮВА за месяц.</p>
+        <ul>
+          <li>Оптимум — <strong>региональная eSIM</strong>: одна покрывает весь маршрут.</li>
+          <li>Не нужно покупать новую eSIM на каждой границе, данные не пропадают при переезде.</li>
+          <li>По цене — компромисс между локальной (дешевле) и глобальной (дороже, но шире).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Сценарий C: постоянное движение по миру</h3>
+        <p>Смена континентов, работа из 10+ стран в год.</p>
+        <ul>
+          <li>Глобальная eSIM или помесячная подписка (Holafly Plans, Ubigi, KnowRoaming) — ключевой инструмент.</li>
+          <li>Платите раз и не думаете про смену плана при каждом перелёте.</li>
+          <li>Дороже по цене за ГБ, но экономит время и нервы при интенсивных маршрутах.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Гибридная схема (самая распространённая)</h3>
+        <p>Основная база + короткие поездки в соседние страны.</p>
+        <ul>
+          <li>На базу берёте локальную eSIM, на поездки — региональную или глобальную с небольшим пакетом.</li>
+          <li>Dual‑SIM: одна линия — местная для звонков и скидок, вторая — туристическая eSIM для данных.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>Лайфхак: dual‑SIM для номада</strong>
+      На большинстве современных iPhone и Android можно держать одновременно две активных eSIM или одну физическую SIM + одну eSIM. Это позволяет иметь местный номер для банка и аутентификаций на физической SIM, а данные гнать через более дешёвую туристическую eSIM.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Лучшие eSIM-провайдеры для цифровых кочевников 2026</h2>
+      <p>Топ-5 сервисов по обзорам и сообществам номадов — с акцентом на конкретный стиль работы.</p>
+    </div>
+
+    <p class="muted">
+      В обзорах 2026 года для номадов чаще всего фигурируют Holafly, Airalo, Ubigi, Saily и Nomad. 
+      У каждого своя сильная сторона — ниже краткий разбор.
+    </p>
+
+    <table class="providers-table">
+      <thead>
+        <tr>
+          <th>Провайдер</th>
+          <th>Лучший сценарий для номада</th>
+          <th>Ключевые плюсы</th>
+          <th>Учтите</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><a href="holafly.html">Holafly</a></strong></td>
+          <td>Тяжёлые пользователи: видеозвонки весь день, стримы, hotspot на ноутбук.</td>
+          <td>Безлимитные данные, hotspot, 200+ стран, помесячная подписка Holafly Plans.</td>
+          <td>Дороже конкурентов, fair use при очень большом потреблении.</td>
+        </tr>
+        <tr>
+          <td><strong><a href="airalo.html">Airalo</a></strong></td>
+          <td>Бюджетные номады, которые часто прыгают между странами и не тратят много трафика.</td>
+          <td>200+ стран, широкий выбор страновых и региональных планов, низкая цена за ГБ.</td>
+          <td>Нет безлимита, на тяжёлом трафике придётся часто докупать планы.</td>
+        </tr>
+        <tr>
+          <td><strong>Ubigi</strong></td>
+          <td>Работающие из Европы и Азии, кому важны скорость и 5G, а не только цена.</td>
+          <td>5G там, где доступно; пополнение без Wi‑Fi (прямо из приложения); до годовых безлимитных планов.</td>
+          <td>Дороже бюджетных вариантов на коротких поездках.</td>
+        </tr>
+        <tr>
+          <td><strong><a href="saily.html">Saily</a></strong></td>
+          <td>Номады, которым нужен надёжный интернет + защита (встроенный VPN/Ad‑block).</td>
+          <td>Быстрые скорости в тестах, встроенная защита трафика, хорошее покрытие Европы и Азии.</td>
+          <td>Меньше покрытие экзотических направлений, чем у Airalo.</td>
+        </tr>
+        <tr>
+          <td><strong><a href="nomad.html">Nomad</a></strong></td>
+          <td>Мульти-страна, сложные маршруты, когда хочется одну eSIM на весь трип.</td>
+          <td>11 региональных планов, 2 глобальных, прозрачное ценообразование, удобное приложение.</td>
+          <td>Нет безлимита, средняя цена за ГБ выше бюджетного уровня.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Сколько трафика нужно номаду в месяц</h2>
+      <p>Оценка под разные режимы работы: от «офлайн-большую-часть-времени» до «Zoom весь день».</p>
+    </div>
+
+    <p class="muted">
+      В гайдах для номадов советуют разделять мобильные данные и стационарный Wi‑Fi: eSIM — резервный канал или основной на ходу, а коворкинг и отельный Wi‑Fi — для тяжёлой работы.
+    </p>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>Лёгкий режим</h3>
+        <p>Основная работа — на Wi‑Fi коворкинга/отеля, eSIM — для карт, мессенджеров и переездов.</p>
+        <ul>
+          <li>Хватает 5–10 ГБ в месяц.</li>
+          <li>Подходит Airalo или Nomad с умеренным пакетом.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Средний режим</h3>
+        <p>1–2 часа видеозвонков в день через eSIM, остальное на Wi‑Fi.</p>
+        <ul>
+          <li>Нужно 15–25 ГБ в месяц.</li>
+          <li>Удобны Ubigi или крупные пакеты Airalo/Nomad.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Тяжёлый режим</h3>
+        <p>Много видеозвонков, облачная работа, ноутбук по hotspot целый день.</p>
+        <ul>
+          <li>30–50+ ГБ в месяц, а то и больше.</li>
+          <li>Оптимальны безлимитные планы: Holafly, Ubigi annual unlimited.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Hotspot на ноутбук</h3>
+        <p>Особый пункт — раздача интернета с телефона на ноутбук.</p>
+        <ul>
+          <li>Поддерживается у большинства провайдеров, но у некоторых есть дневные лимиты.</li>
+          <li>Перед покупкой проверяйте условия hotspot в конкретном плане.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Топовые номадские хабы: где что работает лучше</h2>
+      <p>По опыту сообществ и обзоров — ориентир по провайдерам в популярных номадских городах.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>ЮВА: Таиланд, Бали, Вьетнам</h3>
+        <ul>
+          <li>Airalo и Holafly имеют хорошие партнёрские сети в регионе.</li>
+          <li>На длительной стоянке в Чанг Мае или Бали рассматривайте локальную SIM как основной канал.</li>
+          <li>Обзорщики отмечают стабильные скорости в городах у большинства топ-провайдеров.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Европа: Испания, Португалия, Германия</h3>
+        <ul>
+          <li>Ubigi и Saily часто хвалят за скорость и 5G-покрытие в крупных городах Европы.</li>
+          <li>Nomad даёт удобные региональные планы на всю Европу сразу.</li>
+          <li>Holafly популярен среди тех, кто разъезжает по нескольким европейским странам за месяц.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>LATAM: Мексика, Колумбия, Бразилия</h3>
+        <ul>
+          <li>В регионе быстро улучшается инфраструктура: Airalo и Holafly покрывают основные направления.</li>
+          <li>Коворкинг + eSIM как резерв — стандартная схема для работы из LATAM.</li>
+          <li>Ряд стран предлагают визы для цифровых кочевников, что упрощает долгосрочное планирование.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ближний Восток и Африка</h3>
+        <ul>
+          <li>Ubigi и GigSky имеют более широкое покрытие в менее туристических направлениях.</li>
+          <li>Для нестандартных маршрутов стоит проверять покрытие на сайте конкретного провайдера до покупки.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Частые вопросы номадов про eSIM</h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Одна eSIM на весь год или менять под каждую страну?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Зависит от стиля движения. Если вы долго остаётесь в одной стране — локальная eSIM даёт больший объём за те же деньги. Если постоянно путешествуете — глобальная или помесячная подписка (Holafly Plans, Ubigi) экономит время, хотя и стоит дороже по цене за ГБ. Большинство опытных номадов используют гибридную схему: локальная на базе + глобальная на переезды.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Достаточно ли eSIM для полноценной удалённой работы или нужен Wi‑Fi?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Для лёгкой работы (чаты, браузер) eSIM вполне достаточно. Для постоянных видеозвонков и работы с большими файлами большинство номадов рекомендуют использовать eSIM как резервный канал, а для тяжёлой работы — коворкинг или отельный Wi‑Fi. Hotspot с хорошим безлимитным планом (Holafly, Ubigi) в принципе покрывает и полноценный рабочий день, но это требует крупного трафикового бюджета.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Как работает dual‑SIM у номада: физическая + eSIM?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Большинство современных смартфонов поддерживают одновременную работу физической SIM и одной или двух eSIM. Типичная номадская схема: физическая SIM домашнего оператора или местная — для звонков, СМС и банковской аутентификации, eSIM туристического провайдера — для данных и hotspot. При смене страны просто меняете eSIM-профиль, физическая SIM остаётся нетронутой.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Какой провайдер лучше для долгосрочного пребывания в Азии?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Для долгой стоянки (1–3 месяца) в Таиланде, Индонезии или Вьетнаме — рассмотрите локальную SIM или страновую eSIM с большим пакетом. Для маршрута по нескольким азиатским странам — региональная eSIM от Airalo, Nomad или Holafly. Обзорщики и сообщество r/digitalnomad в 2026 году отмечают стабильную работу Airalo и Holafly в популярных номадских точках ЮВА.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cta">
+        <h2>Найдите свою eSIM-стратегию как номад</h2>
+        <p>Определите стиль движения, оцените нужный объём трафика — и выбирайте провайдера под конкретный сценарий, а не «самый популярный» из рекламы.</p>
+        <div class="cta-actions">
+          <a href="rating.html" class="cta-main">Открыть рейтинг провайдеров 2026</a>
+          <a href="esim-multi-country.html" class="cta-alt">eSIM для нескольких стран</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM‑провайдеров. Помогаем номадам и путешественникам экономить на связи.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал‑номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 eSIM‑каталог. Все права защищены.</span>
+    <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  var backBtn=document.getElementById('backTop');
+  window.addEventListener('scroll',function(){
+    var show=window.scrollY>400;
+    backBtn.style.opacity=show?1:0;
+    backBtn.style.pointerEvents=show?'auto':'none';
+  },{passive:true});
+
+  var lastY=0,navEl=document.querySelector('nav');
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY;
+    navEl.style.transform=y<100?'translateY(0)':y>lastY?'translateY(-100%)':'translateY(0)';
+    lastY=y;
+  },{passive:true});
+
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click',function(){
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>

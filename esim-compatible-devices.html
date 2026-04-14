@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Какие телефоны поддерживают eSIM — список устройств</title>
+  <meta name="description" content="Полный список смартфонов с поддержкой eSIM: iPhone, Samsung, Google Pixel, Xiaomi и другие. Как проверить поддержку eSIM на своём устройстве.">
+  <meta name="keywords" content="какие телефоны поддерживают esim, список устройств esim, iphone esim, samsung esim, xiaomi esim">
+  <meta property="og:title" content="Список устройств с поддержкой eSIM">
+  <meta property="og:description" content="Проверите, поддерживает ли ваш смартфон eSIM. Актуальный список моделей iPhone, Samsung, Pixel, Xiaomi и других брендов.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/esim-compatible-devices.html">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+
+  <style>
+    :root{
+      --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;
+      --accent:#10b981;--accent-dark:#059669;
+      --warn:#f59e0b;--danger:#ef4444;
+      --bg:#f8fafc;--card:#ffffff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+      --radius:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 20px rgba(0,0,0,.1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{display:block;max-width:100%;}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+    .section{padding:56px 0;}
+    .section-header{margin-bottom:24px;}
+    .section-header h2{font-size:1.65rem;font-weight:800;line-height:1.25;}
+    .section-header p{color:var(--muted);margin-top:6px;font-size:.95rem;}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid var(--border);height:62px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm);transition:transform .3s;}
+    .nav-logo{font-size:1.2rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px;text-decoration:none;}
+    .nav-links{display:flex;gap:24px;list-style:none;}
+    .nav-links a{color:var(--text);font-size:.88rem;font-weight:500;transition:color .15s;}
+    .nav-links a:hover{color:var(--primary);text-decoration:none;}
+    .nav-cta{background:var(--primary);color:#fff !important;padding:7px 16px;border-radius:8px;font-weight:600 !important;}
+    .nav-cta:hover{background:var(--primary-dark);text-decoration:none !important;}
+    .nav-dropdown{position:relative;}
+    .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);min-width:180px;z-index:300;list-style:none;padding:6px 0;}
+    .dropdown li a{display:block;padding:9px 16px;font-size:.87rem;color:var(--text);white-space:nowrap;}
+    .dropdown li a:hover{background:var(--bg);color:var(--primary);text-decoration:none;}
+    .nav-dropdown:hover .dropdown{display:block;}
+
+    /* HERO */
+    .page-hero{background:linear-gradient(135deg,#0f2460 0%,#1d4ed8 45%,#0ea5e9 100%);color:#fff;padding:60px 20px 42px;position:relative;overflow:hidden;}
+    .page-hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+    .page-hero-inner{position:relative;z-index:1;}
+    .page-hero-eyebrow{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;font-weight:600;}
+    .page-hero h1{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:900;line-height:1.15;margin-bottom:12px;letter-spacing:-.02em;}
+    .page-hero-sub{font-size:.98rem;opacity:.9;max-width:640px;line-height:1.6;}
+    .page-hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;font-size:.82rem;opacity:.9;}
+    .page-hero-meta span{background:rgba(15,23,42,.32);border-radius:20px;padding:5px 12px;}
+
+    /* BREADCRUMBS */
+    .breadcrumbs{background:#fff;border-bottom:1px solid var(--border);padding:10px 0;font-size:.82rem;color:var(--muted);}
+    .breadcrumbs a{color:var(--muted);}
+    .breadcrumbs a:hover{color:var(--primary);}
+    .breadcrumbs span{color:var(--text);font-weight:600;}
+
+    /* CONTENT */
+    .lead{font-size:.98rem;color:var(--muted);margin-bottom:18px;}
+    .info-box{background:#ecfeff;border:1px solid #bae6fd;border-radius:14px;padding:16px 18px;font-size:.9rem;color:#075985;margin-bottom:24px;}
+    .info-box strong{color:#0369a1;}
+    .check-steps{margin-top:10px;padding-left:18px;font-size:.9rem;color:#0f172a;display:flex;flex-direction:column;gap:6px;}
+
+    .brand-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 22px 18px;margin-bottom:24px;box-shadow:var(--shadow-sm);}
+    .brand-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;}
+    .brand-title{font-weight:800;font-size:1.05rem;}
+    .brand-badge{font-size:.78rem;background:var(--primary-light);color:var(--primary);padding:3px 10px;border-radius:999px;font-weight:600;}
+    .brand-note{font-size:.86rem;color:var(--muted);margin-bottom:10px;}
+    .device-table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:4px;}
+    .device-table thead th{background:var(--primary-light);color:var(--text);padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);font-weight:600;}
+    .device-table tbody td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+    .device-table tbody tr:last-child td{border-bottom:none;}
+    .tagline{font-size:.8rem;color:var(--muted);margin-top:6px;}
+
+    .notice{font-size:.82rem;color:var(--muted);margin-top:8px;}
+
+    /* FOOTER (как в других страницах) */
+    footer{background:#0f172a;color:#94a3b8;padding:56px 20px 28px;margin-top:60px;}
+    .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:36px;max-width:1120px;margin:0 auto 40px;}
+    .footer-brand .logo{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:10px;}
+    .footer-brand p{font-size:.84rem;line-height:1.65;max-width:240px;}
+    .partner-links{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+    .partner-links a{font-size:.75rem;background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:5px 10px;border-radius:6px;}
+    .partner-links a:hover{color:#fff;text-decoration:none;}
+    .footer-col h4{color:#e2e8f0;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .footer-col ul a{color:#94a3b8;font-size:.85rem;transition:color .15s;}
+    .footer-col ul a:hover{color:#fff;text-decoration:none;}
+    .footer-bottom{max-width:1120px;margin:0 auto;border-top:1px solid #1e293b;padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:10px;}
+    .footer-bottom a{color:#64748b;}
+    .footer-bottom a:hover{color:#fff;}
+
+    /* BACK TO TOP */
+    #backTop{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.2rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.4);opacity:0;transition:opacity .3s;pointer-events:none;}
+
+    @media(max-width:900px){
+      .footer-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none;}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="esim-compatible-devices.html" style="color:var(--primary);font-weight:700;">Устройства</a></li>
+    <li><a href="index.html#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="page-hero-eyebrow">Справочник устройств</div>
+    <h1>Какие телефоны поддерживают eSIM</h1>
+    <p class="page-hero-sub">Собрали в одном месте поддерживаемые модели iPhone, Samsung, Google Pixel, Xiaomi и других брендов, а также показали, как проверить поддержку eSIM на своём смартфоне.</p>
+    <div class="page-hero-meta">
+      <span>Обновлено: апрель 2026</span>
+      <span>Apple, Samsung, Google, Xiaomi и др.</span>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="index.html">Главная</a> &nbsp;›&nbsp;
+    <a href="chto-takoe-esim.html">Гайды по eSIM</a> &nbsp;›&nbsp;
+    <span>Список устройств с eSIM</span>
+  </div>
+</div>
+
+<div class="container">
+  <section class="section">
+    <p class="lead">
+      Поддержка eSIM зависит не только от модели телефона, но и от региона его продажи и версии прошивки. Ниже — общий список устройств, на которых eSIM работает у большинства пользователей.
+    </p>
+
+    <div class="info-box">
+      <strong>Как быстро проверить поддержку eSIM:</strong>
+      <ul class="check-steps">
+        <li>Откройте «Настройки» → «Сотовая связь» / «Мобильные данные»</li>
+        <li>Найдите пункт «Добавить eSIM» или «Добавить тариф»</li>
+        <li>Если такой пункт есть — телефон поддерживает eSIM. Если нет, скорее всего модель или регион не поддерживаются</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- iPhone -->
+  <section class="section" id="iphone">
+    <div class="section-header">
+      <h2>iPhone с поддержкой eSIM</h2>
+      <p>Apple одной из первых добавила eSIM — все свежие модели умеют работать с цифровыми SIM‑картами.</p>
+    </div>
+
+    <div class="brand-block">
+      <div class="brand-header">
+        <div class="brand-title">Поддерживаемые модели iPhone</div>
+        <span class="brand-badge">2 eSIM на одном устройстве</span>
+      </div>
+      <p class="brand-note">Ниже указаны модели, в которых eSIM доступна в большинстве регионов. В отдельных странах (например, Китай) некоторые версии могут быть без eSIM.</p>
+
+      <table class="device-table">
+        <thead>
+          <tr>
+            <th>Поколение</th>
+            <th>Модели</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>iPhone 15</td>
+            <td>iPhone 15 / 15 Plus / 15 Pro / 15 Pro Max</td>
+          </tr>
+          <tr>
+            <td>iPhone 14</td>
+            <td>iPhone 14 / 14 Plus / 14 Pro / 14 Pro Max</td>
+          </tr>
+          <tr>
+            <td>iPhone 13</td>
+            <td>iPhone 13 mini / 13 / 13 Pro / 13 Pro Max</td>
+          </tr>
+          <tr>
+            <td>iPhone 12</td>
+            <td>iPhone 12 mini / 12 / 12 Pro / 12 Pro Max</td>
+          </tr>
+          <tr>
+            <td>iPhone 11</td>
+            <td>iPhone 11 / 11 Pro / 11 Pro Max</td>
+          </tr>
+          <tr>
+            <td>iPhone XS / XR</td>
+            <td>iPhone XS / XS Max / XR</td>
+          </tr>
+          <tr>
+            <td>iPhone SE</td>
+            <td>iPhone SE (2‑го и 3‑го поколения)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="tagline">На iPhone можно одновременно использовать одну физическую SIM и одну eSIM, либо две eSIM (на новых моделях без слота под SIM).</p>
+      <p class="notice">Важно: в США iPhone 14 и новее продаются только с eSIM (без слота под физическую SIM). В других регионах слот может сохраняться.</p>
+    </div>
+  </section>
+
+  <!-- Samsung -->
+  <section class="section" id="samsung">
+    <div class="section-header">
+      <h2>Смартфоны Samsung с eSIM</h2>
+      <p>У Samsung eSIM есть в большинстве флагманских моделей последних лет, но бюджетные линейки обычно её не поддерживают.</p>
+    </div>
+
+    <div class="brand-block">
+      <div class="brand-header">
+        <div class="brand-title">Galaxy S / Z / Note</div>
+        <span class="brand-badge">Флагманы</span>
+      </div>
+      <p class="brand-note">Поддержка eSIM может отличаться по регионам (версии для Китая / некоторых стран СНГ иногда выходят без eSIM).</p>
+
+      <table class="device-table">
+        <thead>
+          <tr>
+            <th>Линейка</th>
+            <th>Модели</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Galaxy S24</td>
+            <td>Galaxy S24 / S24+ / S24 Ultra</td>
+          </tr>
+          <tr>
+            <td>Galaxy S23</td>
+            <td>Galaxy S23 / S23+ / S23 Ultra</td>
+          </tr>
+          <tr>
+            <td>Galaxy S22</td>
+            <td>Galaxy S22 / S22+ / S22 Ultra</td>
+          </tr>
+          <tr>
+            <td>Galaxy S21</td>
+            <td>Galaxy S21 / S21+ / S21 Ultra / S21 FE</td>
+          </tr>
+          <tr>
+            <td>Galaxy S20</td>
+            <td>Galaxy S20 / S20+ / S20 Ultra (часть регионов)</td>
+          </tr>
+          <tr>
+            <td>Складные</td>
+            <td>Galaxy Z Fold 2 / 3 / 4 / 5, Galaxy Z Flip 3 / 4 / 5</td>
+          </tr>
+          <tr>
+            <td>Note</td>
+            <td>Galaxy Note 20 / Note 20 Ultra</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="tagline">Убедиться в поддержке проще всего через настройки: «Подключения» → «Менеджер SIM» → кнопка «Добавить тариф на eSIM».</p>
+    </div>
+  </section>
+
+  <!-- Pixel -->
+  <section class="section" id="pixel">
+    <div class="section-header">
+      <h2>Google Pixel с поддержкой eSIM</h2>
+      <p>Практически все современные Pixel умеют работать с eSIM «из коробки».</p>
+    </div>
+
+    <div class="brand-block">
+      <div class="brand-header">
+        <div class="brand-title">Поддерживаемые модели Pixel</div>
+        <span class="brand-badge">Чистый Android</span>
+      </div>
+
+      <table class="device-table">
+        <thead>
+          <tr>
+            <th>Поколение</th>
+            <th>Модели</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pixel 9</td>
+            <td>Pixel 9 / 9 Pro (ожидается полная поддержка eSIM)</td>
+          </tr>
+          <tr>
+            <td>Pixel 8</td>
+            <td>Pixel 8 / 8 Pro</td>
+          </tr>
+          <tr>
+            <td>Pixel 7</td>
+            <td>Pixel 7 / 7 Pro / 7a</td>
+          </tr>
+          <tr>
+            <td>Pixel 6</td>
+            <td>Pixel 6 / 6 Pro / 6a</td>
+          </tr>
+          <tr>
+            <td>Pixel 5</td>
+            <td>Pixel 5 / 5a</td>
+          </tr>
+          <tr>
+            <td>Pixel 4</td>
+            <td>Pixel 4 / 4 XL / 4a / 4a 5G</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="notice">В некоторых странах операторы могут ограничивать использование eSIM на старых моделях, даже если устройство технически поддерживает технологию.</p>
+    </div>
+  </section>
+
+  <!-- Xiaomi / другие Android -->
+  <section class="section" id="xiaomi">
+    <div class="section-header">
+      <h2>Xiaomi, Huawei и другие Android‑смартфоны</h2>
+      <p>У большинства китайских брендов eSIM появляется только в отдельных флагманах и моделях для Европы.</p>
+    </div>
+
+    <div class="brand-block">
+      <div class="brand-header">
+        <div class="brand-title">Xiaomi / Redmi / Poco</div>
+        <span class="brand-badge">Точечно, в флагманах</span>
+      </div>
+      <p class="brand-note">Поддержка сильно зависит от региона — европейские версии чаще получают eSIM, чем устройства для Китая/Индии.</p>
+
+      <table class="device-table">
+        <thead>
+          <tr>
+            <th>Бренд</th>
+            <th>Примеры моделей с eSIM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Xiaomi</td>
+            <td>Некоторые модели серий Xiaomi 13 / 14 для Европы (уточняйте на сайте производителя)</td>
+          </tr>
+          <tr>
+            <td>Redmi / Poco</td>
+            <td>Поддержка eSIM встречается редко, в основном в дорогих моделях последних лет</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="notice">Для Xiaomi и дочерних брендов обязательно проверяйте поддержку eSIM конкретной модели и региона поставки перед покупкой.</p>
+    </div>
+
+    <div class="brand-block">
+      <div class="brand-header">
+        <div class="brand-title">Huawei, Honor, другие</div>
+        <span class="brand-badge">Ограниченная поддержка</span>
+      </div>
+
+      <table class="device-table">
+        <thead>
+          <tr>
+            <th>Бренд</th>
+            <th>Комментарии по eSIM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Huawei</td>
+            <td>Ряд флагманов (Mate, P‑серия) с eSIM для Европы и Азии. Из‑за санкций и ограничений поддержка зависит от региона и прошивки.</td>
+          </tr>
+          <tr>
+            <td>Honor</td>
+            <td>Отдельные флагманские модели могут поддерживать eSIM, но информации мало — проверяйте на официальном сайте.</td>
+          </tr>
+          <tr>
+            <td>Другие бренды</td>
+            <td>Motorola, Oppo, OnePlus и др. постепенно добавляют eSIM в новые флагманы. Всегда смотрите спецификации именно вашей версии.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="notice">Для Android‑устройств разных брендов универсального списка нет — производители часто делают разные версии одной модели для разных рынков.</p>
+    </div>
+  </section>
+
+  <!-- Итоговый блок -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Какой eSIM-провайдер выбрать под ваш телефон</h2>
+      <p>Когда убедились, что телефон поддерживает eSIM, можно переходить к выбору тарифа.</p>
+    </div>
+
+    <div class="info-box">
+      <strong>Кратко:</strong> если у вас iPhone, Samsung S‑серии или Google Pixel последних лет — вероятность поддержки eSIM почти 100%. Для Xiaomi, Huawei и других брендов всегда проверяйте модель и регион.
+    </div>
+
+    <p class="lead">
+      Дальше всё просто: выбираете страну поездки, сравниваете тарифы провайдеров и покупаете eSIM с удобной оплатой. Мы уже собрали лучшие варианты в рейтинге:
+      <a href="rating.html">рейтинг eSIM-провайдеров 2026</a>.
+    </p>
+  </section>
+</div>
+
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM-провайдеров. Сравниваем тарифы, помогаем экономить на роуминге.</p>
+      <div class="partner-links">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" target="_blank" rel="nofollow">Yesim</a>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" target="_blank" rel="nofollow">Airalo</a>
+        <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" target="_blank" rel="nofollow">eSIM World</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал-номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Провайдеры</h4>
+      <ul>
+        <li><a href="airalo.html">Airalo</a></li>
+        <li><a href="yesim.html">Yesim</a></li>
+        <li><a href="holafly.html">Holafly</a></li>
+        <li><a href="nomad.html">Nomad</a></li>
+        <li><a href="esim365.html">esim365</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="o-nas.html">О нас</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 eSIM-каталог. Все права защищены.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- КНОПКА ВВЕРХ -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- JS -->
+<script>
+  // Back to top
+  var backBtn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 400;
+    backBtn.style.opacity = show ? 1 : 0;
+    backBtn.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+
+  // Sticky nav hide on scroll down
+  var lastY = 0;
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y < 100) {
+      navEl.style.transform = 'translateY(0)';
+    } else if (y > lastY) {
+      navEl.style.transform = 'translateY(-100%)';
+    } else {
+      navEl.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+</script>
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Какие телефоны поддерживают eSIM — список устройств",
+  "description": "Полный список смартфонов с поддержкой eSIM: iPhone, Samsung, Google Pixel, Xiaomi и другие бренды. Советы по проверке поддержки eSIM на своём устройстве.",
+  "url": "https://esim-catalog.vercel.app/esim-compatible-devices.html",
+  "mainEntityOfPage": "https://esim-catalog.vercel.app/esim-compatible-devices.html",
+  "about": {
+    "@type": "Thing",
+    "name": "eSIM-совместимые устройства"
+  }
+}
+</script>
+
+</body>
+</html>
+

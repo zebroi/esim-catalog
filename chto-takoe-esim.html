@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Что такое eSIM и как она работает в 2026 году</title>
+  <meta name="description" content="Простое объяснение, что такое eSIM, чем она отличается от обычной SIM-карты, какие устройства поддерживают eSIM и как с её помощью экономить на интернете за границей.">
+  <meta name="keywords" content="что такое esim, esim что это, как работает esim, esim отличие от sim карты, esim для путешествий">
+  <meta property="og:title" content="Что такое eSIM: простое объяснение">
+  <meta property="og:description" content="Разбираем, что такое eSIM, как она устроена, какие даёт плюсы в поездках и в чём отличие от обычной SIM-карты.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/chto-takoe-esim.html">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+
+  <style>
+    :root{
+      --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;
+      --accent:#10b981;--accent-dark:#059669;
+      --warn:#f59e0b;--danger:#ef4444;
+      --bg:#f8fafc;--card:#ffffff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+      --radius:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 20px rgba(0,0,0,.1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{display:block;max-width:100%;}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+    .section{padding:56px 0;}
+    .section-header{margin-bottom:24px;}
+    .section-header h2{font-size:1.65rem;font-weight:800;line-height:1.25;}
+    .section-header p{color:var(--muted);margin-top:6px;font-size:.95rem;}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid var(--border);height:62px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm);transition:transform .3s;}
+    .nav-logo{font-size:1.2rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px;text-decoration:none;}
+    .nav-links{display:flex;gap:24px;list-style:none;}
+    .nav-links a{color:var(--text);font-size:.88rem;font-weight:500;transition:color .15s;}
+    .nav-links a:hover{color:var(--primary);text-decoration:none;}
+    .nav-cta{background:var(--primary);color:#fff !important;padding:7px 16px;border-radius:8px;font-weight:600 !important;}
+    .nav-cta:hover{background:var(--primary-dark);text-decoration:none !important;}
+    .nav-dropdown{position:relative;}
+    .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);min-width:180px;z-index:300;list-style:none;padding:6px 0;}
+    .dropdown li a{display:block;padding:9px 16px;font-size:.87rem;color:var(--text);white-space:nowrap;}
+    .dropdown li a:hover{background:var(--bg);color:var(--primary);text-decoration:none;}
+    .nav-dropdown:hover .dropdown{display:block;}
+
+    /* HERO */
+    .page-hero{background:linear-gradient(135deg,#0f2460 0%,#1d4ed8 45%,#0ea5e9 100%);color:#fff;padding:60px 20px 48px;position:relative;overflow:hidden;}
+    .page-hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+    .page-hero-inner{position:relative;z-index:1;text-align:left;}
+    .page-hero-eyebrow{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;font-weight:600;}
+    .page-hero h1{font-size:clamp(1.9rem,3.8vw,2.8rem);font-weight:900;line-height:1.1;margin-bottom:14px;letter-spacing:-.02em;}
+    .page-hero-sub{font-size:.98rem;opacity:.9;max-width:640px;line-height:1.6;}
+    .page-hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;font-size:.82rem;opacity:.9;}
+    .page-hero-meta span{background:rgba(15,23,42,.32);border-radius:20px;padding:5px 12px;}
+
+    /* BREADCRUMBS */
+    .breadcrumbs{background:#fff;border-bottom:1px solid var(--border);padding:10px 0;font-size:.82rem;color:var(--muted);}
+    .breadcrumbs a{color:var(--muted);}
+    .breadcrumbs a:hover{color:var(--primary);}
+    .breadcrumbs span{color:var(--text);font-weight:600;}
+
+    /* CONTENT */
+    .lead{font-size:.98rem;color:var(--muted);margin-bottom:18px;}
+    .info-box{background:#ecfeff;border:1px solid #bae6fd;border-radius:14px;padding:16px 18px;font-size:.9rem;color:#075985;margin-bottom:24px;}
+    .info-box strong{color:#0369a1;}
+    .muted{color:var(--muted);font-size:.9rem;}
+
+    .two-cols{display:grid;grid-template-columns:1.6fr 1.4fr;gap:28px;margin-top:18px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow-sm);font-size:.9rem;}
+    .card h3{font-size:1.05rem;font-weight:800;margin-bottom:10px;}
+    .card p{color:var(--muted);}
+    .card ul{margin-top:8px;padding-left:18px;display:flex;flex-direction:column;gap:6px;color:var(--muted);}
+    .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+    .pill{font-size:.78rem;padding:4px 10px;border-radius:999px;border:1px solid var(--border);background:var(--bg);color:var(--muted);}
+
+    .compare-wrap{margin-top:18px;overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);}
+    table.compare{width:100%;border-collapse:collapse;font-size:.87rem;min-width:720px;}
+    table.compare thead th{background:var(--primary);color:#fff;padding:10px 12px;text-align:left;font-weight:700;white-space:nowrap;}
+    table.compare tbody td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+    table.compare tbody tr:last-child td{border-bottom:none;}
+    .yes{color:var(--accent);font-weight:700;}
+    .no{color:var(--muted);}
+
+    .devices-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:14px;}
+    .device-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:16px 18px;font-size:.9rem;}
+    .device-card h3{font-size:.98rem;font-weight:800;margin-bottom:6px;}
+    .device-card ul{margin-top:4px;padding-left:18px;display:flex;flex-direction:column;gap:4px;color:var(--muted);font-size:.88rem;}
+
+    .faq-section{padding:56px 0;}
+    .faq-list{display:flex;flex-direction:column;gap:10px;}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 22px;font-size:.97rem;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .faq-q:hover{background:var(--bg);}
+    .faq-icon{font-size:1.3rem;font-weight:300;color:var(--primary);transition:transform .25s;flex-shrink:0;}
+    .faq-item.open .faq-icon{transform:rotate(45deg);}
+    .faq-a{display:none;padding:0 22px 18px;font-size:.9rem;color:var(--muted);line-height:1.65;}
+    .faq-item.open .faq-a{display:block;}
+
+    .cta-box{background:linear-gradient(135deg,#1e40af,#2563eb);color:#fff;border-radius:16px;padding:26px 24px;margin-top:32px;text-align:left;}
+    .cta-box h2{font-size:1.25rem;font-weight:800;margin-bottom:8px;}
+    .cta-box p{font-size:.95rem;opacity:.9;margin-bottom:16px;max-width:520px;}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:12px;}
+    .cta-primary{background:var(--accent);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.95rem;}
+    .cta-secondary{background:rgba(15,23,42,.3);color:#e5e7eb;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.9rem;border:1px solid rgba(148,163,184,.5);}
+
+    /* FOOTER */
+    footer{background:#0f172a;color:#94a3b8;padding:56px 20px 28px;margin-top:60px;}
+    .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:36px;max-width:1120px;margin:0 auto 40px;}
+    .footer-brand .logo{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:10px;}
+    .footer-brand p{font-size:.84rem;line-height:1.65;max-width:260px;}
+    .partner-links{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+    .partner-links a{font-size:.75rem;background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:5px 10px;border-radius:6px;}
+    .partner-links a:hover{color:#fff;text-decoration:none;}
+    .footer-col h4{color:#e2e8f0;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .footer-col ul a{color:#94a3b8;font-size:.85rem;transition:color .15s;}
+    .footer-col ul a:hover{color:#fff;text-decoration:none;}
+    .footer-bottom{max-width:1120px;margin:0 auto;border-top:1px solid #1e293b;padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:10px;}
+    .footer-bottom a{color:#64748b;}
+    .footer-bottom a:hover{color:#fff;}
+
+    #backTop{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.2rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.4);opacity:0;transition:opacity .3s;pointer-events:none;}
+
+    @media(max-width:900px){
+      .footer-grid{grid-template-columns:1fr 1fr;}
+      .two-cols{grid-template-columns:1fr;}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none;}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+    <li><a href="index.html#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="page-hero-eyebrow">Базовый гид</div>
+    <h1>Что такое eSIM и зачем она нужна</h1>
+    <p class="page-hero-sub">Объясняем простыми словами, что такое eSIM, как она работает, чем отличается от обычной SIM‑карты и почему с eSIM удобно ездить за границу.</p>
+    <div class="page-hero-meta">
+      <span>Обновлено: апрель 2026</span>
+      <span>iPhone · Android · Планшеты</span>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="index.html">Главная</a> &nbsp;›&nbsp;
+    <span>Что такое eSIM</span>
+  </div>
+</div>
+
+<div class="container">
+  <!-- ЧТО ТАКОЕ ESIM -->
+  <section class="section">
+    <p class="lead">
+      eSIM — это встроенная в устройство микросхема, которая заменяет привычную пластиковую SIM‑карту. Профиль оператора на eSIM загружается через интернет, без похода в салон и без физической замены карты.
+    </p>
+
+    <div class="two-cols">
+      <div>
+        <div class="section-header">
+          <h2>Простое определение eSIM</h2>
+          <p>Как объяснить eSIM человеку, который раньше видел только обычные SIM‑карты.</p>
+        </div>
+
+        <div class="info-box">
+          <strong>Если коротко:</strong> eSIM — это не отдельный тариф, а способ хранения SIM‑профиля внутри телефона. На одну eSIM можно «записать» несколько операторов и переключаться между ними через настройки.
+        </div>
+
+        <p class="muted">
+          Вместо того чтобы вынимать лоток, обрезать SIM‑карты и искать скрепку, вы просто сканируете QR‑код от оператора или вводите код активации — профиль eSIM появляется в меню, как новая линия мобильной связи.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Чем eSIM отличается от обычной SIM‑карты</h3>
+        <p>Главное отличие — в форме и способе активации.</p>
+        <ul>
+          <li>Обычная SIM — это физический пластик, который нужно вставить в лоток</li>
+          <li>eSIM — это чип, уже впаянный в устройство на заводе</li>
+          <li>Тарифы и номера на eSIM загружаются по QR‑коду или из приложения</li>
+          <li>Можно хранить несколько профилей eSIM и переключаться между ними</li>
+        </ul>
+        <div class="pill-row">
+          <span class="pill">Без пластика</span>
+          <span class="pill">Удалённая активация</span>
+          <span class="pill">Несколько профилей</span>
+          <span class="pill">Удобно в поездках</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЛЮСЫ / МИНУСЫ -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Плюсы и минусы eSIM</h2>
+      <p>Разберём, зачем вообще переходить на eSIM, и какие ограничения пока остаются.</p>
+    </div>
+
+    <div class="two-cols">
+      <div class="card">
+        <h3>Преимущества eSIM</h3>
+        <ul>
+          <li>Подключение за несколько минут: достаточно Wi‑Fi и QR‑кода</li>
+          <li>Не нужно искать салон связи по прилёте в другую страну</li>
+          <li>Можно держать несколько тарифов (дом, поездки, работа) и быстро переключаться</li>
+          <li>Удобно для Dual SIM: российский номер на физической SIM, интернет за рубежом — на eSIM</li>
+          <li>Меньше риска потерять или повредить карту — ничего физически не меняется</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Ограничения eSIM</h3>
+        <ul>
+          <li>Нужен телефон с поддержкой eSIM (старые модели её не поддерживают)</li>
+          <li>Не все операторы выпускают eSIM, особенно региональные</li>
+          <li>Часть провайдеров ограничивает число переустановок eSIM на новые устройства</li>
+          <li>Иногда для оплаты за рубеж нужно использовать банковские карты, принимаемые международными сервисами</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESIM VS SIM -->
+  <section class="section">
+    <div class="section-header">
+      <h2>eSIM против обычной SIM‑карты</h2>
+      <p>Сводная таблица, чтобы увидеть разницу по ключевым параметрам.</p>
+    </div>
+
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th>eSIM</th>
+            <th>Обычная SIM‑карта</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Форма и установка</td>
+            <td>Встроенная микросхема, профиль добавляется через настройки</td>
+            <td>Физический пластик, который нужно вставлять в слот</td>
+          </tr>
+          <tr>
+            <td>Подключение нового оператора</td>
+            <td><span class="yes">Онлайн</span>: QR‑код или приложение, без визита в салон</td>
+            <td>Чаще всего требуется поход в офис или заказ доставки SIM</td>
+          </tr>
+          <tr>
+            <td>Количество профилей</td>
+            <td>Можно хранить несколько профилей eSIM, быстро переключаться между ними</td>
+            <td>Обычно один оператор на одну SIM‑карту</td>
+          </tr>
+          <tr>
+            <td>Удобство в поездках</td>
+            <td>Легко заранее купить eSIM под страну и активировать по прилёте</td>
+            <td>Нужно искать местную SIM, менять карту, хранить старую «на потом»</td>
+          </tr>
+          <tr>
+            <td>Риски потерять связь</td>
+            <td>Сложнее потерять: профиль хранится в устройстве</td>
+            <td>Можно забыть или потерять физическую карту</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- УСТРОЙСТВА -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Какие устройства поддерживают eSIM</h2>
+      <p>Общая логика: eSIM есть в большинстве флагманов последних лет и части «среднего класса».</p>
+    </div>
+
+    <p class="muted">
+      Конкретный список лучше всегда проверять на официальном сайте производителя или в нашем справочнике совместимых устройств — но в целом можно ориентироваться на модели ниже.
+    </p>
+
+    <div class="devices-grid">
+      <div class="device-card">
+        <h3>iPhone</h3>
+        <ul>
+          <li>iPhone XS, XS Max, XR и новее (за исключением некоторых региональных версий)</li>
+          <li>Свежие модели могут работать только с eSIM без физической SIM‑карты</li>
+          <li>Поддерживают Dual SIM: физическая SIM + eSIM или две eSIM</li>
+        </ul>
+      </div>
+
+      <div class="device-card">
+        <h3>Android‑смартфоны</h3>
+        <ul>
+          <li>Многие флагманы Samsung Galaxy, Google Pixel, Xiaomi / Redmi / Poco</li>
+          <li>Часть устройств для китайского рынка выпускается без eSIM</li>
+          <li>Поддержка зависит от модели и региона продажи</li>
+        </ul>
+      </div>
+
+      <div class="device-card">
+        <h3>Планшеты и часы</h3>
+        <ul>
+          <li>iPad с модемом (Cellular‑версии) последних поколений</li>
+          <li>Некоторые модели Apple Watch с поддержкой сотовой связи</li>
+          <li>Отдельные LTE‑версии ноутбуков и «умных» гаджетов</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Частые вопросы про eSIM</h2>
+        <p>Ответы на вопросы, которые чаще всего задают перед первой установкой eSIM.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            eSIM — это отдельный тариф или технология?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>eSIM — это именно технология. Тарифы и пакеты данных могут быть похожи на обычные SIM, просто подключаются они не через физическую карту, а через встроенный чип и QR‑код или приложение.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Можно ли использовать eSIM и обычную SIM одновременно?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Да, если телефон поддерживает Dual SIM. Частый сценарий: российский номер на физической SIM для звонков и SMS, а eSIM — для дешёвого интернета за границей.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Подходит ли eSIM для поездок за границу вместо роуминга?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>В большинстве туристических направлений eSIM с пакетом трафика оказывается выгоднее, чем постоянный роуминг домашнего оператора. Особенно если вы активно пользуетесь навигатором, такси и соцсетями.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Можно ли перенести eSIM на другой телефон?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Это зависит от провайдера. Некоторые разрешают несколько активаций одной eSIM, другие привязывают её к первому устройству. Перед переносом всегда читайте условия и инструкцию в личном кабинете оператора.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Что будет с eSIM, если потерять телефон?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Как и с обычной SIM, нужно заблокировать номер у оператора. В большинстве случаев eSIM можно перевыпустить на новое устройство, но детали зависят от конкретного провайдера и его правил безопасности.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="cta-box">
+      <h2>Готовы попробовать eSIM на практике?</h2>
+      <p>Мы собрали проверенные eSIM‑сервисы и тарифы под популярные страны. Сравните цены, объём трафика и условия и выберите вариант под свои путешествия.</p>
+      <div class="cta-actions">
+        <a href="rating.html" class="cta-primary">Открыть рейтинг eSIM‑провайдеров</a>
+        <a href="promo.html" class="cta-secondary">Посмотреть промокоды и скидки</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM-провайдеров. Сравниваем тарифы, помогаем экономить на роуминге.</p>
+      <div class="partner-links">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" target="_blank" rel="nofollow">Yesim</a>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" target="_blank" rel="nofollow">Airalo</a>
+        <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" target="_blank" rel="nofollow">eSIM World</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал-номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Провайдеры</h4>
+      <ul>
+        <li><a href="airalo.html">Airalo</a></li>
+        <li><a href="yesim.html">Yesim</a></li>
+        <li><a href="holafly.html">Holafly</a></li>
+        <li><a href="nomad.html">Nomad</a></li>
+        <li><a href="esim365.html">esim365</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="o-nas.html">О нас</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 eSIM-каталог. Все права защищены.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- КНОПКА ВВЕРХ -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- JS -->
+<script>
+  // Back to top
+  var backBtn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 400;
+    backBtn.style.opacity = show ? 1 : 0;
+    backBtn.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+
+  // Sticky nav hide on scroll down
+  var lastY = 0;
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y < 100) {
+      navEl.style.transform = 'translateY(0)';
+    } else if (y > lastY) {
+      navEl.style.transform = 'translateY(-100%)';
+    } else {
+      navEl.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+
+  // FAQ accordion
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function() {
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Что такое eSIM и как она работает",
+  "description": "Базовый гид по технологии eSIM: чем она отличается от обычной SIM-карты, какие устройства поддерживают eSIM и почему это удобно для поездок за границу.",
+  "url": "https://esim-catalog.vercel.app/chto-takoe-esim.html",
+  "mainEntityOfPage": "https://esim-catalog.vercel.app/chto-takoe-esim.html",
+  "about": {
+    "@type": "Thing",
+    "name": "Технология eSIM"
+  }
+}
+</script>
+
+</body>
+</html>
