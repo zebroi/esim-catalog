@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как установить eSIM на Android: пошаговая инструкция 2026</title>
+  <meta name="description" content="Подробная пошаговая инструкция по установке eSIM на смартфоны Android: Samsung, Google Pixel, Xiaomi и другие. Активация через QR-код и приложение провайдера.">
+  <meta name="keywords" content="как установить esim на android, активация esim android, esim samsung, esim pixel, esim инструкция android">
+  <meta property="og:title" content="Как установить eSIM на Android — пошаговая инструкция">
+  <meta property="og:description" content="Пошагово разбираем установку eSIM на Android-смартфоны: Samsung, Pixel, Xiaomi. Через QR-код, вручную и через приложение провайдера.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/how-to-install-esim-android.html">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+
+  <style>
+    :root{
+      --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;
+      --accent:#10b981;--accent-dark:#059669;
+      --warn:#f59e0b;--danger:#ef4444;
+      --bg:#f8fafc;--card:#ffffff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+      --radius:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 20px rgba(0,0,0,.1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{display:block;max-width:100%;}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+    .section{padding:56px 0;}
+    .section-header{margin-bottom:24px;}
+    .section-header h2{font-size:1.65rem;font-weight:800;line-height:1.25;}
+    .section-header p{color:var(--muted);margin-top:6px;font-size:.95rem;}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid var(--border);height:62px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm);transition:transform .3s;}
+    .nav-logo{font-size:1.2rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px;text-decoration:none;}
+    .nav-links{display:flex;gap:24px;list-style:none;}
+    .nav-links a{color:var(--text);font-size:.88rem;font-weight:500;transition:color .15s;}
+    .nav-links a:hover{color:var(--primary);text-decoration:none;}
+    .nav-cta{background:var(--primary);color:#fff !important;padding:7px 16px;border-radius:8px;font-weight:600 !important;}
+    .nav-cta:hover{background:var(--primary-dark);text-decoration:none !important;}
+    .nav-dropdown{position:relative;}
+    .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);min-width:180px;z-index:300;list-style:none;padding:6px 0;}
+    .dropdown li a{display:block;padding:9px 16px;font-size:.87rem;color:var(--text);white-space:nowrap;}
+    .dropdown li a:hover{background:var(--bg);color:var(--primary);text-decoration:none;}
+    .nav-dropdown:hover .dropdown{display:block;}
+
+    /* HERO */
+    .page-hero{background:linear-gradient(135deg,#0f2460 0%,#1d4ed8 45%,#0ea5e9 100%);color:#fff;padding:60px 20px 42px;position:relative;overflow:hidden;}
+    .page-hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/G%3E%3C/svg%3E");}
+    .page-hero-inner{position:relative;z-index:1;}
+    .page-hero-eyebrow{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;font-weight:600;}
+    .page-hero h1{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:900;line-height:1.15;margin-bottom:12px;letter-spacing:-.02em;}
+    .page-hero-sub{font-size:.98rem;opacity:.9;max-width:640px;line-height:1.6;}
+    .page-hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;font-size:.82rem;opacity:.9;}
+    .page-hero-meta span{background:rgba(15,23,42,.32);border-radius:20px;padding:5px 12px;}
+
+    /* BREADCRUMBS */
+    .breadcrumbs{background:#fff;border-bottom:1px solid var(--border);padding:10px 0;font-size:.82rem;color:var(--muted);}
+    .breadcrumbs a{color:var(--muted);}
+    .breadcrumbs a:hover{color:var(--primary);}
+    .breadcrumbs span{color:var(--text);font-weight:600;}
+
+    /* STEPS */
+    .lead{font-size:.98rem;color:var(--muted);margin-bottom:18px;}
+    .info-box{background:#ecfeff;border:1px solid #bae6fd;border-radius:14px;padding:16px 18px;font-size:.9rem;color:#075985;margin-bottom:24px;}
+    .info-box strong{color:#0369a1;}
+    .warn-box{background:#fffbeb;border:1px solid #fef3c7;border-radius:14px;padding:14px 16px;font-size:.88rem;color:#92400e;margin-bottom:16px;}
+    .warn-box strong{color:#b45309;}
+
+    .steps-list{display:flex;flex-direction:column;gap:0;counter-reset:steps;margin-top:18px;}
+    .step-item{display:flex;gap:18px;position:relative;padding-bottom:28px;}
+    .step-item:last-child{padding-bottom:0;}
+    .step-item::before{
+      content:counter(steps);
+      counter-increment:steps;
+      min-width:36px;height:36px;border-radius:50%;
+      background:var(--primary);color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:.95rem;flex-shrink:0;
+      position:relative;z-index:1;
+    }
+    .step-item:not(:last-child)::after{
+      content:"";position:absolute;left:18px;top:36px;bottom:0;
+      width:2px;background:var(--border);
+    }
+    .step-body{padding-top:6px;}
+    .step-title{font-weight:700;font-size:1rem;margin-bottom:4px;}
+    .step-body p{font-size:.9rem;color:var(--muted);}
+    .step-body code{background:var(--primary-light);color:var(--primary);padding:2px 6px;border-radius:5px;font-size:.85rem;font-family:monospace;}
+
+    .brand-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+    .brand-tab{padding:7px 16px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:.86rem;font-weight:600;cursor:pointer;color:var(--text);transition:all .15s;}
+    .brand-tab.active,.brand-tab:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+
+    .brand-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-sm);margin-bottom:20px;}
+    .brand-block h3{font-size:1.05rem;font-weight:800;margin-bottom:14px;}
+    .brand-steps{display:flex;flex-direction:column;gap:8px;font-size:.9rem;}
+    .brand-step{display:flex;gap:10px;align-items:flex-start;}
+    .brand-step-num{min-width:24px;height:24px;background:var(--primary-light);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.78rem;flex-shrink:0;margin-top:1px;}
+    .brand-step-text{color:var(--text);line-height:1.55;}
+    .brand-step-text code{background:var(--primary-light);color:var(--primary);padding:1px 5px;border-radius:4px;font-size:.82rem;font-family:monospace;}
+
+    .faq-section{padding:56px 0;}
+    .faq-list{display:flex;flex-direction:column;gap:10px;}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 22px;font-size:.97rem;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .faq-q:hover{background:var(--bg);}
+    .faq-icon{font-size:1.3rem;font-weight:300;color:var(--primary);transition:transform .25s;flex-shrink:0;}
+    .faq-item.open .faq-icon{transform:rotate(45deg);}
+    .faq-a{display:none;padding:0 22px 18px;font-size:.9rem;color:var(--muted);line-height:1.65;}
+    .faq-item.open .faq-a{display:block;}
+
+    /* FOOTER */
+    footer{background:#0f172a;color:#94a3b8;padding:56px 20px 28px;margin-top:60px;}
+    .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:36px;max-width:1120px;margin:0 auto 40px;}
+    .footer-brand .logo{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:10px;}
+    .footer-brand p{font-size:.84rem;line-height:1.65;max-width:240px;}
+    .partner-links{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+    .partner-links a{font-size:.75rem;background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:5px 10px;border-radius:6px;}
+    .partner-links a:hover{color:#fff;text-decoration:none;}
+    .footer-col h4{color:#e2e8f0;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .footer-col ul a{color:#94a3b8;font-size:.85rem;transition:color .15s;}
+    .footer-col ul a:hover{color:#fff;text-decoration:none;}
+    .footer-bottom{max-width:1120px;margin:0 auto;border-top:1px solid #1e293b;padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:10px;}
+    .footer-bottom a{color:#64748b;}
+    .footer-bottom a:hover{color:#fff;}
+
+    #backTop{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.2rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.4);opacity:0;transition:opacity .3s;pointer-events:none;}
+
+    @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:640px){.nav-links{display:none;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+    <li><a href="index.html#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="page-hero-eyebrow">Пошаговая инструкция</div>
+    <h1>Как установить eSIM на Android</h1>
+    <p class="page-hero-sub">Показываем весь процесс — от покупки eSIM до выхода в интернет через локальную сеть. Подходит для Samsung, Google Pixel, Xiaomi и других Android‑смартфонов.</p>
+    <div class="page-hero-meta">
+      <span>Обновлено: апрель 2026</span>
+      <span>Samsung · Pixel · Xiaomi · Android 10+</span>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="index.html">Главная</a> &nbsp;›&nbsp;
+    <a href="chto-takoe-esim.html">Гайды по eSIM</a> &nbsp;›&nbsp;
+    <span>Установка eSIM на Android</span>
+  </div>
+</div>
+
+
+<div class="container">
+  <!-- ОБЩИЕ ШАГИ -->
+  <section class="section">
+    <p class="lead">
+      В большинстве Android‑смартфонов eSIM устанавливается через раздел настроек мобильной сети: нужно отсканировать QR‑код или ввести данные вручную. Варианты меню могут немного отличаться в зависимости от производителя и версии Android.
+    </p>
+
+    <div class="info-box">
+      <strong>Проверьте заранее:</strong> поддерживает ли ваш телефон eSIM. Откройте «Настройки» → «Подключения» / «Сеть и интернет» → «SIM‑карты» / «Менеджер SIM» и найдите пункт «Добавить eSIM» или «Добавить тариф».
+    </div>
+
+    <div class="warn-box">
+      <strong>Важно:</strong> часть операторов ограничивает количество активаций eSIM на одну покупку. Не удаляйте профиль eSIM до конца поездки, если не уверены, что его можно будет восстановить.
+    </div>
+
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Купите eSIM у провайдера</div>
+          <p>Выберите страну в каталоге, оформите тариф и получите QR‑код и/или код активации (SM‑DP+ адрес и активационный код). Всё это обычно приходит на почту или отображается в личном кабинете провайдера.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Откройте настройки мобильной сети</div>
+          <p>Обычно путь похожий: <code>Настройки → Подключения / Сеть и Интернет → SIM‑карты / Менеджер SIM</code>. Нужен пункт, где управляются SIM‑карты и eSIM‑профили.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Нажмите «Добавить eSIM» или «Добавить тариф»</div>
+          <p>Телефон предложит отсканировать QR‑код, ввести данные вручную или открыть приложение оператора. Выберите вариант, который указал ваш eSIM‑провайдер.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Отсканируйте QR‑код или введите данные вручную</div>
+          <p>При сканировании QR‑кода камера автоматически подставит адрес сервера и активационный код. Если QR‑код не работает, используйте ручной ввод: <code>SM‑DP+ адрес</code> и <code>Activation code</code>.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Выберите eSIM для мобильного интернета</div>
+          <p>После установки eSIM у вас будет как минимум две линии: российский номер (физическая SIM) и зарубежный интернет (eSIM). В настройках выберите eSIM как линию по умолчанию для мобильных данных.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Включите роуминг данных для eSIM</div>
+          <p>Для работы eSIM за границей обычно нужно включить «Роуминг данных» именно для eSIM‑линии. Российскую SIM можно оставить только для звонков и SMS‑банка.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БРЕНДЫ -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Инструкция по брендам: Samsung, Pixel, Xiaomi</h2>
+      <p>Ниже — типичные пути в меню для популярных Android‑смартфонов. Названия пунктов могут отличаться в зависимости от версии прошивки.</p>
+    </div>
+
+    <div class="brand-tabs">
+      <button class="brand-tab active" data-brand="samsung">Samsung</button>
+      <button class="brand-tab" data-brand="pixel">Google Pixel</button>
+      <button class="brand-tab" data-brand="xiaomi">Xiaomi / Redmi / Poco</button>
+      <button class="brand-tab" data-brand="other">Другие Android</button>
+    </div>
+
+    <!-- Samsung -->
+    <div class="brand-block" id="brand-samsung">
+      <h3>Как установить eSIM на Samsung Galaxy</h3>
+      <div class="brand-steps">
+        <div class="brand-step">
+          <div class="brand-step-num">1</div>
+          <div class="brand-step-text">
+            Откройте <code>Настройки → Подключения → Менеджер SIM‑карт</code> (или «SIM‑карты» / «SIM‑менеджер» в зависимости от версии One UI).
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">2</div>
+          <div class="brand-step-text">
+            Нажмите <code>Добавить тариф на eSIM</code> или <code>Добавить eSIM</code>. Появится выбор: сканировать QR‑код или использовать приложение оператора.
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">3</div>
+          <div class="brand-step-text">
+            Выберите «Сканировать QR‑код» и наведите камеру на код, который дал провайдер. Дождитесь загрузки профиля и подтвердите установку.
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">4</div>
+          <div class="brand-step-text">
+            После установки вернитесь в <code>Менеджер SIM‑карт</code> и в разделе «Мобильные данные» выберите свою eSIM. Включите переключатель «Роуминг данных» для этой линии.
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">5</div>
+          <div class="brand-step-text">
+            При необходимости отключите мобильные данные для российской SIM, чтобы интернет ходил только через eSIM, а основной номер использовался для звонков и SMS.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pixel -->
+    <div class="brand-block" id="brand-pixel" style="display:none;">
+      <h3>Как установить eSIM на Google Pixel</h3>
+      <div class="brand-steps">
+        <div class="brand-step">
+          <div class="brand-step-num">1</div>
+          <div class="brand-step-text">
+            Откройте <code>Настройки → Сеть и Интернет → SIM‑карты</code> (или «Мобильная сеть» в зависимости от версии Android).
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">2</div>
+          <div class="brand-step-text">
+            Нажмите <code>Добавить SIM</code> или <code>+ Добавить eSIM</code>. Выберите опцию «Скачать SIM вместо физической карты».
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">3</div>
+          <div class="brand-step-text">
+            Нажмите «Скани­ровать QR‑код оператора» и наведите камеру на код eSIM. Если оператор дал данные для ручного ввода, используйте пункт «Ввести код активации».
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">4</div>
+          <div class="brand-step-text">
+            После установки в разделе <code>SIM‑карты</code> выберите eSIM как линию по умолчанию для мобильных данных. Включите «Роуминг данных» для этой линии.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Xiaomi -->
+    <div class="brand-block" id="brand-xiaomi" style="display:none;">
+      <h3>Как установить eSIM на Xiaomi / Redmi / Poco</h3>
+      <div class="brand-steps">
+        <div class="brand-step">
+          <div class="brand-step-num">1</div>
+          <div class="brand-step-text">
+            Откройте <code>Настройки → SIM‑карты и мобильные сети</code>. Если в вашем регионе eSIM поддерживается, вы увидите пункт «Добавить eSIM» или «Добавить оператор».
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">2</div>
+          <div class="brand-step-text">
+            Нажмите <code>Добавить eSIM</code> и выберите «Сканировать QR‑код». Если такого пункта нет, возможно, версия вашего устройства не поддерживает eSIM.
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">3</div>
+          <div class="brand-step-text">
+            Сканируйте QR‑код eSIM и подтвердите установку. После загрузки профиля воз­вра­титесь к списку SIM‑карт.
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">4</div>
+          <div class="brand-step-text">
+            Назначьте eSIM линией по умолчанию для мобильных данных и включите «Международный роуминг» для этой SIM. Российскую SIM можно оставить только для звонков и SMS.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other -->
+    <div class="brand-block" id="brand-other" style="display:none;">
+      <h3>Другие Android‑смартфоны (Oppo, OnePlus, Motorola и др.)</h3>
+      <div class="brand-steps">
+        <div class="brand-step">
+          <div class="brand-step-num">1</div>
+          <div class="brand-step-text">
+            Ищите раздел настроек, связанный с SIM‑картами: <code>Настройки → Сеть и Интернет → SIM‑карты / Мобильная сеть</code>.
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">2</div>
+          <div class="brand-step-text">
+            Найдите кнопку <code>Добавить eSIM</code>, <code>Добавить оператор</code> или <code>+ SIM</code> и выберите вариант добавления по QR‑коду или коду активации.
+          </div>
+        </div>
+        <div class="brand-step">
+          <div class="brand-step-num">3</div>
+          <div class="brand-step-text">
+            После установки eSIM обязательно включите её для мобильных данных и активируйте роуминг данных для этой линии.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Частые вопросы по eSIM на Android</h2>
+        <p>Разбираем типичные проблемы при установке eSIM и переключении между SIM‑картами.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Телефон не показывает пункт «Добавить eSIM» — что делать?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Скорее всего, ваша модель или регион прошивки не поддерживает eSIM. Для Xiaomi и ряда китайских версий Samsung/Pixel производители выпускают модификации без eSIM. Проверьте официальную страницу устройства и регион его продажи (код модели на коробке или в настройках).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Можно ли использовать сразу две линии: российскую SIM и зарубежную eSIM?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Да, большинство современных Android‑смартфонов позволяют одновременно держать активной физическую SIM и eSIM. Обычно eSIM используют для интернета, а российская SIM остаётся для звонков, SMS‑банка и кодов подтверждения.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            После установки eSIM интернет не работает — в чём может быть проблема?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Проверьте три вещи: 1) eSIM выбрана линией по умолчанию для мобильных данных, 2) включён «Роуминг данных» именно для eSIM‑линии, 3) при необходимости прописан APN, который указал провайдер. Также убедитесь, что пакет активирован и не истёк срок его действия.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Можно ли перенести eSIM на другой Android‑смартфон?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Это зависит от провайдера. Некоторые разрешают несколько активаций одной eSIM, другие привязывают её к первому устройству. Перед переносом всегда читайте условия: иногда нужно выписать новый QR‑код в личном кабинете и отключить старый профиль.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM-провайдеров. Сравниваем тарифы, помогаем экономить на роуминге.</p>
+      <div class="partner-links">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" target="_blank" rel="nofollow">Yesim</a>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" target="_blank" rel="nofollow">Airalo</a>
+        <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" target="_blank" rel="nofollow">eSIM World</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал-номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Провайдеры</h4>
+      <ul>
+        <li><a href="airalo.html">Airalo</a></li>
+        <li><a href="yesim.html">Yesim</a></li>
+        <li><a href="holafly.html">Holafly</a></li>
+        <li><a href="nomad.html">Nomad</a></li>
+        <li><a href="esim365.html">esim365</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="o-nas.html">О нас</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 eSIM-каталог. Все права защищены.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- КНОПКА ВВЕРХ -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- JS -->
+<script>
+  // Back to top
+  var backBtn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 400;
+    backBtn.style.opacity = show ? 1 : 0;
+    backBtn.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+
+  // Sticky nav hide on scroll down
+  var lastY = 0;
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y < 100) {
+      navEl.style.transform = 'translateY(0)';
+    } else if (y > lastY) {
+      navEl.style.transform = 'translateY(-100%)';
+    } else {
+      navEl.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+
+  // Brand tabs
+  var tabs = document.querySelectorAll('.brand-tab');
+  var brandBlocks = {
+    samsung: document.getElementById('brand-samsung'),
+    pixel: document.getElementById('brand-pixel'),
+    xiaomi: document.getElementById('brand-xiaomi'),
+    other: document.getElementById('brand-other')
+  };
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var brand = tab.getAttribute('data-brand');
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      Object.keys(brandBlocks).forEach(function(key) {
+        brandBlocks[key].style.display = key === brand ? 'block' : 'none';
+      });
+    });
+  });
+
+  // FAQ accordion
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function() {
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Как установить eSIM на Android: пошаговая инструкция",
+  "description": "Подробный гид по установке eSIM на Android-смартфоны: Samsung, Google Pixel, Xiaomi и другие бренды. QR-код, ручная активация и типичные ошибки.",
+  "url": "https://esim-catalog.vercel.app/how-to-install-esim-android.html",
+  "mainEntityOfPage": "https://esim-catalog.vercel.app/how-to-install-esim-android.html",
+  "about": {
+    "@type": "Thing",
+    "name": "Установка eSIM на Android"
+  }
+}
+</script>
+
+</body>
+</html>
+

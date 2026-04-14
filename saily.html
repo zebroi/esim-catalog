@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saily eSIM: обзор сервиса от команды NordVPN</title>
+  <meta name="description" content="Обзор eSIM-провайдера Saily от команды NordVPN: покрытие 200+ стран, типичные тарифы, плюсы и минусы, для кого Saily особенно выгоден.">
+  <meta name="keywords" content="saily esim, saily обзор, saily esim отзывы, saily тарифы, saily nordvpn">
+  <meta property="og:title" content="Saily eSIM — обзор сервиса от команды NordVPN">
+  <meta property="og:description" content="Разбираем, как работает Saily eSIM, чем он отличается от других провайдеров и когда его имеет смысл выбрать вместо Airalo и других сервисов.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/saily.html">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+
+  <style>
+    :root{
+      --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;
+      --accent:#10b981;--accent-dark:#059669;
+      --warn:#f59e0b;--danger:#ef4444;
+      --bg:#f8fafc;--card:#ffffff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+      --radius:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 20px rgba(0,0,0,.1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{display:block;max-width:100%;}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+    .section{padding:56px 0;}
+    .section-header{margin-bottom:24px;}
+    .section-header h2{font-size:1.65rem;font-weight:800;line-height:1.25;}
+    .section-header p{color:var(--muted);margin-top:6px;font-size:.95rem;}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid var(--border);height:62px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm);transition:transform .3s;}
+    .nav-logo{font-size:1.2rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px;text-decoration:none;}
+    .nav-links{display:flex;gap:24px;list-style:none;}
+    .nav-links a{color:var(--text);font-size:.88rem;font-weight:500;transition:color .15s;}
+    .nav-links a:hover{color:var(--primary);text-decoration:none;}
+    .nav-cta{background:var(--primary);color:#fff !important;padding:7px 16px;border-radius:8px;font-weight:600 !important;}
+    .nav-cta:hover{background:var(--primary-dark);text-decoration:none !important;}
+    .nav-dropdown{position:relative;}
+    .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);min-width:180px;z-index:300;list-style:none;padding:6px 0;}
+    .dropdown li a{display:block;padding:9px 16px;font-size:.87rem;color:var(--text);white-space:nowrap;}
+    .dropdown li a:hover{background:var(--bg);color:var(--primary);text-decoration:none;}
+    .nav-dropdown:hover .dropdown{display:block;}
+
+    /* HERO PROVIDER */
+    .hero-provider{background:#0b1120;color:#e5e7eb;padding:52px 20px 40px;}
+    .hero-inner{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;}
+    .hero-main{flex:1 1 260px;min-width:0;}
+    .hero-meta{flex:1 1 220px;min-width:0;max-width:340px;}
+    .badge-top{display:inline-flex;align-items:center;gap:6px;background:rgba(250,204,21,.16);border-radius:999px;padding:5px 12px;font-size:.78rem;color:#facc15;border:1px solid rgba(250,204,21,.6);margin-bottom:10px;}
+    .logo-wrap{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+    .logo-icon{width:48px;height:48px;border-radius:14px;border:1px solid #1f2937;background:#020617;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .logo-icon img{width:30px;height:30px;object-fit:contain;}
+    .logo-fallback{font-weight:800;color:#facc15;font-size:1rem;}
+    .hero-main h1{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:900;letter-spacing:-.02em;line-height:1.15;margin-bottom:4px;}
+    .subtitle{font-size:.95rem;color:#9ca3af;margin-bottom:14px;max-width:520px;}
+    .rating-line{display:flex;align-items:center;gap:8px;font-size:.86rem;color:#e5e7eb;margin-bottom:10px;}
+    .stars{color:#facc15;font-size:.9rem;letter-spacing:-1px;}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+    .hero-tag{font-size:.78rem;border-radius:999px;padding:4px 10px;border:1px solid #1f2937;background:#020617;color:#9ca3af;}
+
+    .hero-cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+    .btn-main{background:#10b981;color:#fff;padding:11px 22px;border-radius:10px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+    .btn-main span{font-size:.8rem;color:#bbf7d0;font-weight:600;}
+    .btn-ghost{background:transparent;color:#e5e7eb;padding:10px 18px;border-radius:10px;font-weight:600;font-size:.9rem;border:1px solid #374151;text-decoration:none;}
+
+    .hero-meta-box{background:#020617;border-radius:16px;border:1px solid #1f2937;padding:16px 18px;font-size:.85rem;color:#9ca3af;}
+    .hero-meta-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px;}
+    .meta-item{padding:8px 10px;border-radius:10px;background:#020617;border:1px solid #1f2937;}
+    .meta-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:2px;}
+    .meta-value{font-size:.92rem;font-weight:700;color:#e5e7eb;}
+
+    /* BREADCRUMBS */
+    .breadcrumbs{background:#fff;border-bottom:1px solid var(--border);padding:10px 0;font-size:.82rem;color:var(--muted);}
+    .breadcrumbs a{color:var(--muted);}
+    .breadcrumbs a:hover{color:var(--primary);}
+    .breadcrumbs span{color:var(--text);font-weight:600;}
+
+    /* BODY */
+    .muted{color:var(--muted);font-size:.9rem;}
+    .pros-cons{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:20px;}
+    .pros,.cons{border-radius:12px;padding:18px 18px;font-size:.9rem;}
+    .pros{background:#f0fdf4;}
+    .cons{background:#fff5f5;}
+    .pros h3,.cons h3{font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;}
+    .pros h3{color:#16a34a;}
+    .cons h3{color:#dc2626;}
+    .pros ul,.cons ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+    .pros li::before,.cons li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:middle;}
+    .pros li::before{background:#16a34a;}
+    .cons li::before{background:#dc2626;}
+
+    .plans-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px;}
+    .plan-card{border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center;font-size:.86rem;background:var(--card);}
+    .plan-card.best{border-color:var(--primary);background:var(--primary-light);}
+    .plan-gb{font-weight:700;font-size:.98rem;}
+    .plan-price{font-size:1.2rem;font-weight:900;color:var(--primary);margin:4px 0;}
+    .plan-days{font-size:.78rem;color:var(--muted);}
+    .plan-best-label{font-size:.72rem;color:var(--primary);font-weight:700;margin-top:4px;}
+
+    .region-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .region-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:16px 18px;font-size:.88rem;}
+    .region-card h3{font-size:.96rem;font-weight:800;margin-bottom:6px;}
+    .region-card ul{margin-top:4px;padding-left:18px;color:var(--muted);display:flex;flex-direction:column;gap:4px;font-size:.86rem;}
+
+    .faq-section{padding:40px 0 56px;}
+    .faq-list{display:flex;flex-direction:column;gap:10px;}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:16px 20px;font-size:.95rem;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .faq-q:hover{background:var(--bg);}
+    .faq-icon{font-size:1.3rem;font-weight:300;color:var(--primary);transition:transform .25s;flex-shrink:0;}
+    .faq-item.open .faq-icon{transform:rotate(45deg);}
+    .faq-a{display:none;padding:0 20px 16px;font-size:.9rem;color:var(--muted);line-height:1.65;}
+    .faq-item.open .faq-a{display:block;}
+
+    .cta-box{background:linear-gradient(135deg,#1e40af,#2563eb);color:#fff;border-radius:16px;padding:24px 22px;margin-top:24px;text-align:left;}
+    .cta-box h2{font-size:1.2rem;font-weight:800;margin-bottom:6px;}
+    .cta-box p{font-size:.94rem;opacity:.9;margin-bottom:14px;max-width:520px;}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:10px;}
+    .cta-secondary{background:rgba(15,23,42,.3);color:#e5e7eb;padding:10px 20px;border-radius:999px;font-weight:600;font-size:.9rem;border:1px solid rgba(148,163,184,.5);text-decoration:none;}
+
+    /* FOOTER */
+    footer{background:#0f172a;color:#94a3b8;padding:56px 20px 28px;margin-top:40px;}
+    .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:36px;max-width:1120px;margin:0 auto 40px;}
+    .footer-brand .logo{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:10px;}
+    .footer-brand p{font-size:.84rem;line-height:1.65;max-width:240px;}
+    .partner-links{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+    .partner-links a{font-size:.75rem;background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:5px 10px;border-radius:6px;}
+    .partner-links a:hover{color:#fff;text-decoration:none;}
+    .footer-col h4{color:#e2e8f0;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .footer-col ul a{color:#94a3b8;font-size:.85rem;transition:color .15s;}
+    .footer-col ul a:hover{color:#fff;text-decoration:none;}
+    .footer-bottom{max-width:1120px;margin:0 auto;border-top:1px solid #1e293b;padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:10px;}
+    .footer-bottom a{color:#64748b;}
+    .footer-bottom a:hover{color:#fff;}
+
+    #backTop{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.2rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.4);opacity:0;transition:opacity .3s;pointer-events:none;}
+
+    @media(max-width:900px){
+      .footer-grid{grid-template-columns:1fr 1fr;}
+      .hero-inner{flex-direction:column;}
+      .hero-meta{max-width:none;}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none;}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+    <li><a href="index.html#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<section class="hero-provider">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div class="badge-top">eSIM‑сервис от команды NordVPN</div>
+        <div class="logo-wrap">
+          <div class="logo-icon">
+            <img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/6601cfffc80091d789271888/0x0.png" alt="Saily logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="logo-fallback" style="display:none;">S</span>
+          </div>
+          <div>
+            <h1>Saily — eSIM с покрытием 200+ стран</h1>
+            <div class="subtitle">Глобальный eSIM‑сервис от создателей NordVPN с упором на простоту, безопасность и доступные пакеты данных.</div>
+          </div>
+        </div>
+
+        <div class="rating-line">
+          <span class="stars">★★★★★</span>
+          <span><strong>примерно 4.6–4.8</strong> средние оценки в обзорах</span>
+          <span style="font-size:.78rem;color:#9ca3af;">по независимым ревью и тестам скорости</span>
+        </div>
+
+        <div class="hero-tags">
+          <span class="hero-tag">Покрытие 200+ направлений</span>
+          <span class="hero-tag">Планы от 1 ГБ до безлимита</span>
+          <span class="hero-tag">Автоактивация по прилёту</span>
+          <span class="hero-tag">Связь с экосистемой NordVPN</span>
+        </div>
+
+        <div class="hero-cta-row">
+          <a href="https://saily.com" class="btn-main" target="_blank" rel="nofollow">
+            Перейти на Saily
+            <span>Проверить тарифы в вашей стране</span>
+          </a>
+          <a href="rating.html" class="btn-ghost">Сравнить с другими eSIM</a>
+        </div>
+      </div>
+
+      <aside class="hero-meta">
+        <div class="hero-meta-box">
+          <div style="font-size:.82rem;color:#e5e7eb;font-weight:600;">Краткая сводка по Saily</div>
+          <div class="hero-meta-grid">
+            <div class="meta-item">
+              <div class="meta-label">Покрытие</div>
+              <div class="meta-value">200+ стран и территорий</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Объём данных</div>
+              <div class="meta-value">1 ГБ до безлимита</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Типы планов</div>
+              <div class="meta-value">Локальные, региональные, глобальные</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Особенности</div>
+              <div class="meta-value">Автоактивация, виртуальная локация</div>
+            </div>
+          </div>
+          <p style="margin-top:10px;font-size:.83rem;color:#9ca3af;">
+            Подходит, если нужна простая eSIM с широким покрытием и важен бэкграунд NordVPN по части приватности и безопасности.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="index.html">Главная</a> &nbsp;›&nbsp;
+    <a href="rating.html">Рейтинг eSIM‑провайдеров</a> &nbsp;›&nbsp;
+    <span>Saily</span>
+  </div>
+</div>
+
+<div class="container">
+  <section class="section">
+    <div class="section-header">
+      <h2>Обзор Saily: чем он отличается от других eSIM‑сервисов</h2>
+      <p>Кто стоит за Saily, как оно работает и в каких поездках полезно.</p>
+    </div>
+
+    <p class="muted">
+      Saily — eSIM‑сервис для путешествий, запущенный командой, которая стоит за NordVPN. Он предлагает тарифы в более чем двух сотнях стран и регионов, включая локальные, региональные и глобальные планы. Основной акцент — простое приложение, автоактивация по прилёту и дополнительные опции вроде виртуальной локации.
+    </p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>Преимущества Saily</h3>
+        <ul>
+          <li>Очень широкое покрытие: 200+ стран и территорий, включая менее популярные направления.</li>
+          <li>Гибкая линейка: от 1 ГБ на 7 дней до крупных и безлимитных планов.</li>
+          <li>Автоактивация: eSIM включается по прилёту или через указанное время после покупки.</li>
+          <li>Удобное приложение: установка и старт работы занимают несколько минут.</li>
+          <li>Связь с NordVPN: акцент на приватности и безопасности, плюс опция виртуальной локации.</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>Недостатки и ограничения</h3>
+        <ul>
+          <li>Только мобильный интернет, без голоса и SMS.</li>
+          <li>Неиспользованный трафик сгорает в конце срока действия.</li>
+          <li>Качество и скорость зависят от страны и роуминговых партнёров.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Типичные тарифы Saily и популярные направления</h2>
+      <p>Примеры объёмов и цен, чтобы понимать порядок стоимости.</p>
+    </div>
+
+    <p class="muted">
+      По открытым данным, стартовый уровень — пакеты 1 ГБ на 7 дней примерно от 1.99–3.99 $ в зависимости от страны. Далее идут более крупные планы и региональные eSIM. Перед покупкой лучше проверять актуальные цены под конкретную страну и даты поездки.
+    </p>
+
+    <div class="plans-row">
+      <div class="plan-card">
+        <div class="plan-gb">1 ГБ</div>
+        <div class="plan-price">от 1.99–3.99 $</div>
+        <div class="plan-days">7 дней</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-gb">5–10 ГБ</div>
+        <div class="plan-price">примерно 8–20 $</div>
+        <div class="plan-days">7–15 дней</div>
+      </div>
+      <div class="plan-card best">
+        <div class="plan-gb">20–30 ГБ</div>
+        <div class="plan-price">ориентировочно 25–40 $</div>
+        <div class="plan-days">15–30 дней</div>
+        <div class="plan-best-label">Оптимум для отпуска и работы</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-gb">Безлимит*</div>
+        <div class="plan-price">зависит от региона</div>
+        <div class="plan-days">есть fair use и возможный троттлинг</div>
+      </div>
+    </div>
+
+    <div class="region-cards">
+      <div class="region-card">
+        <h3>Европа</h3>
+        <ul>
+          <li>Региональные планы покрывают несколько европейских стран одной eSIM.</li>
+          <li>Удобно для автотуров и комбинированных маршрутов по ЕС и UK.</li>
+        </ul>
+      </div>
+      <div class="region-card">
+        <h3>Юго‑Восточная Азия</h3>
+        <ul>
+          <li>Варианты на несколько стран сразу, без покупки eSIM в каждой отдельно.</li>
+          <li>Подходит для маршрутов вроде «Таиланд + Вьетнам + Малайзия».</li>
+        </ul>
+      </div>
+      <div class="region-card">
+        <h3>Редкие направления</h3>
+        <ul>
+          <li>В каталоге есть ряд стран, которых нет у многих конкурентов.</li>
+          <li>Если сложно найти eSIM под конкретную страну — стоит проверить Saily.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Кому Saily подходит лучше всего</h2>
+      <p>Когда Saily логичнее выбирать вместо Airalo, Yesim и других сервисов.</p>
+    </div>
+
+    <p class="muted">
+      В обзорах Saily часто хвалят как сочетание широкого покрытия, понятных цен и понятного приложения, а также отмечают бонус в виде экспертизы NordVPN по безопасности.
+    </p>
+
+    <div class="region-cards">
+      <div class="region-card">
+        <h3>Бюджетные поездки с акцентом на безопасность</h3>
+        <ul>
+          <li>Нужен разумный баланс цены, покрытия и доверия к бренду.</li>
+          <li>Подходит, если хотите «одного поставщика» и eSIM, и VPN‑экосистемы.</li>
+        </ul>
+      </div>
+      <div class="region-card">
+        <h3>Частые поездки и пересадки</h3>
+        <ul>
+          <li>Можно держать несколько планов в приложении и не переоформлять eSIM каждый раз.</li>
+          <li>Автоактивация по прилёту снимает вопрос «когда включать пакет».</li>
+        </ul>
+      </div>
+      <div class="region-card">
+        <h3>Путешествия «без заморочек»</h3>
+        <ul>
+          <li>Процесс установки занимает несколько минут, всё делается через приложение.</li>
+          <li>Хорошо, если не хочется разбираться с локальными SIM‑картами на месте.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Частые вопросы по Saily</h2>
+        <p>Коротко — что важно знать перед покупкой eSIM у этого провайдера.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Кто стоит за Saily?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Saily принадлежит команде, которая развивает NordVPN. Это даёт дополнительное доверие с точки зрения инфраструктуры, приватности и работы с сетями.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            В скольких странах работает Saily?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Сервис покрывает более 200 стран и регионов по всему миру. Точный список направлений и доступных пакетов можно посмотреть в каталоге на сайте и в приложении Saily.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Как активируется eSIM Saily?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Вы устанавливаете приложение Saily, выбираете страну и план, оплачиваете, добавляете eSIM в настройки телефона. Дальше она автоматически активируется при прилёте в нужную страну или по истечении оговорённого времени после покупки.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Есть ли голос и SMS у Saily?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Saily — это только мобильный интернет. Для звонков и SMS можно использовать мессенджеры или отдельные VoIP‑сервисы, а также оставлять физическую SIM с домашним номером.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h2>Стоит ли брать Saily именно вам?</h2>
+        <p>Если вы часто путешествуете, хотите одно приложение для множества стран и цените экспертизу NordVPN, Saily — сильный кандидат. При разовых поездках в одну страну имеет смысл сравнить цены и с другими eSIM‑провайдерами.</p>
+        <div class="cta-actions">
+          <a href="https://saily.com" class="btn-main" target="_blank" rel="nofollow">Перейти на Saily и подобрать план</a>
+          <a href="rating.html" class="cta-secondary">Сравнить с другими eSIM‑сервисами</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM‑провайдеров. Сравниваем тарифы, помогаем экономить на роуминге.</p>
+      <div class="partner-links">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" target="_blank" rel="nofollow">Yesim</a>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" target="_blank" rel="nofollow">Airalo</a>
+        <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" target="_blank" rel="nofollow">eSIM World</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал‑номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Провайдеры</h4>
+      <ul>
+        <li><a href="airalo.html">Airalo</a></li>
+        <li><a href="yesim.html">Yesim</a></li>
+        <li><a href="holafly.html">Holafly</a></li>
+        <li><a href="nomad.html">Nomad</a></li>
+        <li><a href="esim365.html">esim365</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="o-nas.html">О нас</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 eSIM‑каталог. Все права защищены.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  var backBtn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 400;
+    backBtn.style.opacity = show ? 1 : 0;
+    backBtn.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+
+  var lastY = 0;
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y < 100) {
+      navEl.style.transform = 'translateY(0)';
+    } else if (y > lastY) {
+      navEl.style.transform = 'translateY(-100%)';
+    } else {
+      navEl.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function() {
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Saily eSIM",
+    "url": "https://saily.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "eSIM-каталог"
+  },
+  "headline": "Saily eSIM: обзор сервиса от команды NordVPN",
+  "reviewBody": "Обзор Saily eSIM: сильные и слабые стороны, примеры тарифов, сценарии использования и отличия от других глобальных eSIM-провайдеров.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.7",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
+</body>
+</html>

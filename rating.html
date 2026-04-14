@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рейтинг eSIM-провайдеров 2026 — топ 20 сервисов для путешествий</title>
+  <meta name="description" content="Честный рейтинг 20 лучших eSIM-провайдеров 2026 года. Плюсы, минусы, цены, отзывы. Выбираем лучший сервис для путешествий из России.">
+  <meta name="keywords" content="рейтинг esim, лучшие esim провайдеры, esim сравнение 2026, airalo yesim holafly">
+  <meta property="og:title" content="Рейтинг eSIM-провайдеров 2026 — топ 20">
+  <meta property="og:description" content="Честный рейтинг 20 лучших eSIM-провайдеров с плюсами, минусами и ценами.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/rating.html">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --accent: #10b981;
+      --accent-dark: #059669;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+      --shadow-md: 0 4px 20px rgba(0,0,0,.1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; font-size: 16px; }
+    img { display: block; max-width: 100%; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 56px 0; }
+    .section-header { margin-bottom: 28px; }
+    .section-header h2 { font-size: 1.65rem; font-weight: 800; line-height: 1.25; }
+    .section-header p { color: var(--muted); margin-top: 6px; font-size: .95rem; }
+
+    /* NAV */
+    nav { background: #fff; border-bottom: 1px solid var(--border); height: 62px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 200; box-shadow: var(--shadow-sm); transition: transform .3s; }
+    .nav-logo { font-size: 1.2rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--text); font-size: .88rem; font-weight: 500; transition: color .15s; }
+    .nav-links a:hover { color: var(--primary); text-decoration: none; }
+    .nav-cta { background: var(--primary); color: #fff !important; padding: 7px 16px; border-radius: 8px; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--primary-dark); text-decoration: none !important; }
+    .nav-dropdown { position: relative; }
+    .dropdown { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-md); min-width: 180px; z-index: 300; list-style: none; padding: 6px 0; }
+    .dropdown li a { display: block; padding: 9px 16px; font-size: .87rem; color: var(--text); white-space: nowrap; }
+    .dropdown li a:hover { background: var(--bg); color: var(--primary); text-decoration: none; }
+    .nav-dropdown:hover .dropdown { display: block; }
+
+    /* PAGE HERO (маленький) */
+    .page-hero { background: linear-gradient(135deg, #0f2460 0%, #1d4ed8 45%, #0ea5e9 100%); color: #fff; padding: 48px 20px 40px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-hero-eyebrow { display: inline-block; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); border-radius: 20px; padding: 4px 14px; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; font-weight: 600; }
+    .page-hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 12px; letter-spacing: -.02em; }
+    .page-hero h1 span { color: #67e8f9; }
+    .page-hero-sub { font-size: .98rem; opacity: .88; max-width: 580px; line-height: 1.6; margin-bottom: 18px; }
+    .page-hero-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .page-hero-badge { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); border-radius: 20px; padding: 5px 14px; font-size: .8rem; font-weight: 600; }
+
+    /* BREADCRUMBS */
+    .breadcrumbs { background: #fff; border-bottom: 1px solid var(--border); padding: 10px 0; font-size: .82rem; color: var(--muted); }
+    .breadcrumbs a { color: var(--muted); }
+    .breadcrumbs a:hover { color: var(--primary); }
+    .breadcrumbs span { color: var(--text); font-weight: 600; }
+
+    /* FILTERS */
+    .filters-wrap { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 28px; box-shadow: var(--shadow-sm); }
+    .filters-title { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 14px; }
+    .filter-groups { display: flex; gap: 28px; flex-wrap: wrap; }
+    .filter-group { display: flex; flex-direction: column; gap: 8px; }
+    .filter-group-label { font-size: .78rem; color: var(--muted); font-weight: 600; }
+    .filter-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+    .filter-pill { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: .8rem; cursor: pointer; transition: all .15s; font-weight: 500; user-select: none; }
+    .filter-pill:hover { border-color: var(--primary); color: var(--primary); }
+    .filter-pill.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* RATING LIST */
+    .rating-list { display: flex; flex-direction: column; gap: 12px; }
+    .rating-row { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; display: grid; grid-template-columns: 36px 44px 1fr auto auto 120px 160px; align-items: center; gap: 16px; transition: box-shadow .2s; }
+    .rating-row:hover { box-shadow: var(--shadow-md); }
+    .rating-row.gold { border-left: 4px solid #f59e0b; }
+    .rating-row.silver { border-left: 4px solid #94a3b8; }
+    .rating-row.bronze { border-left: 4px solid #c47a3a; }
+    .rank-num { font-size: 1.1rem; font-weight: 800; color: var(--muted); text-align: center; }
+    .rank-num.top1 { color: #f59e0b; }
+    .rank-num.top2 { color: #94a3b8; }
+    .rank-num.top3 { color: #c47a3a; }
+    .rank-logo { width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .rank-logo img { width: 28px; height: 28px; object-fit: contain; }
+    .rank-logo .abbr { font-size: .85rem; font-weight: 800; color: var(--primary); }
+    .rank-name-wrap .rank-name { font-weight: 700; font-size: 1rem; }
+    .rank-name-wrap .rank-desc { font-size: .78rem; color: var(--muted); }
+    .rank-score-bar { display: flex; align-items: center; gap: 8px; }
+    .bar-track { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--primary), #60a5fa); transition: width .6s ease; }
+    .bar-score { font-size: .82rem; font-weight: 700; min-width: 30px; }
+    .rank-price { font-weight: 700; font-size: .95rem; }
+    .rank-price span { font-size: .75rem; color: var(--muted); font-weight: 400; }
+    .rank-cta { display: inline-block; background: var(--primary); color: #fff; padding: 9px 18px; border-radius: 8px; font-size: .82rem; font-weight: 700; text-align: center; transition: background .2s; white-space: nowrap; }
+    .rank-cta:hover { background: var(--primary-dark); text-decoration: none; }
+    .rank-cta.featured-cta { background: var(--accent); }
+    .rank-cta.featured-cta:hover { background: var(--accent-dark); }
+
+    /* TAGS */
+    .tag { padding: 3px 10px; border-radius: 6px; font-size: .74rem; font-weight: 600; }
+    .tag-blue { background: #eff6ff; color: #2563eb; }
+    .tag-green { background: #f0fdf4; color: #16a34a; }
+    .tag-orange { background: #fff7ed; color: #ea580c; }
+    .tag-purple { background: #faf5ff; color: #7c3aed; }
+
+    /* REVIEW CARDS (плюсы/минусы) */
+    .review-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; margin-bottom: 28px; }
+    .review-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .review-logo-big { width: 64px; height: 64px; border-radius: 14px; border: 1px solid var(--border); background: var(--bg); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+    .review-logo-big img { width: 40px; height: 40px; object-fit: contain; }
+    .review-logo-big .abbr { font-size: 1.1rem; font-weight: 800; color: var(--primary); }
+    .review-meta h3 { font-size: 1.3rem; font-weight: 800; }
+    .review-meta .sub { color: var(--muted); font-size: .88rem; margin-top: 3px; }
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+    .pros { background: #f0fdf4; border-radius: 10px; padding: 16px 18px; }
+    .cons { background: #fff5f5; border-radius: 10px; padding: 16px 18px; }
+    .pros h4 { color: #16a34a; font-size: .88rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .05em; }
+    .cons h4 { color: #dc2626; font-size: .88rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .05em; }
+    .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .pros li::before { content: "✓ "; color: #16a34a; font-weight: 700; }
+    .cons li::before { content: "✗ "; color: #dc2626; font-weight: 700; }
+    .pros li, .cons li { font-size: .87rem; color: var(--text); }
+    .plans-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 22px; }
+    .plan-card { border: 1px solid var(--border); border-radius: 10px; padding: 14px 12px; text-align: center; }
+    .plan-card.best { border-color: var(--primary); background: var(--primary-light); }
+    .plan-gb { font-size: 1rem; font-weight: 700; }
+    .plan-price { font-size: 1.4rem; font-weight: 900; color: var(--primary); margin: 4px 0; }
+    .plan-days { font-size: .75rem; color: var(--muted); }
+    .plan-best-label { font-size: .7rem; color: var(--primary); font-weight: 700; margin-top: 4px; }
+    .promo-badge { display: inline-flex; align-items: center; gap: 8px; background: #fffbeb; border: 1px dashed #f59e0b; border-radius: 8px; padding: 10px 16px; font-size: .85rem; margin-top: 4px; }
+    .promo-badge .code { background: #fef3c7; border-radius: 4px; padding: 2px 8px; font-weight: 800; color: #92400e; letter-spacing: .06em; }
+    .review-cta-wrap { margin-top: 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .btn-review-cta { display: inline-block; background: var(--primary); color: #fff; padding: 12px 28px; border-radius: var(--radius); font-weight: 700; font-size: .95rem; transition: background .2s; }
+    .btn-review-cta:hover { background: var(--primary-dark); text-decoration: none; }
+    .btn-review-cta.green { background: var(--accent); }
+    .btn-review-cta.green:hover { background: var(--accent-dark); }
+    .verdict { background: var(--primary-light); border-left: 4px solid var(--primary); border-radius: 0 10px 10px 0; padding: 14px 18px; font-size: .9rem; line-height: 1.6; margin-bottom: 20px; }
+    .verdict strong { color: var(--primary); }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 18px 22px; font-size: .97rem; font-weight: 600; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q:hover { background: var(--bg); }
+    .faq-icon { font-size: 1.3rem; font-weight: 300; color: var(--primary); transition: transform .25s; flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 22px 18px; font-size: .9rem; color: var(--muted); line-height: 1.65; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* FOOTER */
+    footer { background: #0f172a; color: #94a3b8; padding: 56px 20px 28px; margin-top: 60px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 36px; max-width: 1120px; margin: 0 auto 40px; }
+    .footer-brand .logo { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .footer-brand p { font-size: .84rem; line-height: 1.65; max-width: 240px; }
+    .partner-links { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .partner-links a { font-size: .75rem; background: #1e293b; border: 1px solid #334155; color: #94a3b8; padding: 5px 10px; border-radius: 6px; }
+    .partner-links a:hover { color: #fff; text-decoration: none; }
+    .footer-col h4 { color: #e2e8f0; font-size: .8rem; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { color: #94a3b8; font-size: .85rem; transition: color .15s; }
+    .footer-col ul a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { max-width: 1120px; margin: 0 auto; border-top: 1px solid #1e293b; padding-top: 22px; display: flex; justify-content: space-between; align-items: center; font-size: .8rem; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom a { color: #64748b; }
+    .footer-bottom a:hover { color: #fff; }
+
+    /* BACK TO TOP */
+    #backTop { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; border: none; font-size: 1.2rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(37,99,235,.4); opacity: 0; transition: opacity .3s; pointer-events: none; }
+
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .rating-row { grid-template-columns: 32px 40px 1fr auto; }
+      .rating-row .rank-score-bar, .rating-row .rank-price { display: none; }
+      .pros-cons { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .rating-row { grid-template-columns: 28px 36px 1fr auto; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li class="nav-dropdown">
+      <a href="index.html#scenarios">Сценарии ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал-номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый вариант</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html" style="color:var(--primary); font-weight:700;">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="index.html#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="page-hero-eyebrow">Обновлено: сегодня</div>
+    <h1>Рейтинг eSIM-провайдеров <span>2026</span></h1>
+    <p class="page-hero-sub">Честный разбор 20 сервисов: тарифы, плюсы, минусы, реальные отзывы. Помогаем выбрать лучший вариант для путешествий из России.</p>
+    <div class="page-hero-badges">
+      <div class="page-hero-badge">📦 20 провайдеров</div>
+      <div class="page-hero-badge">✅ Проверено вручную</div>
+      <div class="page-hero-badge">💳 Оплата из РФ</div>
+      <div class="page-hero-badge">🔄 Апрель 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="index.html">Главная</a> &nbsp;›&nbsp;
+    <span>Рейтинг eSIM-провайдеров 2026</span>
+  </div>
+</div>
+
+<!-- РЕЙТИНГ + ФИЛЬТРЫ -->
+<div class="container">
+  <section class="section" id="rating">
+    <div class="section-header">
+      <h2>📊 Топ-20 eSIM-провайдеров</h2>
+      <p>Оценка по 5 параметрам: цена, покрытие, скорость, поддержка, удобство. Партнёрские строки отмечены 🔵.</p>
+    </div>
+
+    <!-- ФИЛЬТРЫ -->
+    <div class="filters-wrap">
+      <div class="filters-title">Фильтры</div>
+      <div class="filter-groups">
+        <div class="filter-group">
+          <span class="filter-group-label">Регион</span>
+          <div class="filter-pills">
+            <span class="filter-pill active" onclick="applyFilter(this,'region','all')">Все</span>
+            <span class="filter-pill" onclick="applyFilter(this,'region','global')">Глобальный</span>
+            <span class="filter-pill" onclick="applyFilter(this,'region','asia')">Азия</span>
+            <span class="filter-pill" onclick="applyFilter(this,'region','europe')">Европа</span>
+            <span class="filter-pill" onclick="applyFilter(this,'region','ru')">Оплата ₽</span>
+          </div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-group-label">Цена</span>
+          <div class="filter-pills">
+            <span class="filter-pill active" onclick="applyFilter(this,'price','all')">Любая</span>
+            <span class="filter-pill" onclick="applyFilter(this,'price','low')">до $10</span>
+            <span class="filter-pill" onclick="applyFilter(this,'price','mid')">$10–20</span>
+            <span class="filter-pill" onclick="applyFilter(this,'price','high')">от $20</span>
+          </div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-group-label">Данные</span>
+          <div class="filter-pills">
+            <span class="filter-pill active" onclick="applyFilter(this,'data','all')">Любые</span>
+            <span class="filter-pill" onclick="applyFilter(this,'data','unlimited')">Безлимит</span>
+            <span class="filter-pill" onclick="applyFilter(this,'data','10gb')">10+ ГБ</span>
+            <span class="filter-pill" onclick="applyFilter(this,'data','3gb')">3–10 ГБ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- СПИСОК РЕЙТИНГА -->
+    <div class="rating-list" id="ratingList">
+
+      <!-- #1 Airalo -->
+      <div class="rating-row gold" data-region="global" data-price="low" data-data="10gb">
+        <div class="rank-num top1">🥇</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=airalo.com&sz=64" alt="Airalo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">AIR</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Airalo 🔵</div>
+          <div class="rank-desc">Крупнейший маркетплейс — 200+ стран, 500+ тарифов</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:98%"></div></div>
+          <div class="bar-score">4.9</div>
+        </div>
+        <div class="rank-price">от $5 <span>/ 7 дней</span></div>
+        <a href="#airalo" class="rank-cta featured-cta">Подробнее →</a>
+      </div>
+
+      <!-- #2 Yesim -->
+      <div class="rating-row gold" data-region="global" data-price="low" data-data="unlimited">
+        <div class="rank-num top2">🥈</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=yesim.app&sz=64" alt="Yesim" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">YS</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Yesim 🔵</div>
+          <div class="rank-desc">Безлимит от $4.5, поддержка на русском 24/7</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
+          <div class="bar-score">4.8</div>
+        </div>
+        <div class="rank-price">от $4.5 <span>/ 7 дней</span></div>
+        <a href="#yesim" class="rank-cta featured-cta">Подробнее →</a>
+      </div>
+
+      <!-- #3 eSIM2Fly -->
+      <div class="rating-row gold" data-region="asia" data-price="low" data-data="unlimited">
+        <div class="rank-num top3">🥉</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=esim2fly.com&sz=64" alt="eSIM2Fly" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">E2F</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">eSIM2Fly</div>
+          <div class="rank-desc">Лучший безлимит для Азии (AIS Thailand)</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
+          <div class="bar-score">4.8</div>
+        </div>
+        <div class="rank-price">от $8 <span>/ 15 дней</span></div>
+        <a href="#esim2fly" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #4 Holafly -->
+      <div class="rating-row" data-region="global" data-price="mid" data-data="unlimited">
+        <div class="rank-num">4</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=esim.holafly.com&sz=64" alt="Holafly" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">HF</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Holafly</div>
+          <div class="rank-desc">Только безлимит, 170+ стран, поддержка 24/7</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:94%"></div></div>
+          <div class="bar-score">4.7</div>
+        </div>
+        <div class="rank-price">от $17 <span>/ 15 дней</span></div>
+        <a href="#holafly" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #5 esim365 -->
+      <div class="rating-row" data-region="ru" data-price="low" data-data="3gb">
+        <div class="rank-num">5</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=esim365.ru&sz=64" alt="esim365" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">365</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">esim365 🔵</div>
+          <div class="rank-desc">Оплата рублями, Мир, СБП — лучший для РФ</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+          <div class="bar-score">4.6</div>
+        </div>
+        <div class="rank-price">от ₽350 <span>/ 7 дней</span></div>
+        <a href="#esim365" class="rank-cta featured-cta">Подробнее →</a>
+      </div>
+
+      <!-- #6 eSIM World -->
+      <div class="rating-row" data-region="global" data-price="mid" data-data="10gb">
+        <div class="rank-num">6</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=esim.world&sz=64" alt="eSIM World" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">EW</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">eSIM World 🔵</div>
+          <div class="rank-desc">Гибкие глобальные тарифы, 180+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+          <div class="bar-score">4.5</div>
+        </div>
+        <div class="rank-price">от $8 <span>/ 30 дней</span></div>
+        <a href="#esimworld" class="rank-cta featured-cta">Подробнее →</a>
+      </div>
+
+      <!-- #7 Nomad -->
+      <div class="rating-row" data-region="global" data-price="low" data-data="10gb">
+        <div class="rank-num">7</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=getnomad.app&sz=64" alt="Nomad" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">NM</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Nomad</div>
+          <div class="rank-desc">Хорошие цены для Европы и США, 130+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+          <div class="bar-score">4.4</div>
+        </div>
+        <div class="rank-price">от $6 <span>/ 30 дней</span></div>
+        <a href="#nomad" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #8 GigSky -->
+      <div class="rating-row" data-region="global" data-price="high" data-data="10gb">
+        <div class="rank-num">8</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=gigsky.com&sz=64" alt="GigSky" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">GS</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">GigSky</div>
+          <div class="rank-desc">Бизнес-класс, 190+ стран, надёжное покрытие</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:86%"></div></div>
+          <div class="bar-score">4.3</div>
+        </div>
+        <div class="rank-price">от $15 <span>/ 30 дней</span></div>
+        <a href="#gigsky" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #9 Keepgo -->
+      <div class="rating-row" data-region="global" data-price="mid" data-data="10gb">
+        <div class="rank-num">9</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=keepgo.com&sz=64" alt="Keepgo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">KG</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Keepgo</div>
+          <div class="rank-desc">Трафик не сгорает до 1 года, 100+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:86%"></div></div>
+          <div class="bar-score">4.3</div>
+        </div>
+        <div class="rank-price">от $12 <span>/ 365 дней</span></div>
+        <a href="#keepgo" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #10 Ubigi -->
+      <div class="rating-row" data-region="europe" data-price="mid" data-data="10gb">
+        <div class="rank-num">10</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=ubigi.com&sz=64" alt="Ubigi" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">UB</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Ubigi</div>
+          <div class="rank-desc">Transatel, IoT-тарифы, 160+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:84%"></div></div>
+          <div class="bar-score">4.2</div>
+        </div>
+        <div class="rank-price">от $10 <span>/ 30 дней</span></div>
+        <a href="#ubigi" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #11 Alosim -->
+      <div class="rating-row" data-region="global" data-price="low" data-data="3gb">
+        <div class="rank-num">11</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=alosim.com&sz=64" alt="Alosim" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">AL</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Alosim</div>
+          <div class="rank-desc">Бюджетный вариант, простой UI, 130+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:84%"></div></div>
+          <div class="bar-score">4.2</div>
+        </div>
+        <div class="rank-price">от $5 <span>/ 15 дней</span></div>
+        <a href="#alosim" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #12 Flexiroam -->
+      <div class="rating-row" data-region="asia" data-price="low" data-data="3gb">
+        <div class="rank-num">12</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=flexiroam.com&sz=64" alt="Flexiroam" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">FX</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Flexiroam</div>
+          <div class="rank-desc">Азия-Пасифик, пополнение, 100+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+          <div class="bar-score">4.1</div>
+        </div>
+        <div class="rank-price">от $6 <span>/ 7 дней</span></div>
+        <a href="#flexiroam" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #13 Knowroaming -->
+      <div class="rating-row" data-region="global" data-price="mid" data-data="3gb">
+        <div class="rank-num">13</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=knowroaming.com&sz=64" alt="Knowroaming" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">KR</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Knowroaming</div>
+          <div class="rank-desc">Голос + данные, 150+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+          <div class="bar-score">4.1</div>
+        </div>
+        <div class="rank-price">от $10 <span>/ 30 дней</span></div>
+        <a href="#knowroaming" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #14 RedteaGO -->
+      <div class="rating-row" data-region="asia" data-price="low" data-data="3gb">
+        <div class="rank-num">14</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=redteago.com&sz=64" alt="RedteaGO" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">RT</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">RedteaGO</div>
+          <div class="rank-desc">VPN для Китая, 200+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+          <div class="bar-score">4.0</div>
+        </div>
+        <div class="rank-price">от $7 <span>/ 30 дней</span></div>
+        <a href="#redteago" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #15 Surfroam -->
+      <div class="rating-row" data-region="europe" data-price="low" data-data="3gb">
+        <div class="rank-num">15</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=surfroam.com&sz=64" alt="Surfroam" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">SR</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Surfroam</div>
+          <div class="rank-desc">Pay-as-you-go, Европа, 100+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+          <div class="bar-score">4.0</div>
+        </div>
+        <div class="rank-price">от $4 <span>/ 7 дней</span></div>
+        <a href="#surfroam" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #16 Maya Mobile -->
+      <div class="rating-row" data-region="global" data-price="low" data-data="3gb">
+        <div class="rank-num">16</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=mayamobile.com&sz=64" alt="Maya Mobile" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">MM</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Maya Mobile</div>
+          <div class="rank-desc">Бюджетный глобальный, 60+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+          <div class="bar-score">4.0</div>
+        </div>
+        <div class="rank-price">от $6 <span>/ 15 дней</span></div>
+        <a href="#mayamobile" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #17 Jetpac -->
+      <div class="rating-row" data-region="global" data-price="low" data-data="3gb">
+        <div class="rank-num">17</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=jetpacglobal.com&sz=64" alt="Jetpac" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">JP</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Jetpac</div>
+          <div class="rank-desc">Простой интерфейс, 150+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+          <div class="bar-score">4.1</div>
+        </div>
+        <div class="rank-price">от $5 <span>/ 7 дней</span></div>
+        <a href="#jetpac" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #18 MTX Connect -->
+      <div class="rating-row" data-region="europe" data-price="low" data-data="3gb">
+        <div class="rank-num">18</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=mtxc.eu&sz=64" alt="MTX Connect" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">MTX</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">MTX Connect</div>
+          <div class="rank-desc">Европа, B2B, гибкие тарифы, 80+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+          <div class="bar-score">4.1</div>
+        </div>
+        <div class="rank-price">от $5 <span>/ 30 дней</span></div>
+        <a href="#mtxconnect" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #19 Eskimo -->
+      <div class="rating-row" data-region="europe" data-price="mid" data-data="10gb">
+        <div class="rank-num">19</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=eskimo.com&sz=64" alt="Eskimo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">ES</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Eskimo</div>
+          <div class="rank-desc">Скандинавия и Европа, 70+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:78%"></div></div>
+          <div class="bar-score">3.9</div>
+        </div>
+        <div class="rank-price">от $11 <span>/ 30 дней</span></div>
+        <a href="#eskimo" class="rank-cta">Подробнее →</a>
+      </div>
+
+      <!-- #20 Simify -->
+      <div class="rating-row" data-region="global" data-price="mid" data-data="10gb">
+        <div class="rank-num">20</div>
+        <div class="rank-logo">
+          <img src="https://www.google.com/s2/favicons?domain=simify.com&sz=64" alt="Simify" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">SF</span>
+        </div>
+        <div class="rank-name-wrap">
+          <div class="rank-name">Simify</div>
+          <div class="rank-desc">Глобальный, eSIM + физическая SIM, 100+ стран</div>
+        </div>
+        <div class="rank-score-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:76%"></div></div>
+          <div class="bar-score">3.8</div>
+        </div>
+        <div class="rank-price">от $12 <span>/ 30 дней</span></div>
+        <a href="#simify" class="rank-cta">Подробнее →</a>
+      </div>
+
+    </div>
+    <p style="margin-top:14px; font-size:.8rem; color:var(--muted);">
+      🔵 — партнёрская ссылка. Цены актуальны на апрель 2026, могут меняться на сайте провайдера.
+    </p>
+  </section>
+</div>
+
+<!-- ПОДРОБНЫЕ КАРТОЧКИ -->
+<div class="container">
+  <section class="section" id="reviews">
+    <div class="section-header">
+      <h2>🔍 Подробный разбор провайдеров</h2>
+      <p>Плюсы, минусы, тарифы и реальные отзывы по каждому сервису.</p>
+    </div>
+
+    <!-- AIRALO -->
+    <div class="review-card" id="airalo">
+      <div class="review-card-header">
+        <div class="review-logo-big">
+          <img src="https://www.google.com/s2/favicons?domain=airalo.com&sz=64" alt="Airalo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">AIR</span>
+        </div>
+        <div class="review-meta">
+          <h3>Airalo — #1 в рейтинге</h3>
+          <div class="sub">⭐ 4.9 · 18 000+ отзывов · 200+ стран · от $5</div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <strong>Вердикт:</strong> Лучший выбор для большинства путешественников. Самый большой каталог тарифов в мире, удобное приложение и высокий рейтинг на Trustpilot. Минус — нет безлимитных тарифов и оплаты из РФ.
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✅ Плюсы</h4>
+          <ul>
+            <li>500+ тарифов для 200+ стран</li>
+            <li>Локальные, региональные и глобальные eSIM</li>
+            <li>Рейтинг 4.9/5 на Trustpilot (18 000+ оценок)</li>
+            <li>Пополнение трафика без смены eSIM</li>
+            <li>Тарифы от $3 для коротких поездок</li>
+            <li>Удобное мобильное приложение</li>
+            <li>Реферальная программа — баллы за покупки</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>❌ Минусы</h4>
+          <ul>
+            <li>Нет безлимитных тарифов</li>
+            <li>Оплата российскими картами не работает</li>
+            <li>Поддержка только на английском (email / чат)</li>
+            <li>Скорость зависит от локального оператора</li>
+            <li>Возврат средств — только баллами</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:.88rem; font-weight:700; margin-bottom:10px;">Популярные тарифы:</p>
+      <div class="plans-row">
+        <div class="plan-card">
+          <div class="plan-gb">1 ГБ</div>
+          <div class="plan-price">$3</div>
+          <div class="plan-days">7 дней</div>
+        </div>
+        <div class="plan-card best">
+          <div class="plan-gb">5 ГБ</div>
+          <div class="plan-price">$9</div>
+          <div class="plan-days">30 дней</div>
+          <div class="plan-best-label">★ Лучший выбор</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">10 ГБ</div>
+          <div class="plan-price">$15</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">20 ГБ</div>
+          <div class="plan-price">$24</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">50 ГБ</div>
+          <div class="plan-price">$49</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+      </div>
+
+      <div class="review-cta-wrap">
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" class="btn-review-cta" target="_blank" rel="nofollow sponsored">Перейти в Airalo →</a>
+        <span style="font-size:.85rem; color:var(--muted);">Оплата: международные карты, PayPal</span>
+      </div>
+    </div>
+
+    <!-- YESIM -->
+    <div class="review-card" id="yesim">
+      <div class="review-card-header">
+        <div class="review-logo-big">
+          <img src="https://www.google.com/s2/favicons?domain=yesim.app&sz=64" alt="Yesim" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">YS</span>
+        </div>
+        <div class="review-meta">
+          <h3>Yesim — #2 в рейтинге</h3>
+          <div class="sub">⭐ 4.8 · 2 140 отзывов · 150+ стран · от $4.5</div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <strong>Вердикт:</strong> Лучший вариант если нужен безлимитный интернет и поддержка на русском языке. Хорошее соотношение цены и качества, особенно для Турции, Таиланда и Европы.
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✅ Плюсы</h4>
+          <ul>
+            <li>Безлимитные тарифы от $4.5</li>
+            <li>Поддержка на русском языке 24/7</li>
+            <li>Автопополнение трафика</li>
+            <li>Удобное приложение с картой покрытия</li>
+            <li>Виртуальный номер телефона в подарок</li>
+            <li>Промокод ESIMCAT10 — скидка 10%</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>❌ Минусы</h4>
+          <ul>
+            <li>Оплата российскими картами нестабильна</li>
+            <li>Покрытие чуть меньше чем у Airalo (150 vs 200)</li>
+            <li>Скорость в час пик может падать</li>
+            <li>Возврат — только через поддержку</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:.88rem; font-weight:700; margin-bottom:10px;">Популярные тарифы:</p>
+      <div class="plans-row">
+        <div class="plan-card">
+          <div class="plan-gb">∞ ГБ</div>
+          <div class="plan-price">$4.5</div>
+          <div class="plan-days">7 дней</div>
+        </div>
+        <div class="plan-card best">
+          <div class="plan-gb">∞ ГБ</div>
+          <div class="plan-price">$9</div>
+          <div class="plan-days">15 дней</div>
+          <div class="plan-best-label">★ Лучший выбор</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">∞ ГБ</div>
+          <div class="plan-price">$19</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">10 ГБ</div>
+          <div class="plan-price">$7</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+      </div>
+
+      <div class="promo-badge">
+        🎁 Промокод: <span class="code">ESIMCAT10</span> — скидка 10% на первый заказ
+      </div>
+
+      <div class="review-cta-wrap">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" class="btn-review-cta green" target="_blank" rel="nofollow sponsored">Перейти в Yesim →</a>
+        <span style="font-size:.85rem; color:var(--muted);">Оплата: международные карты, некоторые карты РФ</span>
+      </div>
+    </div>
+
+    <!-- eSIM2Fly -->
+    <div class="review-card" id="esim2fly">
+      <div class="review-card-header">
+        <div class="review-logo-big">
+          <img src="https://www.google.com/s2/favicons?domain=esim2fly.com&sz=64" alt="eSIM2Fly" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">E2F</span>
+        </div>
+        <div class="review-meta">
+          <h3>eSIM2Fly — #3 в рейтинге</h3>
+          <div class="sub">⭐ 4.8 · 3 700 отзывов · Азия 30+ стран · от $8</div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <strong>Вердикт:</strong> Абсолютный лидер для путешествий по Азии. Работает на сети AIS Thailand — одного из лучших операторов региона. Безлимитный интернет по отличной цене. Не подходит для Европы и Америки.
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✅ Плюсы</h4>
+          <ul>
+            <li>Безлимит на сети AIS — лучшее покрытие в Азии</li>
+            <li>Отличная скорость 4G/LTE по всему Таиланду</li>
+            <li>Дешевле конкурентов для азиатского региона</li>
+            <li>Работает в Таиланде, Японии, Корее, Сингапуре</li>
+            <li>Простая установка — только QR-код</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>❌ Минусы</h4>
+          <ul>
+            <li>Только Азия — не подходит для других регионов</li>
+            <li>Нет приложения — только веб-интерфейс</li>
+            <li>Поддержка на английском, ответы медленные</li>
+            <li>Оплата только международными картами</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:.88rem; font-weight:700; margin-bottom:10px;">Популярные тарифы:</p>
+      <div class="plans-row">
+        <div class="plan-card">
+          <div class="plan-gb">∞ ГБ</div>
+          <div class="plan-price">$8</div>
+          <div class="plan-days">8 дней</div>
+        </div>
+        <div class="plan-card best">
+          <div class="plan-gb">∞ ГБ</div>
+          <div class="plan-price">$15</div>
+          <div class="plan-days">15 дней</div>
+          <div class="plan-best-label">★ Лучший выбор</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">∞ ГБ</div>
+          <div class="plan-price">$22</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+      </div>
+
+      <div class="review-cta-wrap">
+        <a href="https://www.esim2fly.com" class="btn-review-cta" target="_blank" rel="nofollow">Перейти в eSIM2Fly →</a>
+        <span style="font-size:.85rem; color:var(--muted);">Оплата: международные карты</span>
+      </div>
+    </div>
+
+    <!-- HOLAFLY -->
+    <div class="review-card" id="holafly">
+      <div class="review-card-header">
+        <div class="review-logo-big">
+          <img src="https://www.google.com/s2/favicons?domain=esim.holafly.com&sz=64" alt="Holafly" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">HF</span>
+        </div>
+        <div class="review-meta">
+          <h3>Holafly — #4 в рейтинге</h3>
+          <div class="sub">⭐ 4.7 · 9 500 отзывов · 170+ стран · от $17</div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <strong>Вердикт:</strong> Лучший вариант если принципиален только безлимит и не хочется думать о трафике. Дороже конкурентов, но поддержка 24/7 на нескольких языках и широкое покрытие оправдывают цену.
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✅ Плюсы</h4>
+          <ul>
+            <li>Только безлимитные тарифы — не нужно следить за ГБ</li>
+            <li>170+ стран, включая редкие направления</li>
+            <li>Поддержка 24/7 на нескольких языках</li>
+            <li>Высокий рейтинг на Trustpilot</li>
+            <li>Гарантия возврата при проблемах</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>❌ Минусы</h4>
+          <ul>
+            <li>Самый дорогой среди конкурентов</li>
+            <li>Нет лимитных (ГБ) тарифов</li>
+            <li>Оплата российскими картами не работает</li>
+            <li>Скорость может снижаться при высокой нагрузке</li>
+            <li>Нет пополнения — нужно покупать новый тариф</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:.88rem; font-weight:700; margin-bottom:10px;">Популярные тарифы:</p>
+      <div class="plans-row">
+        <div class="plan-card">
+          <div class="plan-gb">∞ ГБ</div>
+          <div class="plan-price">$17</div>
+          <div class="plan-days">5 дней</div>
+        </div>
+        <div class="plan-card best">
+          <div class="plan-gb">∞ ГБ</div>
+          <div class="plan-price">$27</div>
+          <div class="plan-days">15 дней</div>
+          <div class="plan-best-label">★ Лучший выбор</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">∞ ГБ</div>
+          <div class="plan-price">$47</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+      </div>
+
+      <div class="review-cta-wrap">
+        <a href="https://esim.holafly.com" class="btn-review-cta" target="_blank" rel="nofollow">Перейти в Holafly →</a>
+        <span style="font-size:.85rem; color:var(--muted);">Оплата: международные карты, PayPal</span>
+      </div>
+    </div>
+
+
+
+
+    <!-- esim365 -->
+    <div class="review-card" id="esim365">
+      <div class="review-card-header">
+        <div class="review-logo-big">
+          <img src="https://www.google.com/s2/favicons?domain=esim365.ru&sz=64" alt="esim365" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">365</span>
+        </div>
+        <div class="review-meta">
+          <h3>esim365 — #5 в рейтинге</h3>
+          <div class="sub">⭐ 4.6 · 890 отзывов · 100+ стран · от ₽350</div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <strong>Вердикт:</strong> Единственный сервис с оплатой рублями через СБП и карты Мир. Идеален для путешественников из России без валютной карты. Покрытие чуть меньше, чем у Airalo, но для популярных направлений хватает с запасом.
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✅ Плюсы</h4>
+          <ul>
+            <li>Оплата рублями — СБП, Мир, обычные карты РФ</li>
+            <li>Сайт полностью на русском языке</li>
+            <li>Поддержка по телефону и чату на русском</li>
+            <li>QR-код приходит за 2 минуты после оплаты</li>
+            <li>Доступны популярные направления: Турция, Таиланд, Европа</li>
+            <li>Прозрачное ценообразование без скрытых комиссий</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>❌ Минусы</h4>
+          <ul>
+            <li>Нет безлимитных тарифов</li>
+            <li>Меньше стран, чем у Airalo (100 vs 200)</li>
+            <li>Нет мобильного приложения</li>
+            <li>Пополнение трафика не поддерживается</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:.88rem; font-weight:700; margin-bottom:10px;">Популярные тарифы:</p>
+      <div class="plans-row">
+        <div class="plan-card">
+          <div class="plan-gb">1 ГБ</div>
+          <div class="plan-price">₽350</div>
+          <div class="plan-days">7 дней</div>
+        </div>
+        <div class="plan-card best">
+          <div class="plan-gb">5 ГБ</div>
+          <div class="plan-price">₽890</div>
+          <div class="plan-days">30 дней</div>
+          <div class="plan-best-label">★ Лучший выбор</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">10 ГБ</div>
+          <div class="plan-price">₽1 490</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">20 ГБ</div>
+          <div class="plan-price">₽2 490</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+      </div>
+
+      <div class="review-cta-wrap">
+        <a href="https://esim365.ru/?partner=ruesim" class="btn-review-cta green" target="_blank" rel="nofollow sponsored">Перейти в esim365 →</a>
+        <span style="font-size:.85rem; color:var(--muted);">Оплата: рубли, СБП, карты Мир ✅</span>
+      </div>
+    </div>
+
+    <!-- eSIM World -->
+    <div class="review-card" id="esimworld">
+      <div class="review-card-header">
+        <div class="review-logo-big">
+          <img src="https://www.google.com/s2/favicons?domain=esim.world&sz=64" alt="eSIM World" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">EW</span>
+        </div>
+        <div class="review-meta">
+          <h3>eSIM World — #6 в рейтинге</h3>
+          <div class="sub">⭐ 4.5 · 1 200 отзывов · 180+ стран · от $8</div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <strong>Вердикт:</strong> Хороший выбор для тех, кто часто ездит в несколько стран. Один глобальный тариф покрывает 180+ стран без необходимости покупать отдельные eSIM. Цена адекватная, интерфейс удобный.
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✅ Плюсы</h4>
+          <ul>
+            <li>Один тариф для 180+ стран</li>
+            <li>Без контракта и скрытых условий</li>
+            <li>Гибкие пакеты: от 1 ГБ до 30 ГБ</li>
+            <li>Multi-SIM — один аккаунт на несколько устройств</li>
+            <li>Поддержка через чат</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>❌ Минусы</h4>
+          <ul>
+            <li>Нет безлимитных тарифов</li>
+            <li>Оплата только международными картами</li>
+            <li>Поддержка отвечает медленнее конкурентов</li>
+            <li>Нет промокодов и реферальной программы</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:.88rem; font-weight:700; margin-bottom:10px;">Популярные тарифы:</p>
+      <div class="plans-row">
+        <div class="plan-card">
+          <div class="plan-gb">3 ГБ</div>
+          <div class="plan-price">$8</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+        <div class="plan-card best">
+          <div class="plan-gb">10 ГБ</div>
+          <div class="plan-price">$18</div>
+          <div class="plan-days">30 дней</div>
+          <div class="plan-best-label">★ Лучший выбор</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">20 ГБ</div>
+          <div class="plan-price">$29</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">30 ГБ</div>
+          <div class="plan-price">$39</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+      </div>
+
+      <div class="review-cta-wrap">
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" class="btn-review-cta" target="_blank" rel="nofollow sponsored">Перейти в eSIM World →</a>
+        <span style="font-size:.85rem; color:var(--muted);">Оплата: международные карты</span>
+      </div>
+    </div>
+
+    <!-- NOMAD -->
+    <div class="review-card" id="nomad">
+      <div class="review-card-header">
+        <div class="review-logo-big">
+          <img src="https://www.google.com/s2/favicons?domain=getnomad.app&sz=64" alt="Nomad" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="abbr" style="display:none">NM</span>
+        </div>
+        <div class="review-meta">
+          <h3>Nomad — #7 в рейтинге</h3>
+          <div class="sub">⭐ 4.4 · 4 200 отзывов · 130+ стран · от $6</div>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <strong>Вердикт:</strong> Хороший бюджетный вариант для Европы и США. Цены ниже среднего по рынку, гибкие сроки от 1 до 90 дней. Подходит для тех, кто ездит часто и хочет платить меньше.
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>✅ Плюсы</h4>
+          <ul>
+            <li>Цены ниже конкурентов для Европы и США</li>
+            <li>Гибкие сроки: 1, 7, 15, 30, 90 дней</li>
+            <li>Пополнение трафика</li>
+            <li>Удобное приложение</li>
+            <li>130+ стран</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>❌ Минусы</h4>
+          <ul>
+            <li>Нет безлимитных тарифов</li>
+            <li>Оплата только международными картами</li>
+            <li>Поддержка только email и чат, без телефона</li>
+            <li>Меньше стран, чем у Airalo</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:.88rem; font-weight:700; margin-bottom:10px;">Популярные тарифы:</p>
+      <div class="plans-row">
+        <div class="plan-card">
+          <div class="plan-gb">1 ГБ</div>
+          <div class="plan-price">$6</div>
+          <div class="plan-days">7 дней</div>
+        </div>
+        <div class="plan-card best">
+          <div class="plan-gb">10 ГБ</div>
+          <div class="plan-price">$16</div>
+          <div class="plan-days">30 дней</div>
+          <div class="plan-best-label">★ Лучший выбор</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">20 ГБ</div>
+          <div class="plan-price">$26</div>
+          <div class="plan-days">30 дней</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-gb">40 ГБ</div>
+          <div class="plan-price">$39</div>
+          <div class="plan-days">90 дней</div>
+        </div>
+      </div>
+
+      <div class="review-cta-wrap">
+        <a href="https://www.getnomad.app" class="btn-review-cta" target="_blank" rel="nofollow">Перейти в Nomad →</a>
+        <span style="font-size:.85rem; color:var(--muted);">Оплата: международные карты</span>
+      </div>
+  </section>
+</div>
+
+<!-- ОСТАЛЬНЫЕ 13 — КРАТКИЕ КАРТОЧКИ -->
+<div style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-top: 40px;">
+  <div class="container">
+    <div class="section" id="others">
+      <div class="section-header">
+        <h2>📋 Остальные провайдеры — краткий обзор</h2>
+        <p>Провайдеры #8–20: ключевые факты, для кого подходят и прямые ссылки.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:16px;">
+
+        <!-- GigSky -->
+        <div id="gigsky" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=gigsky.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="GigSky" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#8 GigSky</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.3 · от $15 · 190+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Бизнес-класс с надёжным покрытием. Дорогой, но стабильный. Подходит для командировок.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-purple">Бизнес</span>
+            <span class="tag tag-blue">190+ стран</span>
+            <span class="tag tag-green">Надёжный</span>
+          </div>
+          <a href="https://www.gigsky.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в GigSky →</a>
+        </div>
+
+        <!-- Keepgo -->
+        <div id="keepgo" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=keepgo.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Keepgo" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#9 Keepgo</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.3 · от $12 · 100+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Трафик не сгорает до 1 года. Идеален для редких поездок — купил раз и пользуешься весь год.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-purple">Трафик 1 год</span>
+            <span class="tag tag-green">Пополнение</span>
+          </div>
+          <a href="https://www.keepgo.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Keepgo →</a>
+        </div>
+
+        <!-- Ubigi -->
+        <div id="ubigi" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=ubigi.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Ubigi" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#10 Ubigi</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.2 · от $10 · 160+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Transatel / NTT. IoT-тарифы, поддержка пополнения, хорош для Европы и Японии.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-blue">IoT</span>
+            <span class="tag tag-green">Пополнение</span>
+            <span class="tag tag-orange">Европа / Япония</span>
+          </div>
+          <a href="https://www.ubigi.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Ubigi →</a>
+        </div>
+
+        <!-- Alosim -->
+        <div id="alosim" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=alosim.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Alosim" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#11 Alosim</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.2 · от $5 · 130+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Бюджетный вариант с простым интерфейсом. Хорош для коротких поездок без лишних опций.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-orange">Бюджетный</span>
+            <span class="tag tag-blue">Простой UI</span>
+          </div>
+          <a href="https://www.alosim.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Alosim →</a>
+        </div>
+
+        <!-- Flexiroam -->
+        <div id="flexiroam" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=flexiroam.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Flexiroam" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#12 Flexiroam</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.1 · от $6 · 100+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Азия-Пасифик специалист. Поддерживает пополнение, хорошие цены для региона.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-orange">Азия-Пасифик</span>
+            <span class="tag tag-green">Пополнение</span>
+          </div>
+          <a href="https://www.flexiroam.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Flexiroam →</a>
+        </div>
+
+        <!-- Knowroaming -->
+        <div id="knowroaming" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=knowroaming.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Knowroaming" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#13 Knowroaming</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.1 · от $10 · 150+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Один из немногих с голосовыми звонками. Подходит тем, кому нужен не только интернет.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-purple">Голос + данные</span>
+            <span class="tag tag-blue">150+ стран</span>
+          </div>
+          <a href="https://www.knowroaming.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Knowroaming →</a>
+        </div>
+
+        <!-- RedteaGO -->
+        <div id="redteago" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=redteago.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="RedteaGO" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#14 RedteaGO</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.0 · от $7 · 200+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Уникальная функция: встроенный VPN для обхода блокировок в Китае. 200+ стран.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-orange">VPN Китай</span>
+            <span class="tag tag-blue">200+ стран</span>
+          </div>
+          <a href="https://www.redteago.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в RedteaGO →</a>
+        </div>
+
+        <!-- Surfroam -->
+        <div id="surfroam" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=surfroam.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Surfroam" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#15 Surfroam</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.0 · от $4 · 100+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Pay-as-you-go — платишь только за использованный трафик. Дёшево для коротких поездок.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-orange">Pay-as-you-go</span>
+            <span class="tag tag-green">Самый дешёвый</span>
+          </div>
+          <a href="https://www.surfroam.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Surfroam →</a>
+        </div>
+
+        <!-- Maya Mobile -->
+        <div id="mayamobile" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=mayamobile.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Maya Mobile" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#16 Maya Mobile</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.0 · от $6 · 60+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Бюджетный глобальный провайдер. Небольшое покрытие, но хорошие цены для основных направлений.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-orange">Бюджетный</span>
+            <span class="tag tag-blue">Глобальный</span>
+          </div>
+          <a href="https://www.mayamobile.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Maya Mobile →</a>
+        </div>
+
+        <!-- Jetpac -->
+        <div id="jetpac" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=jetpacglobal.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Jetpac" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#17 Jetpac</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.1 · от $5 · 150+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Простой интерфейс и быстрая активация. Хорошо подходит для новичков в eSIM.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-blue">Простой</span>
+            <span class="tag tag-green">Быстрая активация</span>
+          </div>
+          <a href="https://www.jetpacglobal.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Jetpac →</a>
+        </div>
+
+        <!-- MTX Connect -->
+        <div id="mtxconnect" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=mtxc.eu&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="MTX Connect" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#18 MTX Connect</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 4.1 · от $5 · 80+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Европейский B2B-провайдер. Гибкие тарифы, хорошо подходит для бизнес-поездок по Европе.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-blue">Европа B2B</span>
+            <span class="tag tag-green">Гибкие тарифы</span>
+          </div>
+          <a href="https://www.mtxc.eu" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в MTX Connect →</a>
+        </div>
+
+        <!-- Eskimo -->
+        <div id="eskimo" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=eskimo.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Eskimo" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#19 Eskimo</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 3.9 · от $11 · 70+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">Скандинавия и Европа. Небольшой провайдер с хорошим покрытием в Северной Европе.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-blue">Скандинавия</span>
+            <span class="tag tag-orange">Нишевый</span>
+          </div>
+          <a href="https://www.eskimo.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Eskimo →</a>
+        </div>
+
+        <!-- Simify -->
+        <div id="simify" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+              <img src="https://www.google.com/s2/favicons?domain=simify.com&sz=64" style="width:24px;height:24px;object-fit:contain;" alt="Simify" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div style="font-weight:800;font-size:.95rem;">#20 Simify</div>
+              <div style="font-size:.78rem;color:var(--muted);">⭐ 3.8 · от $12 · 100+ стран</div>
+            </div>
+          </div>
+          <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px;">eSIM + физическая SIM в одном сервисе. Подходит для телефонов без встроенного eSIM.</p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="tag tag-purple">eSIM + SIM</span>
+            <span class="tag tag-blue">100+ стран</span>
+          </div>
+          <a href="https://www.simify.com" style="font-size:.85rem;font-weight:600;color:var(--primary);" target="_blank" rel="nofollow">Перейти в Simify →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- FAQ -->
+<div class="container">
+  <section class="section" id="faq">
+    <div class="section-header">
+      <h2>❓ Частые вопросы о выборе провайдера</h2>
+      <p>Отвечаем на самые популярные вопросы перед покупкой eSIM.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Какой провайдер лучший для Таиланда?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">
+          Для Таиланда лучший выбор — <strong>eSIM2Fly</strong> (безлимит на сети AIS, от $8/15 дней) или <strong>Airalo</strong> (гибкие пакеты от $9/30 дней). Если нужна оплата рублями — <a href="#esim365">esim365</a>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Какой провайдер принимает оплату из России?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">
+          Единственный надёжный вариант — <strong>esim365</strong>: принимает рубли, карты Мир и СБП. У Yesim часть российских карт тоже проходит, но нестабильно. Подробнее — в нашем <a href="how-to-pay-esim-from-russia.html">гайде по оплате из РФ</a>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Airalo или Holafly — что выбрать?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">
+          Зависит от цели. <strong>Airalo</strong> — если важна цена и гибкость (пакеты ГБ). <strong>Holafly</strong> — если хотите безлимит и не думать о трафике, но стоит дороже. Для большинства поездок до 14 дней Airalo выгоднее.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Есть ли провайдеры с поддержкой на русском языке?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">
+          Да. <strong>Yesim</strong> и <strong>esim365</strong> полностью поддерживают русский язык — сайт, приложение и служба поддержки. Остальные провайдеры работают только на английском.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Можно ли использовать eSIM в нескольких странах?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">
+          Да, для этого нужен региональный или глобальный тариф. Лучшие варианты: <strong>eSIM World</strong> (180+ стран), <strong>Airalo</strong> (региональные пакеты), <strong>Nomad</strong>. Локальные eSIM работают только в одной стране.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Какой провайдер самый дешёвый?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">
+          По минимальной цене: <strong>Surfroam</strong> (от $4, pay-as-you-go), <strong>Airalo</strong> (от $3 за 1 ГБ), <strong>Yesim</strong> (от $4.5 безлимит). Для России: <strong>esim365</strong> от ₽350. Подробнее — в подборке <a href="esim-cheapest.html">самых дешёвых eSIM</a>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Что такое пополнение (top-up) и зачем оно нужно?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">
+          Пополнение позволяет докупить трафик не меняя eSIM — сканировать новый QR-код не нужно. Поддерживают: Airalo, Nomad, Keepgo, Flexiroam, Ubigi. У Holafly и esim365 пополнения нет — нужно покупать новый тариф.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Как проверить рейтинг провайдера перед покупкой?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">
+          Смотрите отзывы на <strong>Trustpilot</strong> и <strong>App Store / Google Play</strong>. Airalo и Holafly имеют тысячи реальных отзывов. Мы также публикуем собственные тесты — ищите блок «Вердикт» в карточке каждого провайдера выше.
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- CTA БЛОК -->
+<div style="background: linear-gradient(135deg, #0f2460 0%, #1d4ed8 45%, #0ea5e9 100%); color:#fff; padding: 56px 20px; text-align: center;">
+  <div class="container">
+    <h2 style="font-size:clamp(1.5rem,3vw,2.2rem); font-weight:900; margin-bottom:12px;">Не знаете какой выбрать?</h2>
+    <p style="opacity:.88; max-width:500px; margin:0 auto 28px; line-height:1.6;">Для большинства подойдёт Airalo или Yesim. Если нужна оплата из России — esim365.</p>
+    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB"
+         style="background:var(--accent);color:#fff;padding:14px 28px;border-radius:var(--radius);font-weight:700;font-size:.95rem;"
+         target="_blank" rel="nofollow sponsored">🥇 Airalo — #1 в рейтинге</a>
+      <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij"
+         style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.4);padding:14px 28px;border-radius:var(--radius);font-weight:700;font-size:.95rem;"
+         target="_blank" rel="nofollow sponsored">🥈 Yesim — безлимит</a>
+      <a href="https://esim365.ru/?partner=ruesim"
+         style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.4);padding:14px 28px;border-radius:var(--radius);font-weight:700;font-size:.95rem;"
+         target="_blank" rel="nofollow sponsored">💳 esim365 — рубли</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM-провайдеров. Сравниваем тарифы, помогаем экономить на роуминге.</p>
+      <div class="partner-links">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" target="_blank" rel="nofollow">Yesim</a>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" target="_blank" rel="nofollow">Airalo</a>
+        <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" target="_blank" rel="nofollow">eSIM World</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал-номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Провайдеры</h4>
+      <ul>
+        <li><a href="airalo.html">Airalo</a></li>
+        <li><a href="yesim.html">Yesim</a></li>
+        <li><a href="holafly.html">Holafly</a></li>
+        <li><a href="nomad.html">Nomad</a></li>
+        <li><a href="esim365.html">esim365</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="o-nas.html">О нас</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 eSIM-каталог. Все права защищены.</span>
+    <div style="display:flex; gap:16px;">
+      <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- КНОПКА ВВЕРХ -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+
+<!-- JAVASCRIPT -->
+<script>
+  // FAQ toggle
+  function toggleFAQ(btn) {
+    var item = btn.parentElement;
+    document.querySelectorAll('.faq-item.open').forEach(function(el) {
+      if (el !== item) el.classList.remove('open');
+    });
+    item.classList.toggle('open');
+  }
+
+  // Back to top
+  var backBtn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 400;
+    backBtn.style.opacity = show ? 1 : 0;
+    backBtn.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+
+  // Sticky nav — прячется при скролле вниз
+  var lastY = 0;
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y < 100) {
+      navEl.style.transform = 'translateY(0)';
+    } else if (y > lastY) {
+      navEl.style.transform = 'translateY(-100%)';
+    } else {
+      navEl.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+
+  // Анимация баров рейтинга при скролле
+  var barsAnimated = false;
+  function animateBars() {
+    if (barsAnimated) return;
+    var bars = document.querySelectorAll('.bar-fill');
+    bars.forEach(function(bar) {
+      var target = bar.style.width;
+      bar.style.width = '0%';
+      setTimeout(function() { bar.style.width = target; }, 100);
+    });
+    barsAnimated = true;
+  }
+  window.addEventListener('scroll', function() {
+    var list = document.getElementById('ratingList');
+    if (!list) return;
+    var rect = list.getBoundingClientRect();
+    if (rect.top < window.innerHeight) animateBars();
+  }, { passive: true });
+
+  // Фильтры рейтинга
+  var activeFilters = { region: 'all', price: 'all', data: 'all' };
+
+  function applyFilter(pill, type, value) {
+    // Снимаем active с группы
+    pill.closest('.filter-pills').querySelectorAll('.filter-pill').forEach(function(p) {
+      p.classList.remove('active');
+    });
+    pill.classList.add('active');
+    activeFilters[type] = value;
+    filterRows();
+  }
+
+  function filterRows() {
+    var rows = document.querySelectorAll('#ratingList .rating-row');
+    rows.forEach(function(row) {
+      var region = row.dataset.region;
+      var price  = row.dataset.price;
+      var data   = row.dataset.data;
+
+      var showRegion = activeFilters.region === 'all' || region === activeFilters.region;
+      var showPrice  = activeFilters.price  === 'all' || price  === activeFilters.price;
+      var showData   = activeFilters.data   === 'all' || data   === activeFilters.data;
+
+      row.style.display = (showRegion && showPrice && showData) ? '' : 'none';
+    });
+
+    // Показываем сообщение если ничего не найдено
+    var visible = Array.from(rows).filter(function(r) { return r.style.display !== 'none'; });
+    var msg = document.getElementById('noResults');
+    if (!msg) {
+      msg = document.createElement('div');
+      msg.id = 'noResults';
+      msg.style.cssText = 'text-align:center;padding:32px;color:var(--muted);font-size:.95rem;display:none;';
+      msg.textContent = 'Нет провайдеров по выбранным фильтрам. Попробуйте изменить параметры.';
+      document.getElementById('ratingList').after(msg);
+    }
+    msg.style.display = visible.length === 0 ? 'block' : 'none';
+  }
+
+  // Плавный скролл к якорям карточек
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var id = this.getAttribute('href').slice(1);
+      var el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        var offset = 80;
+        var top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Рейтинг eSIM-провайдеров 2026",
+  "description": "Топ-20 eSIM-провайдеров для путешествий — честный рейтинг с плюсами, минусами и ценами.",
+  "url": "https://esim-catalog.vercel.app/rating.html",
+  "numberOfItems": 20,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Airalo",
+      "url": "https://esim-catalog.vercel.app/rating.html#airalo",
+      "description": "Крупнейший маркетплейс eSIM — 200+ стран, от $5"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Yesim",
+      "url": "https://esim-catalog.vercel.app/rating.html#yesim",
+      "description": "Безлимит от $4.5, поддержка на русском 24/7"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "eSIM2Fly",
+      "url": "https://esim-catalog.vercel.app/rating.html#esim2fly",
+      "description": "Лучший безлимит для Азии на сети AIS Thailand"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Holafly",
+      "url": "https://esim-catalog.vercel.app/rating.html#holafly",
+      "description": "Только безлимит, 170+ стран, поддержка 24/7"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "esim365",
+      "url": "https://esim-catalog.vercel.app/rating.html#esim365",
+      "description": "Оплата рублями, Мир, СБП — лучший для РФ"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "eSIM World",
+      "url": "https://esim-catalog.vercel.app/rating.html#esimworld",
+      "description": "Глобальные тарифы, 180+ стран, от $8"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Nomad",
+      "url": "https://esim-catalog.vercel.app/rating.html#nomad",
+      "description": "Хорошие цены для Европы и США, 130+ стран"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://esim-catalog.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Рейтинг eSIM-провайдеров 2026",
+      "item": "https://esim-catalog.vercel.app/rating.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какой eSIM-провайдер лучший для Таиланда?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для Таиланда лучший выбор — eSIM2Fly (безлимит на сети AIS, от $8/15 дней) или Airalo (гибкие пакеты от $9/30 дней). Если нужна оплата рублями — esim365."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой провайдер принимает оплату из России?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Единственный надёжный вариант — esim365: принимает рубли, карты Мир и СБП. У Yesim часть российских карт тоже проходит, но нестабильно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Airalo или Holafly — что выбрать?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Airalo — если важна цена и гибкость (пакеты ГБ). Holafly — если хотите безлимит и не думать о трафике. Для большинства поездок до 14 дней Airalo выгоднее."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Есть ли провайдеры с поддержкой на русском языке?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Yesim и esim365 полностью поддерживают русский язык — сайт, приложение и служба поддержки."
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>

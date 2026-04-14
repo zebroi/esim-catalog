@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О проекте — eSIM-каталог</title>
+  <meta name="description" content="Кто стоит за eSIM-каталогом, как мы выбираем провайдеров и считаем рейтинг. Принципы, источники данных и дисклеймер.">
+  <meta name="keywords" content="о проекте, eSIM каталог, как составлен рейтинг, независимый обзор esim">
+  <meta property="og:title" content="О проекте — eSIM-каталог">
+  <meta property="og:description" content="Рассказываем, как устроен eSIM-каталог и как мы оцениваем провайдеров.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/o-nas.html">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --accent: #10b981;
+      --accent-dark: #059669;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+      --shadow-md: 0 4px 20px rgba(0,0,0,.1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{display:block;max-width:100%;}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+    .section{padding:56px 0;}
+    .section-header{margin-bottom:28px;}
+    .section-header h2{font-size:1.65rem;font-weight:800;line-height:1.25;}
+    .section-header p{color:var(--muted);margin-top:6px;font-size:.95rem;}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid var(--border);height:62px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm);transition:transform .3s;}
+    .nav-logo{font-size:1.2rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px;text-decoration:none;}
+    .nav-links{display:flex;gap:24px;list-style:none;}
+    .nav-links a{color:var(--text);font-size:.88rem;font-weight:500;transition:color .15s;}
+    .nav-links a:hover{color:var(--primary);text-decoration:none;}
+    .nav-cta{background:var(--primary);color:#fff !important;padding:7px 16px;border-radius:8px;font-weight:600 !important;}
+    .nav-cta:hover{background:var(--primary-dark);text-decoration:none !important;}
+    .nav-dropdown{position:relative;}
+    .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);min-width:180px;z-index:300;list-style:none;padding:6px 0;}
+    .dropdown li a{display:block;padding:9px 16px;font-size:.87rem;color:var(--text);white-space:nowrap;}
+    .dropdown li a:hover{background:var(--bg);color:var(--primary);text-decoration:none;}
+    .nav-dropdown:hover .dropdown{display:block;}
+
+    /* PAGE HERO */
+    .page-hero{background:linear-gradient(135deg,#0f2460 0%,#1d4ed8 45%,#0ea5e9 100%);color:#fff;padding:52px 20px 40px;position:relative;overflow:hidden;}
+    .page-hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+    .page-hero-inner{position:relative;z-index:1;}
+    .page-hero-eyebrow{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;font-weight:600;}
+    .page-hero h1{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:900;line-height:1.2;margin-bottom:10px;letter-spacing:-.02em;}
+    .page-hero-sub{font-size:.98rem;opacity:.9;max-width:620px;line-height:1.6;}
+    .page-hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;font-size:.82rem;opacity:.9;}
+    .page-hero-meta span{background:rgba(15,23,42,.3);border-radius:20px;padding:5px 12px;}
+
+    /* BREADCRUMBS */
+    .breadcrumbs{background:#fff;border-bottom:1px solid var(--border);padding:10px 0;font-size:.82rem;color:var(--muted);}
+    .breadcrumbs a{color:var(--muted);}
+    .breadcrumbs a:hover{color:var(--primary);}
+    .breadcrumbs span{color:var(--text);font-weight:600;}
+
+    /* CONTENT BLOCKS */
+    .about-grid{display:grid;grid-template-columns:2fr 1.3fr;gap:32px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 22px 20px;box-shadow:var(--shadow-sm);}
+    .card h3{font-size:1.1rem;font-weight:800;margin-bottom:10px;}
+    .card p{font-size:.94rem;color:var(--muted);}
+    .card ul{margin-top:10px;padding-left:18px;font-size:.9rem;color:var(--muted);display:flex;flex-direction:column;gap:6px;}
+    .pill-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+    .pill{font-size:.8rem;background:var(--primary-light);color:var(--primary);border-radius:999px;padding:4px 10px;font-weight:600;}
+
+    .method-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;}
+    .step-title{font-size:.9rem;font-weight:700;margin-bottom:6px;}
+    .step p{font-size:.88rem;color:var(--muted);}
+
+    .disclaimer{background:#fffbeb;border:1px solid #fef3c7;border-radius:14px;padding:18px 20px;font-size:.88rem;color:#92400e;line-height:1.7;margin-top:24px;}
+    .disclaimer strong{color:#b45309;}
+
+    .contact-block{background:#0f172a;color:#e2e8f0;border-radius:16px;padding:22px 24px;margin-top:24px;display:flex;flex-direction:column;gap:10px;}
+    .contact-block a{color:#93c5fd;}
+    .contact-tags{display:flex;flex-wrap:wrap;gap:8px;font-size:.8rem;}
+    .contact-tag{background:#1e293b;border-radius:999px;padding:4px 10px;color:#cbd5f5;}
+
+    /* FOOTER (та же сетка, что в шаблоне) */
+    footer{background:#0f172a;color:#94a3b8;padding:56px 20px 28px;margin-top:60px;}
+    .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:36px;max-width:1120px;margin:0 auto 40px;}
+    .footer-brand .logo{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:10px;}
+    .footer-brand p{font-size:.84rem;line-height:1.65;max-width:240px;}
+    .partner-links{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+    .partner-links a{font-size:.75rem;background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:5px 10px;border-radius:6px;}
+    .partner-links a:hover{color:#fff;text-decoration:none;}
+    .footer-col h4{color:#e2e8f0;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .footer-col ul a{color:#94a3b8;font-size:.85rem;transition:color .15s;}
+    .footer-col ul a:hover{color:#fff;text-decoration:none;}
+    .footer-bottom{max-width:1120px;margin:0 auto;border-top:1px solid #1e293b;padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:10px;}
+    .footer-bottom a{color:#64748b;}
+    .footer-bottom a:hover{color:#fff;}
+
+    /* BACK TO TOP */
+    #backTop{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.2rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.4);opacity:0;transition:opacity .3s;pointer-events:none;}
+
+    @media(max-width:900px){
+      .footer-grid{grid-template-columns:1fr 1fr;}
+      .about-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none;}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="o-nas.html" style="color:var(--primary);font-weight:700;">О проекте</a></li>
+    <li><a href="index.html#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="page-hero-eyebrow">О проекте</div>
+    <h1>Как устроен eSIM-каталог</h1>
+    <p class="page-hero-sub">Рассказываем, кто стоит за проектом, как мы собираем данные по провайдерам и по каким критериям формируем рейтинг.</p>
+    <div class="page-hero-meta">
+      <span>🚀 Запуск проекта: 2026</span>
+      <span>📦 20+ провайдеров</span>
+      <span>🌍 150+ стран</span>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="index.html">Главная</a> &nbsp;›&nbsp;
+    <span>О проекте</span>
+  </div>
+</div>
+<!-- CONTENT -->
+<div class="container">
+  <section class="section">
+    <div class="about-grid">
+      <!-- КТО МЫ -->
+      <div class="card">
+        <h3>Кто стоит за eSIM-каталогом</h3>
+        <p>eSIM-каталог — независимый русскоязычный проект о мобильном интернете для путешествий. Мы не продаём eSIM напрямую, а агрегируем информацию о провайдерах и тарифах.</p>
+        <ul>
+          <li>Собираем и обновляем тарифы eSIM-провайдеров для популярных стран и регионов</li>
+          <li>Проверяем информацию руками: создаём аккаунты, покупаем тестовые тарифы, общаемся с поддержкой</li>
+          <li>Делаем понятные обзоры вместо маркетинговых промо-страниц</li>
+        </ul>
+        <div class="pill-list">
+          <span class="pill">Независимый обзор</span>
+          <span class="pill">Без продажи eSIM</span>
+          <span class="pill">Фокус на России</span>
+        </div>
+      </div>
+
+      <!-- ДЛЯ КОГО ПРОЕКТ -->
+      <div class="card">
+        <h3>Для кого этот сайт</h3>
+        <p>Проект ориентирован на путешественников, которые:</p>
+        <ul>
+          <li>Хотят заранее подготовиться к поездке и понимать, сколько будет стоить интернет</li>
+          <li>Летят из России и сталкиваются с ограничениями по оплате</li>
+          <li>Не хотят переплачивать за роуминг у домашнего оператора</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- МЕТОДОЛОГИЯ -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Как мы оцениваем провайдеров</h2>
+      <p>Рейтинг строится не только по цене. Мы смотрим на покрытие, скорость, удобство и поддержку.</p>
+    </div>
+
+    <div class="method-steps">
+      <div class="step">
+        <div class="step-title">1. Сбор тарифов и условий</div>
+        <p>Парсим официальные сайты провайдеров, фиксируем цены, объёмы трафика, сроки действия и ограничения по скорости.</p>
+      </div>
+      <div class="step">
+        <div class="step-title">2. Тесты в реальных поездках</div>
+        <p>Покупаем eSIM для популярных направлений (Турция, Таиланд, Европа) и проверяем скорость, стабильность и удобство активации.</p>
+      </div>
+      <div class="step">
+        <div class="step-title">3. Анализ отзывов</div>
+        <p>Смотрим отзывы в App Store, Google Play, Trustpilot и профильных форумах. Учитываем не только оценку, но и свежесть отзывов.</p>
+      </div>
+      <div class="step">
+        <div class="step-title">4. Итоговый балл</div>
+        <p>Для каждого провайдера считаем сводный балл по 5 критериям: цена, покрытие, скорость, поддержка, удобство интерфейса.</p>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Важно:</strong> информация о тарифах и условиях быстро меняется. Мы стараемся поддерживать данные в актуальном состоянии, но перед покупкой обязательно проверяйте цены и ограничения на сайте провайдера.
+    </div>
+  </section>
+
+  <!-- ПАРТНЁРСТВА -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Партнёрские ссылки и прозрачность</h2>
+      <p>На сайте используются партнёрские ссылки — это помогает развивать проект без навязчивой рекламы.</p>
+    </div>
+
+    <div class="card">
+      <h3>Как это работает</h3>
+      <p>Часть ссылок в рейтинге помечена значком «🔵 партнёрская ссылка». Если вы оформляете eSIM по такой ссылке, мы можем получить комиссию от провайдера.</p>
+      <ul>
+        <li>Комиссия не влияет на итоговую цену для вас</li>
+        <li>Мы не продаём места в рейтинге и не гарантируем топовые позиции за деньги</li>
+        <li>Партнёрский статус не отменяет минусов — мы честно пишем о недостатках сервисов</li>
+      </ul>
+      <div class="pill-list">
+        <span class="pill">🔵 Партнёрская ссылка</span>
+        <span class="pill">Нет платного «топа»</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Связаться с нами</h2>
+      <p>Если вы нашли ошибку в тарифах, хотите предложить новый провайдер или сотрудничество — напишите нам.</p>
+    </div>
+
+    <div class="contact-block">
+      <div style="font-weight:700;font-size:1rem;">Обратная связь и предложения</div>
+      <div style="font-size:.9rem;">
+        По вопросам сотрудничества, отзывам о провайдерах и исправлению неточностей пишите на почту:
+        <br>
+        <a href="mailto:hello@esim-catalog.ru">hello@esim-catalog.ru</a>
+      </div>
+      <div class="contact-tags">
+        <span class="contact-tag">Добавить нового провайдера</span>
+        <span class="contact-tag">Сообщить об ошибке</span>
+        <span class="contact-tag">Партнёрство / реклама</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM-провайдеров. Сравниваем тарифы, помогаем экономить на роуминге.</p>
+      <div class="partner-links">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" target="_blank" rel="nofollow">Yesim</a>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" target="_blank" rel="nofollow">Airalo</a>
+        <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" target="_blank" rel="nofollow">eSIM World</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал-номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Провайдеры</h4>
+      <ul>
+        <li><a href="airalo.html">Airalo</a></li>
+        <li><a href="yesim.html">Yesim</a></li>
+        <li><a href="holafly.html">Holafly</a></li>
+        <li><a href="nomad.html">Nomad</a></li>
+        <li><a href="esim365.html">esim365</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="o-nas.html">О нас</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 eSIM-каталог. Все права защищены.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- КНОПКА ВВЕРХ -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- JS -->
+<script>
+  // Back to top
+  var backBtn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 400;
+    backBtn.style.opacity = show ? 1 : 0;
+    backBtn.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+
+  // Sticky nav hide on scroll down
+  var lastY = 0;
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y < 100) {
+      navEl.style.transform = 'translateY(0)';
+    } else if (y > lastY) {
+      navEl.style.transform = 'translateY(-100%)';
+    } else {
+      navEl.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+</script>
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "О проекте — eSIM-каталог",
+  "description": "Кто стоит за eSIM-каталогом, как мы собираем данные по провайдерам и формируем рейтинг.",
+  "url": "https://esim-catalog.vercel.app/o-nas.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "eSIM-каталог"
+  }
+}
+</script>
+
+</body>
+</html>
+

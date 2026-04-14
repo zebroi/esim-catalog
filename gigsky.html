@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GigSky eSIM: обзор сервиса и подписки GigSky One</title>
+  <meta name="description" content="Обзор GigSky eSIM: покрытие 190+ стран, региональные и глобальные тарифы, подписка GigSky One, плюсы и минусы сервиса для путешественников.">
+  <meta name="keywords" content="gigsky esim, gigsky обзор, gigsky one, gigsky esim тарифы, gigsky esim отзывы">
+  <meta property="og:title" content="GigSky eSIM — покрытие 190+ стран и подписка GigSky One">
+  <meta property="og:description" content="Как работает GigSky eSIM, какие есть планы и подписки, в каких странах он доступен и когда его имеет смысл выбрать вместо других eSIM-провайдеров.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/gigsky.html">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+
+  <style>
+    :root{
+      --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;
+      --accent:#10b981;--accent-dark:#059669;
+      --warn:#f59e0b;--danger:#ef4444;
+      --bg:#f8fafc;--card:#ffffff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+      --radius:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 20px rgba(0,0,0,.1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{display:block;max-width:100%;}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+    .section{padding:56px 0;}
+    .section-header{margin-bottom:24px;}
+    .section-header h2{font-size:1.65rem;font-weight:800;line-height:1.25;}
+    .section-header p{color:var(--muted);margin-top:6px;font-size:.95rem;}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid var(--border);height:62px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm);transition:transform .3s;}
+    .nav-logo{font-size:1.2rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px;text-decoration:none;}
+    .nav-links{display:flex;gap:24px;list-style:none;}
+    .nav-links a{color:var(--text);font-size:.88rem;font-weight:500;transition:color .15s;}
+    .nav-links a:hover{color:var(--primary);text-decoration:none;}
+    .nav-cta{background:var(--primary);color:#fff !important;padding:7px 16px;border-radius:8px;font-weight:600 !important;}
+    .nav-cta:hover{background:var(--primary-dark);text-decoration:none !important;}
+    .nav-dropdown{position:relative;}
+    .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);min-width:180px;z-index:300;list-style:none;padding:6px 0;}
+    .dropdown li a{display:block;padding:9px 16px;font-size:.87rem;color:var(--text);white-space:nowrap;}
+    .dropdown li a:hover{background:var(--bg);color:var(--primary);text-decoration:none;}
+    .nav-dropdown:hover .dropdown{display:block;}
+
+    /* HERO PROVIDER */
+    .hero-provider{background:#020617;color:#e5e7eb;padding:52px 20px 40px;}
+    .hero-inner{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;}
+    .hero-main{flex:1 1 260px;min-width:0;}
+    .hero-meta{flex:1 1 220px;min-width:0;max-width:340px;}
+    .badge-top{display:inline-flex;align-items:center;gap:6px;background:rgba(56,189,248,.18);border-radius:999px;padding:5px 12px;font-size:.78rem;color:#bae6fd;border:1px solid rgba(56,189,248,.6);margin-bottom:10px;}
+    .logo-wrap{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+    .logo-icon{width:48px;height:48px;border-radius:14px;border:1px solid #1f2937;background:#020617;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .logo-fallback{font-weight:800;color:#38bdf8;font-size:1rem;}
+    .hero-main h1{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:900;letter-spacing:-.02em;line-height:1.15;margin-bottom:4px;}
+    .subtitle{font-size:.95rem;color:#9ca3af;margin-bottom:14px;max-width:520px;}
+    .rating-line{display:flex;align-items:center;gap:8px;font-size:.86rem;color:#e5e7eb;margin-bottom:10px;}
+    .stars{color:#facc15;font-size:.9rem;letter-spacing:-1px;}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+    .hero-tag{font-size:.78rem;border-radius:999px;padding:4px 10px;border:1px solid #1f2937;background:#020617;color:#9ca3af;}
+
+    .hero-cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+    .btn-main{background:#10b981;color:#fff;padding:11px 22px;border-radius:10px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+    .btn-main span{font-size:.8rem;color:#bbf7d0;font-weight:600;}
+    .btn-ghost{background:transparent;color:#e5e7eb;padding:10px 18px;border-radius:10px;font-weight:600;font-size:.9rem;border:1px solid #374151;text-decoration:none;}
+
+    .hero-meta-box{background:#020617;border-radius:16px;border:1px solid #1f2937;padding:16px 18px;font-size:.85rem;color:#9ca3af;}
+    .hero-meta-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px;}
+    .meta-item{padding:8px 10px;border-radius:10px;background:#020617;border:1px solid #1f2937;}
+    .meta-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:2px;}
+    .meta-value{font-size:.92rem;font-weight:700;color:#e5e7eb;}
+
+    /* BREADCRUMBS */
+    .breadcrumbs{background:#fff;border-bottom:1px solid var(--border);padding:10px 0;font-size:.82rem;color:var(--muted);}
+    .breadcrumbs a{color:var(--muted);}
+    .breadcrumbs a:hover{color:var(--primary);}
+    .breadcrumbs span{color:var(--text);font-weight:600;}
+
+    /* BODY */
+    .muted{color:var(--muted);font-size:.9rem;}
+    .pros-cons{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:20px;}
+    .pros,.cons{border-radius:12px;padding:18px 18px;font-size:.9rem;}
+    .pros{background:#f0fdf4;}
+    .cons{background:#fff5f5;}
+    .pros h3,.cons h3{font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;}
+    .pros h3{color:#16a34a;}
+    .cons h3{color:#dc2626;}
+    .pros ul,.cons ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+    .pros li::before,.cons li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:middle;}
+    .pros li::before{background:#16a34a;}
+    .cons li::before{background:#dc2626;}
+
+    .plans-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px;}
+    .plan-card{border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center;font-size:.86rem;background:var(--card);}
+    .plan-card.best{border-color:var(--primary);background:var(--primary-light);}
+    .plan-gb{font-weight:700;font-size:.98rem;}
+    .plan-price{font-size:1.2rem;font-weight:900;color:var(--primary);margin:4px 0;}
+    .plan-days{font-size:.78rem;color:var(--muted);}
+    .plan-best-label{font-size:.72rem;color:var(--primary);font-weight:700;margin-top:4px;}
+
+    .region-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px;}
+    .region-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:16px 18px;font-size:.88rem;}
+    .region-card h3{font-size:.96rem;font-weight:800;margin-bottom:6px;}
+    .region-card ul{margin-top:4px;padding-left:18px;color:var(--muted);display:flex;flex-direction:column;gap:4px;font-size:.86rem;}
+
+    .faq-section{padding:40px 0 56px;}
+    .faq-list{display:flex;flex-direction:column;gap:10px;}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:16px 20px;font-size:.95rem;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .faq-q:hover{background:var(--bg);}
+    .faq-icon{font-size:1.3rem;font-weight:300;color:var(--primary);transition:transform .25s;flex-shrink:0;}
+    .faq-item.open .faq-icon{transform:rotate(45deg);}
+    .faq-a{display:none;padding:0 20px 16px;font-size:.9rem;color:var(--muted);line-height:1.65;}
+    .faq-item.open .faq-a{display:block;}
+
+    .cta-box{background:linear-gradient(135deg,#1e40af,#2563eb);color:#fff;border-radius:16px;padding:24px 22px;margin-top:24px;text-align:left;}
+    .cta-box h2{font-size:1.2rem;font-weight:800;margin-bottom:6px;}
+    .cta-box p{font-size:.94rem;opacity:.9;margin-bottom:14px;max-width:520px;}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:10px;}
+    .cta-secondary{background:rgba(15,23,42,.3);color:#e5e7eb;padding:10px 20px;border-radius:999px;font-weight:600;font-size:.9rem;border:1px solid rgba(148,163,184,.5);text-decoration:none;}
+
+    /* FOOTER */
+    footer{background:#0f172a;color:#94a3b8;padding:56px 20px 28px;margin-top:40px;}
+    .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:36px;max-width:1120px;margin:0 auto 40px;}
+    .footer-brand .logo{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:10px;}
+    .footer-brand p{font-size:.84rem;line-height:1.65;max-width:240px;}
+    .partner-links{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+    .partner-links a{font-size:.75rem;background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:5px 10px;border-radius:6px;}
+    .partner-links a:hover{color:#fff;text-decoration:none;}
+    .footer-col h4{color:#e2e8f0;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .footer-col ul a{color:#94a3b8;font-size:.85rem;transition:color .15s;}
+    .footer-col ul a:hover{color:#fff;}
+    .footer-bottom{max-width:1120px;margin:0 auto;border-top:1px solid #1e293b;padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:10px;}
+    .footer-bottom a{color:#64748b;}
+    .footer-bottom a:hover{color:#fff;}
+
+    #backTop{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.2rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.4);opacity:0;transition:opacity .3s;pointer-events:none;}
+
+    @media(max-width:900px){
+      .footer-grid{grid-template-columns:1fr 1fr;}
+      .hero-inner{flex-direction:column;}
+      .hero-meta{max-width:none;}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none;}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+    <li><a href="index.html#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<section class="hero-provider">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div class="badge-top">Глобальная eSIM и подписка GigSky One</div>
+        <div class="logo-wrap">
+          <div class="logo-icon">
+            <span class="logo-fallback">GS</span>
+          </div>
+          <div>
+            <h1>GigSky — международная eSIM с покрытием 190+ стран</h1>
+            <div class="subtitle">Провайдер с региональными и глобальными планами, а также подпиской GigSky One для частых путешественников.</div>
+          </div>
+        </div>
+
+        <div class="rating-line">
+          <span class="stars">★★★★☆</span>
+          <span><strong>около 4.0 из 5</strong> по обзорам и рейтингам</span> <!-- web:134][web:138 -->
+          <span style="font-size:.78rem;color:#9ca3af;">подходит тем, кто ценит одну eSIM на много стран</span>
+        </div>
+
+        <div class="hero-tags">
+          <span class="hero-tag">Покрытие 190+ стран и регионов</span> <!-- web:137][web:134 -->
+          <span class="hero-tag">Подписка GigSky One (50–100 ГБ/мес)</span> <!-- web:130][web:138 -->
+          <span class="hero-tag">Глобальная/региональная eSIM</span> <!-- web:129][web:137 -->
+          <span class="hero-tag">Работает через приложение и QR‑код</span> <!-- web:129][web:133 -->
+        </div>
+
+        <div class="hero-cta-row">
+          <a href="https://www.gigsky.com/ru" class="btn-main" target="_blank" rel="nofollow">
+            Перейти на GigSky
+            <span>Посмотреть планы и подписку GigSky One</span>
+          </a>
+          <a href="rating.html" class="btn-ghost">Сравнить с другими eSIM</a>
+        </div>
+      </div>
+
+      <aside class="hero-meta">
+        <div class="hero-meta-box">
+          <div style="font-size:.82rem;color:#e5e7eb;font-weight:600;">Краткая сводка по GigSky</div>
+          <div class="hero-meta-grid">
+            <div class="meta-item">
+              <div class="meta-label">Покрытие</div>
+              <div class="meta-value">190+ стран и регионов</div> <!-- web:137][web:134 -->
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Форматы</div>
+              <div class="meta-value">локальные, региональные, глобальные</div> <!-- web:129][web:137 -->
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Подписка</div>
+              <div class="meta-value">GigSky One 50–100 ГБ/мес</div> <!-- web:130][web:138 -->
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Лучше всего для</div>
+              <div class="meta-value">частые поездки, Европа/США/Азия</div> <!-- web:130][web:138 -->
+            </div>
+          </div>
+          <p style="margin-top:10px;font-size:.83rem;color:#9ca3af;">
+            Интересный вариант, если хочется одной глобальной eSIM и понятной подписки вместо множества отдельных пакетов по странам.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="index.html">Главная</a> &nbsp;›&nbsp;
+    <a href="rating.html">Рейтинг eSIM‑провайдеров</a> &nbsp;›&nbsp;
+    <span>GigSky</span>
+  </div>
+</div>
+
+<div class="container">
+  <section class="section">
+    <div class="section-header">
+      <h2>Обзор GigSky: как устроен сервис eSIM</h2>
+      <p>Классический провайдер eSIM с глобальной картой покрытия и отдельной подпиской для «тяжёлых» пользователей.</p>
+    </div>
+
+    <p class="muted">
+      GigSky предлагает международные eSIM‑планы для поездок по миру: вместо локальной SIM‑карты вы устанавливаете eSIM через приложение GigSky или по QR‑коду и получаете доступ к интернету в выбранной стране или регионе. 
+      Сервис покрывает более 190 стран и регионов, а планы бывают страновыми, региональными (например, Европа) и глобальными, рассчитанными на многонаправительные маршруты.
+    </p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>Преимущества GigSky</h3>
+        <ul>
+          <li>Широкое покрытие: более 190 стран и регионов по всему миру.</li>
+          <li>Региональные и глобальные планы, которые удобны при поездках сразу в несколько стран.</li>
+          <li>Подписка GigSky One: 50, 75 или 100 ГБ высокоскоростного трафика плюс безлимит на сниженной скорости до 1 Мбит/с в 120+ странах.</li>
+          <li>Поддержка hotspot‑раздачи (можно делиться интернетом с ноутбуком и другими устройствами).</li>
+          <li>Планы для круизов и авиа‑маршрутов, что редкость среди eSIM‑провайдеров.</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>Недостатки и ограничения</h3>
+        <ul>
+          <li>Цены часто выше, чем у Airalo и других бюджетных eSIM‑сервисов при тех же объёмах трафика.</li>
+          <li>По отзывам, встречаются проблемы с активацией и переключением между странами, особенно на круизах.</li>
+          <li>Нет поддержки голосовых звонков и SMS — только мобильные данные.</li>
+          <li>Скорости бывают средними: 4G/5G в крупных городах, но возможны просадки до 3G в сельской местности.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>GigSky One: подписка с большим трафиком</h2>
+      <p>Модель для тех, кто много ездит и хочет один план вместо десятка разовых пакетов.</p>
+    </div>
+
+    <p class="muted">
+      GigSky One — подписной формат, запущенный в конце 2025 года, который даёт фиксированный объём быстрого интернета плюс безлимит на сниженной скорости в более чем 120 странах. 
+      Подписка может продлеваться помесячно, ежеквартально или ежегодно, её можно отменить в любой момент.
+    </p>
+
+    <div class="plans-row">
+      <div class="plan-card">
+        <div class="plan-gb">GigSky One 50 ГБ</div>
+        <div class="plan-price">от ~33,99 $ в месяц</div>
+        <div class="plan-days">120+ стран, безлимит на низкой скорости</div> <!-- web:130][web:138 -->
+      </div>
+      <div class="plan-card">
+        <div class="plan-gb">GigSky One 75 ГБ</div>
+        <div class="plan-price">средний пакет</div>
+        <div class="plan-days">для тех, кто много работает в дороге</div> <!-- web:133][web:138 -->
+      </div>
+      <div class="plan-card best">
+        <div class="plan-gb">GigSky One 100 ГБ</div>
+        <div class="plan-price">максимальный объём</div>
+        <div class="plan-days">для цифровых кочевников и фуллтайм‑путешествий</div>
+        <div class="plan-best-label">Много видео, звонков и работы из облака</div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-gb">Безлимит*</div>
+        <div class="plan-price">после пакета — до 1 Мбит/с</div>
+        <div class="plan-days">Fair use, без доплат за «перерасход»</div> <!-- web:133][web:138 -->
+      </div>
+    </div>
+
+    <div class="region-cards">
+      <div class="region-card">
+        <h3>Европа</h3>
+        <ul>
+          <li>Есть отдельный план «GigSky Europe» с покрытием более 40 стран (Франция, Италия, Испания, Германия, Греция и др.).</li>
+          <li>Иногда акция: бесплатные 500 МБ на 7 дней для новых пользователей, чтобы протестировать связь.</li>
+        </ul>
+      </div>
+      <div class="region-card">
+        <h3>США, Канада, Азия</h3>
+        <ul>
+          <li>Глобальные и региональные планы для Северной Америки и ключевых азиатских направлений.</li>
+          <li>Оптимально, если часто бываете в одних и тех же странах и не хотите каждый раз искать локального провайдера.</li>
+        </ul>
+      </div>
+      <div class="region-card">
+        <h3>Партнёрские предложения (Visa и др.)</h3>
+        <ul>
+          <li>Отдельные акции: владельцам некоторых Visa‑карт доступен бесплатный план GigSky в странах‑участниках (например, Великобритания, Франция, ОАЭ, США).</li>
+          <li>Есть смысл проверять раздел промо‑акций перед покупкой тарифов.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Кому GigSky подходит лучше всего</h2>
+      <p>Типичные сценарии использования по обзорам и официальной информации.</p>
+    </div>
+
+    <p class="muted">
+      В независимых обзорах отмечают, что GigSky наиболее интересен путешественникам по Европе, Северной Америке и крупным городам Азии, которым нужно 1–10 ГБ на навигацию, мессенджеры и соцсети, а также тем, кто рассматривает подписку с большим трафиком.
+    </p>
+
+    <div class="region-cards">
+      <div class="region-card">
+        <h3>Частые поездки в одни и те же регионы</h3>
+        <ul>
+          <li>Регулярные поездки в Европу, США, ОАЭ и другие популярные направления.</li>
+          <li>Подписка GigSky One упрощает жизнь: один план — много стран, авто‑продление и понятный объём трафика.</li>
+        </ul>
+      </div>
+      <div class="region-card">
+        <h3>Те, кому важен «один провайдер на всё»</h3>
+        <ul>
+          <li>Не хотите держать десяток eSIM‑профилей разных компаний.</li>
+          <li>Глобальный/региональный план GigSky позволяет ездить с одной eSIM и не переключаться постоянно.</li>
+        </ul>
+      </div>
+      <div class="region-card">
+        <h3>Но не для жёсткой экономии</h3>
+        <ul>
+          <li>Сравнения показывают, что Airalo и ряд других сервисов часто дешевле на 15–25 % при тех же объёмах.</li>
+          <li>Если приоритет — минимальная цена за гигабайт, лучше начать с бюджетных eSIM‑провайдеров.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Частые вопросы по GigSky</h2>
+        <p>Коротко о покрытии, подписке и технических нюансах.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            В скольких странах работает GigSky?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>По данным сайта и сравнений, GigSky покрывает более 190 стран и регионов по всему миру. Точный список есть на официальной карте покрытия GigSky.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Что такое подписка GigSky One?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>GigSky One — это подписка на 50, 75 или 100 ГБ быстрых данных в месяц с безлимитом на скорости до 1 Мбит/с в 120+ странах. Подписка может продлеваться помесячно, ежеквартально или ежегодно, отменить её можно в любой момент.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Как установить и активировать eSIM GigSky?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Вы скачиваете приложение GigSky, выбираете страну или регион, оплачиваете план и устанавливаете eSIM через приложение или QR‑код. По прилёте в страну включаете линию GigSky в настройках телефона — eSIM должна подключиться к партнёрской сети автоматически.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Есть ли у GigSky голос и SMS?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Нет, GigSky предоставляет только мобильные данные: голос и SMS через сеть оператора не поддерживаются. Для звонков и сообщений можно использовать мессенджеры и VoIP‑сервисы.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <h2>Стоит ли вам выбирать GigSky?</h2>
+        <p>Если вы чаще всего путешествуете по Европе, США и популярным азиатским направлениям и хотите одну глобальную eSIM с подпиской, GigSky — рабочий вариант. Для максимально дешёвых поездок по одной стране иногда выгоднее локальные eSIM или более бюджетные провайдеры.</p>
+        <div class="cta-actions">
+          <a href="https://www.gigsky.com/ru" class="btn-main" target="_blank" rel="nofollow">Перейти на GigSky и подобрать план</a>
+          <a href="rating.html" class="cta-secondary">Сравнить с другими eSIM‑провайдерами</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM‑провайдеров. Сравниваем тарифы, помогаем экономить на роуминге.</p>
+      <div class="partner-links">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" target="_blank" rel="nofollow">Yesim</a>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" target="_blank" rel="nofollow">Airalo</a>
+        <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" target="_blank" rel="nofollow">eSIM World</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал‑номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Провайдеры</h4>
+      <ul>
+        <li><a href="airalo.html">Airalo</a></li>
+        <li><a href="yesim.html">Yesim</a></li>
+        <li><a href="holafly.html">Holafly</a></li>
+        <li><a href="nomad.html">Nomad</a></li>
+        <li><a href="esim365.html">esim365</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="o-nas.html">О нас</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 eSIM‑каталог. Все права защищены.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  var backBtn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 400;
+    backBtn.style.opacity = show ? 1 : 0;
+    backBtn.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+
+  var lastY = 0;
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y < 100) {
+      navEl.style.transform = 'translateY(0)';
+    } else if (y > lastY) {
+      navEl.style.transform = 'translateY(-100%)';
+    } else {
+      navEl.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function() {
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "GigSky eSIM",
+    "url": "https://www.gigsky.com"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "eSIM-каталог"
+  },
+  "headline": "GigSky eSIM: обзор сервиса и подписки GigSky One",
+  "reviewBody": "Обзор GigSky eSIM: сильные и слабые стороны, примеры планов, сценарии использования и особенности подписки GigSky One.",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.0",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eSIM для путешествий — каталог и сравнение тарифов 2026</title>
+  <meta name="description" content="Сравните eSIM-тарифы для 150+ стран. Подбор по стране, бюджету и сценарию поездки. Оплата из России, поддержка на русском.">
+  <meta name="keywords" content="eSIM, esim для путешествий, купить esim, esim сравнение, esim 2026">
+  <meta property="og:title" content="eSIM каталог 2026 — сравнение тарифов для путешествий">
+  <meta property="og:description" content="Независимый каталог eSIM. Сравниваем провайдеров, помогаем сэкономить на роуминге.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --accent: #10b981;
+      --accent-dark: #059669;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+      --shadow-md: 0 4px 20px rgba(0,0,0,.1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; font-size: 16px; }
+    img { display: block; max-width: 100%; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 56px 0; }
+    .section-header { margin-bottom: 28px; }
+    .section-header h2 { font-size: 1.65rem; font-weight: 800; line-height: 1.25; }
+    .section-header p { color: var(--muted); margin-top: 6px; font-size: .95rem; }
+
+    /* NAV */
+    nav { background: #fff; border-bottom: 1px solid var(--border); height: 62px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 200; box-shadow: var(--shadow-sm); transition: transform .3s; }
+    .nav-logo { font-size: 1.2rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--text); font-size: .88rem; font-weight: 500; transition: color .15s; }
+    .nav-links a:hover { color: var(--primary); text-decoration: none; }
+    .nav-cta { background: var(--primary); color: #fff !important; padding: 7px 16px; border-radius: 8px; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--primary-dark); text-decoration: none !important; }
+    .nav-dropdown { position: relative; }
+    .dropdown { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-md); min-width: 180px; z-index: 300; list-style: none; padding: 6px 0; }
+    .dropdown li a { display: block; padding: 9px 16px; font-size: .87rem; color: var(--text); white-space: nowrap; }
+    .dropdown li a:hover { background: var(--bg); color: var(--primary); text-decoration: none; }
+    .nav-dropdown:hover .dropdown { display: block; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #0f2460 0%, #1d4ed8 45%, #0ea5e9 100%); color: #fff; padding: 72px 20px 64px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-eyebrow { display: inline-block; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); border-radius: 20px; padding: 4px 14px; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 18px; font-weight: 600; }
+    .hero h1 { font-size: clamp(1.9rem, 4.5vw, 3.2rem); font-weight: 900; line-height: 1.15; margin-bottom: 16px; letter-spacing: -.02em; }
+    .hero h1 span { color: #67e8f9; }
+    .hero-sub { font-size: clamp(.95rem, 2vw, 1.15rem); opacity: .88; max-width: 620px; margin: 0 auto 28px; line-height: 1.6; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 36px; }
+    .hero-badge { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 24px; padding: 7px 18px; font-size: .83rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-hero-primary { background: var(--accent); color: #fff; padding: 15px 36px; border-radius: var(--radius); font-size: 1.05rem; font-weight: 700; transition: background .2s, transform .15s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-hero-primary:hover { background: var(--accent-dark); text-decoration: none; transform: translateY(-1px); }
+    .btn-hero-secondary { background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.4); padding: 15px 28px; border-radius: var(--radius); font-size: 1rem; font-weight: 600; transition: background .2s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-hero-secondary:hover { background: rgba(255,255,255,.25); text-decoration: none; }
+    .search-bar { background: #fff; border-radius: var(--radius); padding: 10px; display: flex; gap: 10px; max-width: 560px; margin: 32px auto 0; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .search-bar select { flex: 1; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: .95rem; color: var(--text); background: #fff; }
+    .search-bar button { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 10px 22px; font-size: .95rem; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background .2s; }
+    .search-bar button:hover { background: var(--accent-dark); }
+
+    /* STATS BAR */
+    .stats-bar { background: #fff; border-bottom: 1px solid var(--border); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); border-left: 1px solid var(--border); }
+    .stat-cell { padding: 18px 24px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stat-cell-val { font-size: 1.3rem; font-weight: 900; color: var(--primary); }
+    .stat-cell-label { font-size: .8rem; color: var(--muted); margin-top: 2px; }
+
+    /* COUNTRIES */
+    .countries-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+    .country-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 14px; display: flex; align-items: center; gap: 12px; transition: box-shadow .2s, transform .15s; text-decoration: none; color: var(--text); }
+    .country-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); text-decoration: none; }
+    .country-flag { font-size: 1.6rem; line-height: 1; }
+    .country-name { font-weight: 700; font-size: .92rem; }
+    .country-price { font-size: .78rem; color: var(--muted); margin-top: 2px; }
+
+    /* SCENARIOS */
+    .scenarios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .scenario-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px 18px 16px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--text); transition: box-shadow .2s, transform .15s; }
+    .scenario-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); text-decoration: none; }
+    .scenario-icon { font-size: 1.6rem; }
+    .scenario-title { font-weight: 700; font-size: 1rem; }
+    .scenario-desc { font-size: .9rem; color: var(--muted); line-height: 1.55; }
+    .scenario-link { margin-top: auto; font-size: .85rem; color: var(--primary); font-weight: 600; }
+
+    /* PROVIDER CARDS */
+    .providers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+    .provider-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 14px; transition: box-shadow .2s, transform .15s; position: relative; }
+    .provider-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .provider-card.top-pick { border: 2px solid var(--primary); }
+    .top-pick-ribbon { position: absolute; top: -1px; right: 20px; background: var(--primary); color: #fff; font-size: .7rem; font-weight: 700; padding: 3px 12px 4px; border-radius: 0 0 8px 8px; letter-spacing: .04em; }
+    .card-header { display: flex; align-items: center; gap: 14px; }
+    .provider-favicon { width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+    .provider-favicon img { width: 28px; height: 28px; object-fit: contain; }
+    .provider-favicon .fallback-abbr { font-size: .9rem; font-weight: 800; color: var(--primary); display: none; }
+    .provider-info { flex: 1; min-width: 0; }
+    .provider-name { font-size: 1.05rem; font-weight: 700; }
+    .provider-tagline { font-size: .8rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .provider-rating { display: flex; align-items: center; gap: 6px; font-size: .85rem; margin-top: 4px; }
+    .stars { color: var(--warn); letter-spacing: -.5px; }
+    .rating-val { font-weight: 700; }
+    .rating-cnt { color: var(--muted); font-size: .78rem; }
+    .provider-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .stat-box { text-align: center; background: var(--bg); border-radius: 8px; padding: 9px 6px; }
+    .stat-val { font-weight: 800; font-size: .95rem; color: var(--primary); }
+    .stat-label { font-size: .7rem; color: var(--muted); margin-top: 1px; }
+    .provider-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { padding: 3px 10px; border-radius: 6px; font-size: .74rem; font-weight: 600; }
+    .tag-blue { background: #eff6ff; color: #2563eb; }
+    .tag-green { background: #f0fdf4; color: #16a34a; }
+    .tag-orange { background: #fff7ed; color: #ea580c; }
+    .tag-purple { background: #faf5ff; color: #7c3aed; }
+    .card-cta { display: block; text-align: center; background: var(--primary); color: #fff; padding: 12px 16px; border-radius: 10px; font-weight: 700; font-size: .92rem; transition: background .2s; margin-top: auto; }
+    .card-cta:hover { background: var(--primary-dark); text-decoration: none; }
+    .card-cta-accent { background: var(--accent); }
+    .card-cta-accent:hover { background: var(--accent-dark); }
+    .card-promo { text-align: center; font-size: .76rem; color: var(--muted); margin-top: -8px; }
+    .card-promo strong { color: var(--accent); }
+
+    /* ATTENTION */
+    .attention-block { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 16px; padding: 22px; display: flex; gap: 14px; align-items: flex-start; margin-bottom: 0; }
+    .attention-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .attention-title { font-size: 1rem; font-weight: 800; margin-bottom: 6px; }
+    .attention-text { font-size: .9rem; color: #92400e; line-height: 1.55; }
+    .attention-list { font-size: .88rem; color: #7c2d12; padding-left: 18px; margin: 8px 0; }
+    .attention-link { font-size: .88rem; font-weight: 600; color: #b45309; }
+
+    /* GUIDES */
+    .guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .guide-card { background: var(--card); border-radius: 14px; padding: 18px 18px 16px; border: 1px solid var(--border); text-decoration: none; color: var(--text); display: block; transition: box-shadow .2s; }
+    .guide-card:hover { box-shadow: var(--shadow-md); text-decoration: none; }
+    .guide-category { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+    .guide-title { font-weight: 800; font-size: 1rem; margin-bottom: 6px; }
+    .guide-desc { font-size: .88rem; color: var(--muted); line-height: 1.55; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 18px 22px; font-size: .97rem; font-weight: 600; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q:hover { background: var(--bg); }
+    .faq-icon { font-size: 1.3rem; font-weight: 300; color: var(--primary); transition: transform .25s; flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 22px 18px; font-size: .9rem; color: var(--muted); line-height: 1.65; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-a a { color: var(--primary); }
+
+    /* FOOTER */
+    footer { background: #0f172a; color: #94a3b8; padding: 56px 20px 28px; margin-top: 60px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 36px; max-width: 1120px; margin: 0 auto 40px; }
+    .footer-brand .logo { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .footer-brand p { font-size: .84rem; line-height: 1.65; max-width: 240px; }
+    .partner-links { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .partner-links a { font-size: .75rem; background: #1e293b; border: 1px solid #334155; color: #94a3b8; padding: 5px 10px; border-radius: 6px; }
+    .partner-links a:hover { color: #fff; text-decoration: none; }
+    .footer-col h4 { color: #e2e8f0; font-size: .8rem; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { color: #94a3b8; font-size: .85rem; transition: color .15s; }
+    .footer-col ul a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { max-width: 1120px; margin: 0 auto; border-top: 1px solid #1e293b; padding-top: 22px; display: flex; justify-content: space-between; align-items: center; font-size: .8rem; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom a { color: #64748b; }
+    .footer-bottom a:hover { color: #fff; }
+
+    /* BACK TO TOP */
+    #backTop { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; border: none; font-size: 1.2rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(37,99,235,.4); opacity: 0; transition: opacity .3s; pointer-events: none; }
+
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.7rem; }
+      .search-bar { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li class="nav-dropdown">
+      <a href="#scenarios">Сценарии ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал-номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый вариант</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner container">
+    <div class="hero-eyebrow">Каталог eSIM 2026</div>
+    <h1>Интернет за рубежом<br><span>без переплат за роуминг</span></h1>
+    <p class="hero-sub">Сравниваем тарифы 20+ провайдеров для 150 стран. Подберём eSIM под вашу поездку за 3 минуты — с оплатой из России.</p>
+
+    <div class="hero-badges">
+      <div class="hero-badge">📦 20 провайдеров</div>
+      <div class="hero-badge">🌍 150+ стран</div>
+      <div class="hero-badge">💳 Оплата из РФ</div>
+      <div class="hero-badge">⚡ Активация за 2 мин.</div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#countries" class="btn-hero-primary">🌍 Выбрать страну</a>
+      <a href="#scenarios" class="btn-hero-secondary">📋 По сценарию поездки</a>
+    </div>
+
+    <div class="search-bar">
+      <select id="heroCountry">
+        <option value="">Куда летите? Выберите страну...</option>
+        <option value="esim-thailand.html">🇹🇭 Таиланд</option>
+        <option value="esim-turkey.html">🇹🇷 Турция</option>
+        <option value="esim-uae.html">🇦🇪 ОАЭ / Дубай</option>
+        <option value="esim-egypt.html">🇪🇬 Египет</option>
+        <option value="esim-europe.html">🇪🇺 Европа</option>
+        <option value="esim-usa.html">🇺🇸 США</option>
+        <option value="esim-georgia.html">🇬🇪 Грузия</option>
+        <option value="esim-indonesia.html">🇮🇩 Бали / Индонезия</option>
+        <option value="esim-vietnam.html">🇻🇳 Вьетнам</option>
+        <option value="esim-spain.html">🇪🇸 Испания</option>
+        <option value="esim-japan.html">🇯🇵 Япония</option>
+        <option value="esim-maldives.html">🇲🇻 Мальдивы</option>
+      </select>
+      <button onclick="goCountry()">Найти eSIM →</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-cell">
+        <div class="stat-cell-val">20</div>
+        <div class="stat-cell-label">Проверенных провайдеров</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-val">от $4.5</div>
+        <div class="stat-cell-label">Минимальная цена</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-val">150+</div>
+        <div class="stat-cell-label">Стран мира</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-val">2 мин.</div>
+        <div class="stat-cell-label">Установка eSIM</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell-val">4.7 ★</div>
+        <div class="stat-cell-label">Средний рейтинг</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ОПЛАТА ИЗ РОССИИ -->
+<div class="container">
+  <div style="padding: 40px 0 0;">
+    <div class="attention-block">
+      <div class="attention-icon">💳</div>
+      <div>
+        <div class="attention-title">Оплата eSIM из России — это возможно</div>
+        <p class="attention-text">Мы отмечаем провайдеров, которые принимают российские карты (Мир, СБП) и не блокируют пользователей из РФ.</p>
+        <ul class="attention-list">
+          <li><strong>esim365</strong> — оплата в рублях, Мир, СБП</li>
+          <li><strong>Yesim</strong> — через сторонние шлюзы, некоторые карты РФ</li>
+          <li><strong>Airalo, Holafly, Nomad</strong> — международные карты и PayPal</li>
+        </ul>
+        <a href="how-to-pay-esim-from-russia.html" class="attention-link">Подробный гайд по оплате из России →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- СТРАНЫ -->
+<div class="container">
+  <section class="section" id="countries">
+    <div class="section-header">
+      <h2>🌍 Популярные направления</h2>
+      <p>Выберите страну — покажем лучшие eSIM-тарифы с ценами, покрытием и отзывами.</p>
+    </div>
+    <div class="countries-grid">
+      <a href="esim-thailand.html" class="country-card">
+        <div class="country-flag">🇹🇭</div>
+        <div><div class="country-name">Таиланд</div><div class="country-price">от $8</div></div>
+      </a>
+      <a href="esim-turkey.html" class="country-card">
+        <div class="country-flag">🇹🇷</div>
+        <div><div class="country-name">Турция</div><div class="country-price">от $5</div></div>
+      </a>
+      <a href="esim-uae.html" class="country-card">
+        <div class="country-flag">🇦🇪</div>
+        <div><div class="country-name">ОАЭ / Дубай</div><div class="country-price">от $9</div></div>
+      </a>
+      <a href="esim-egypt.html" class="country-card">
+        <div class="country-flag">🇪🇬</div>
+        <div><div class="country-name">Египет</div><div class="country-price">от $6</div></div>
+      </a>
+      <a href="esim-europe.html" class="country-card">
+        <div class="country-flag">🇪🇺</div>
+        <div><div class="country-name">Европа</div><div class="country-price">от $7</div></div>
+      </a>
+      <a href="esim-usa.html" class="country-card">
+        <div class="country-flag">🇺🇸</div>
+        <div><div class="country-name">США</div><div class="country-price">от $12</div></div>
+      </a>
+      <a href="esim-georgia.html" class="country-card">
+        <div class="country-flag">🇬🇪</div>
+        <div><div class="country-name">Грузия</div><div class="country-price">от $4.5</div></div>
+      </a>
+      <a href="esim-indonesia.html" class="country-card">
+        <div class="country-flag">🇮🇩</div>
+        <div><div class="country-name">Бали</div><div class="country-price">от $8</div></div>
+      </a>
+      <a href="esim-vietnam.html" class="country-card">
+        <div class="country-flag">🇻🇳</div>
+        <div><div class="country-name">Вьетнам</div><div class="country-price">от $6</div></div>
+      </a>
+      <a href="esim-spain.html" class="country-card">
+        <div class="country-flag">🇪🇸</div>
+        <div><div class="country-name">Испания</div><div class="country-price">от $7</div></div>
+      </a>
+      <a href="esim-japan.html" class="country-card">
+        <div class="country-flag">🇯🇵</div>
+        <div><div class="country-name">Япония</div><div class="country-price">от $9</div></div>
+      </a>
+      <a href="esim-maldives.html" class="country-card">
+        <div class="country-flag">🇲🇻</div>
+        <div><div class="country-name">Мальдивы</div><div class="country-price">от $15</div></div>
+      </a>
+    </div>
+    <p style="margin-top: 20px; text-align: center;">
+      <a href="all-countries.html" style="font-size:.9rem; font-weight:600;">Все страны и регионы →</a>
+    </p>
+  </section>
+</div>
+
+<!-- СЦЕНАРИИ -->
+<div style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <section class="section" id="scenarios">
+      <div class="section-header">
+        <h2>🎯 Подбор по сценарию</h2>
+        <p>Не хочется разбираться в тарифах? Выберите свой сценарий — мы уже подобрали лучшие варианты.</p>
+      </div>
+      <div class="scenarios-grid">
+        <a href="esim-for-tourists.html" class="scenario-card">
+          <div class="scenario-icon">🏖️</div>
+          <div class="scenario-title">Обычный отпуск 7–14 дней</div>
+          <p class="scenario-desc">Пляж, прогулки, навигация и мессенджеры. Тарифы до $20.</p>
+          <div class="scenario-link">Открыть подборку →</div>
+        </a>
+        <a href="esim-digital-nomads.html" class="scenario-card">
+          <div class="scenario-icon">💻</div>
+          <div class="scenario-title">Диджитал-номады</div>
+          <p class="scenario-desc">Стабильный интернет для работы, созвонов и трафика 50+ ГБ в месяц.</p>
+          <div class="scenario-link">eSIM для работы →</div>
+        </a>
+        <a href="esim-business-travel.html" class="scenario-card">
+          <div class="scenario-icon">💼</div>
+          <div class="scenario-title">Командировка</div>
+          <p class="scenario-desc">Связь и почта в приоритете. Стабильность и возможность выставить счёт.</p>
+          <div class="scenario-link">eSIM для бизнеса →</div>
+        </a>
+        <a href="esim-unlimited-data.html" class="scenario-card">
+          <div class="scenario-icon">♾️</div>
+          <div class="scenario-title">Безлимитный интернет</div>
+          <p class="scenario-desc">Стримы, YouTube, TikTok и видеозвонки — подборка безлимитных тарифов.</p>
+          <div class="scenario-link">Все безлимитные eSIM →</div>
+        </a>
+        <a href="esim-cheapest.html" class="scenario-card">
+          <div class="scenario-icon">💸</div>
+          <div class="scenario-title">Максимальная экономия</div>
+          <p class="scenario-desc">Самые дешёвые eSIM-пакеты для популярных стран и коротких поездок.</p>
+          <div class="scenario-link">Самые дешёвые тарифы →</div>
+        </a>
+        <a href="esim-multi-country.html" class="scenario-card">
+          <div class="scenario-icon">🗺️</div>
+          <div class="scenario-title">Несколько стран</div>
+          <p class="scenario-desc">Евро-трип, Азия-трип или кругосветка — региональные и глобальные eSIM.</p>
+          <div class="scenario-link">Глобальные eSIM →</div>
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+
+
+
+<!-- ТОП ПРОВАЙДЕРЫ -->
+<div class="container">
+  <section class="section" id="providers">
+    <div class="section-header">
+      <h2>⭐ Топ eSIM-провайдеров 2026</h2>
+      <p>Честное сравнение. Мы не продаём eSIM — только помогаем выбрать лучший вариант.</p>
+    </div>
+    <div class="providers-grid">
+
+      <!-- Yesim -->
+      <div class="provider-card top-pick">
+        <div class="top-pick-ribbon">Выбор редакции</div>
+        <div class="card-header">
+          <div class="provider-favicon">
+            <img src="https://www.google.com/s2/favicons?domain=yesim.app&sz=64" alt="Yesim" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="fallback-abbr">YS</span>
+          </div>
+          <div class="provider-info">
+            <div class="provider-name">Yesim</div>
+            <div class="provider-tagline">Лучший баланс цены и качества</div>
+            <div class="provider-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-val">4.8</span>
+              <span class="rating-cnt">2 140 отзывов</span>
+            </div>
+          </div>
+        </div>
+        <div class="provider-stats">
+          <div class="stat-box"><div class="stat-val">$4.5</div><div class="stat-label">от</div></div>
+          <div class="stat-box"><div class="stat-val">150+</div><div class="stat-label">стран</div></div>
+          <div class="stat-box"><div class="stat-val">∞ ГБ</div><div class="stat-label">безлимит</div></div>
+        </div>
+        <div class="provider-tags">
+          <span class="tag tag-green">Безлимит</span>
+          <span class="tag tag-blue">24/7 чат</span>
+          <span class="tag tag-purple">Рус. поддержка</span>
+        </div>
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" class="card-cta card-cta-accent" target="_blank" rel="nofollow sponsored">Перейти в Yesim →</a>
+        <div class="card-promo">Промокод <strong>ESIMCAT10</strong> — скидка 10%</div>
+      </div>
+
+      <!-- Airalo -->
+      <div class="provider-card top-pick">
+        <div class="top-pick-ribbon">200+ стран</div>
+        <div class="card-header">
+          <div class="provider-favicon">
+            <img src="https://www.google.com/s2/favicons?domain=airalo.com&sz=64" alt="Airalo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="fallback-abbr">AIR</span>
+          </div>
+          <div class="provider-info">
+            <div class="provider-name">Airalo</div>
+            <div class="provider-tagline">Крупнейший маркетплейс eSIM</div>
+            <div class="provider-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-val">4.9</span>
+              <span class="rating-cnt">18 000+ отзывов</span>
+            </div>
+          </div>
+        </div>
+        <div class="provider-stats">
+          <div class="stat-box"><div class="stat-val">$5</div><div class="stat-label">от</div></div>
+          <div class="stat-box"><div class="stat-val">200+</div><div class="stat-label">стран</div></div>
+          <div class="stat-box"><div class="stat-val">50 ГБ</div><div class="stat-label">макс.</div></div>
+        </div>
+        <div class="provider-tags">
+          <span class="tag tag-blue">500+ тарифов</span>
+          <span class="tag tag-green">Пополнение</span>
+          <span class="tag tag-orange">Старт от $3</span>
+        </div>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" class="card-cta card-cta-accent" target="_blank" rel="nofollow sponsored">Перейти в Airalo →</a>
+        <div class="card-promo">Рейтинг <strong>4.9/5</strong> на Trustpilot (18 000+ оценок)</div>
+      </div>
+
+      <!-- esim365 -->
+      <div class="provider-card top-pick">
+        <div class="top-pick-ribbon">Оплата ₽</div>
+        <div class="card-header">
+          <div class="provider-favicon">
+            <img src="https://www.google.com/s2/favicons?domain=esim365.ru&sz=64" alt="esim365" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="fallback-abbr">365</span>
+          </div>
+          <div class="provider-info">
+            <div class="provider-name">esim365</div>
+            <div class="provider-tagline">Оплата рублями, Мир, СБП</div>
+            <div class="provider-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-val">4.6</span>
+              <span class="rating-cnt">890 отзывов</span>
+            </div>
+          </div>
+        </div>
+        <div class="provider-stats">
+          <div class="stat-box"><div class="stat-val">₽350</div><div class="stat-label">от</div></div>
+          <div class="stat-box"><div class="stat-val">100+</div><div class="stat-label">стран</div></div>
+          <div class="stat-box"><div class="stat-val">20 ГБ</div><div class="stat-label">макс.</div></div>
+        </div>
+        <div class="provider-tags">
+          <span class="tag tag-green">Рубли / СБП</span>
+          <span class="tag tag-blue">Поддержка RU</span>
+          <span class="tag tag-orange">Телефон + чат</span>
+        </div>
+        <a href="https://esim365.ru/?partner=ruesim" class="card-cta card-cta-accent" target="_blank" rel="nofollow sponsored">Перейти в esim365 →</a>
+        <div class="card-promo">Единственный сервис с оплатой через <strong>СБП</strong></div>
+      </div>
+
+      <!-- eSIM World -->
+      <div class="provider-card top-pick">
+        <div class="top-pick-ribbon">Глобальный</div>
+        <div class="card-header">
+          <div class="provider-favicon">
+            <img src="https://www.google.com/s2/favicons?domain=esim.world&sz=64" alt="eSIM World" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="fallback-abbr">EW</span>
+          </div>
+          <div class="provider-info">
+            <div class="provider-name">eSIM World</div>
+            <div class="provider-tagline">Гибкие глобальные тарифы</div>
+            <div class="provider-rating">
+              <span class="stars">★★★★☆</span>
+              <span class="rating-val">4.5</span>
+              <span class="rating-cnt">1 200 отзывов</span>
+            </div>
+          </div>
+        </div>
+        <div class="provider-stats">
+          <div class="stat-box"><div class="stat-val">$8</div><div class="stat-label">от</div></div>
+          <div class="stat-box"><div class="stat-val">180+</div><div class="stat-label">стран</div></div>
+          <div class="stat-box"><div class="stat-val">30 ГБ</div><div class="stat-label">макс.</div></div>
+        </div>
+        <div class="provider-tags">
+          <span class="tag tag-blue">Глобальный тариф</span>
+          <span class="tag tag-green">Без контракта</span>
+          <span class="tag tag-purple">Multi-SIM</span>
+        </div>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" class="card-cta card-cta-accent" target="_blank" rel="nofollow sponsored">Перейти в eSIM World →</a>
+        <div class="card-promo">Один тариф для <strong>нескольких стран</strong></div>
+      </div>
+
+    </div>
+    <p style="margin-top: 20px; text-align: center;">
+      <a href="rating.html" style="font-size:.9rem; font-weight:600;">Полный рейтинг всех 20 провайдеров →</a>
+    </p>
+  </section>
+</div>
+
+<!-- ГАЙДЫ -->
+<div style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <section class="section" id="guides">
+      <div class="section-header">
+        <h2>📖 Гайды по eSIM</h2>
+        <p>Всё, что нужно знать перед покупкой — простым языком.</p>
+      </div>
+      <div class="guides-grid">
+        <a href="chto-takoe-esim.html" class="guide-card">
+          <div class="guide-category">База</div>
+          <div class="guide-title">Что такое eSIM и как она работает</div>
+          <p class="guide-desc">Простое объяснение без технарщины, с примерами.</p>
+        </a>
+        <a href="how-to-install-esim-ios.html" class="guide-card">
+          <div class="guide-category">Инструкция</div>
+          <div class="guide-title">Установка eSIM на iPhone</div>
+          <p class="guide-desc">Пошаговый гайд для iOS 16–17 с картинками.</p>
+        </a>
+        <a href="how-to-install-esim-android.html" class="guide-card">
+          <div class="guide-category">Инструкция</div>
+          <div class="guide-title">Установка eSIM на Android</div>
+          <p class="guide-desc">Samsung, Xiaomi, Pixel и другие модели.</p>
+        </a>
+        <a href="how-to-pay-esim-from-russia.html" class="guide-card">
+          <div class="guide-category">Оплата из РФ</div>
+          <div class="guide-title">Как купить eSIM из России в 2026</div>
+          <p class="guide-desc">Какие способы оплаты работают и где принимают карты Мир.</p>
+        </a>
+        <a href="esim-vs-roaming.html" class="guide-card">
+          <div class="guide-category">Сравнение</div>
+          <div class="guide-title">eSIM vs роуминг: что выгоднее</div>
+          <p class="guide-desc">Считаем на реальных примерах для Турции, Таиланда и Европы.</p>
+        </a>
+        <a href="esim-compatible-devices.html" class="guide-card">
+          <div class="guide-category">Совместимость</div>
+          <div class="guide-title">Какие телефоны поддерживают eSIM</div>
+          <p class="guide-desc">Полный список iPhone, Samsung, Xiaomi с поддержкой eSIM.</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="container">
+  <section class="section" id="faq">
+    <div class="section-header">
+      <h2>❓ Частые вопросы</h2>
+      <p>Отвечаем на самые популярные вопросы о покупке и использовании eSIM.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Сколько ГБ нужно на неделю поездки?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">Для навигации, мессенджеров и соцсетей обычно хватает 3–5 ГБ на 7 дней. Если активно смотреть видео и делать стримы — берите 10+ ГБ или безлимит.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Можно ли оставить российский номер активным?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">Да. eSIM используется только для интернета, а ваша физическая SIM с российским номером остаётся в телефоне. В настройках выбираете, какая линия отвечает за звонки и данные.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Нужно ли покупать eSIM заранее или можно по прилёту?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">Лучше купить заранее — установить eSIM можно по Wi-Fi за 2–3 минуты дома. По прилёту интернет заработает сразу, без поиска салона связи и очередей.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Как оплатить eSIM из России в 2026?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">Проще всего через <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a> — принимают рубли, Мир и СБП. Для зарубежных сервисов (Airalo, Yesim) подойдут карты, выпущенные в других странах, или виртуальные карты.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Безопасно ли покупать eSIM у сторонних провайдеров?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">Мы добавляем в каталог только проверенные сервисы с реальными отзывами, понятной политикой возврата и поддержкой 24/7. Для каждого провайдера приведены рейтинги и обзоры.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Мой телефон поддерживает eSIM?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-a">eSIM поддерживают: iPhone XS и новее, Samsung Galaxy S20+, большинство флагманов Pixel 3+. Полный список — <a href="esim-compatible-devices.html">в нашем гайде по совместимости</a>.</div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- CTA БЛОК -->
+<div style="background: linear-gradient(135deg, #0f2460 0%, #1d4ed8 45%, #0ea5e9 100%); color:#fff; padding: 56px 20px; text-align: center;">
+  <div class="container">
+    <h2 style="font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:900; margin-bottom:14px;">Готовы выбрать eSIM?</h2>
+    <p style="font-size:1rem; opacity:.88; max-width:520px; margin:0 auto 28px; line-height:1.6;">Укажите страну и бюджет — покажем лучшие варианты с оплатой из России.</p>
+    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij"
+         style="background:var(--accent);color:#fff;padding:14px 28px;border-radius:var(--radius);font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;"
+         target="_blank" rel="nofollow sponsored">⚡ Yesim — от $4.5</a>
+      <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB"
+         style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.4);padding:14px 28px;border-radius:var(--radius);font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;"
+         target="_blank" rel="nofollow sponsored">🌍 Airalo — 200 стран</a>
+      <a href="https://esim365.ru/?partner=ruesim"
+         style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.4);padding:14px 28px;border-radius:var(--radius);font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;"
+         target="_blank" rel="nofollow sponsored">💳 esim365 — рубли / СБП</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM-провайдеров. Сравниваем тарифы, помогаем экономить на роуминге.</p>
+      <div class="partner-links">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" target="_blank" rel="nofollow">Yesim</a>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" target="_blank" rel="nofollow">Airalo</a>
+        <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" target="_blank" rel="nofollow">eSIM World</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал-номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Провайдеры</h4>
+      <ul>
+        <li><a href="airalo.html">Airalo</a></li>
+        <li><a href="yesim.html">Yesim</a></li>
+        <li><a href="holafly.html">Holafly</a></li>
+        <li><a href="nomad.html">Nomad eSIM</a></li>
+        <li><a href="esim365.html">esim365</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="o-nas.html">О нас</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 eSIM-каталог. Все права защищены.</span>
+    <div style="display:flex; gap:16px;">
+      <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- КНОПКА ВВЕРХ -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- JAVASCRIPT -->
+<script>
+  // FAQ toggle
+  function toggleFAQ(btn) {
+    var item = btn.parentElement;
+    document.querySelectorAll('.faq-item.open').forEach(function(el) {
+      if (el !== item) el.classList.remove('open');
+    });
+    item.classList.toggle('open');
+  }
+
+  // Search select
+  function goCountry() {
+    var val = document.getElementById('heroCountry').value;
+    if (val) window.location.href = val;
+  }
+
+  // Back to top
+  var backBtn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 400;
+    backBtn.style.opacity = show ? 1 : 0;
+    backBtn.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+
+  // Sticky nav — прячется при скролле вниз
+  var lastY = 0;
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y < 100) {
+      navEl.style.transform = 'translateY(0)';
+    } else if (y > lastY) {
+      navEl.style.transform = 'translateY(-100%)';
+    } else {
+      navEl.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+</script>
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "eSIM каталог — сравнение тарифов для путешествий 2026",
+  "description": "Независимый каталог eSIM-провайдеров. Сравниваем тарифы для 150+ стран, помогаем экономить на роуминге.",
+  "url": "https://esim-catalog.vercel.app/",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://esim-catalog.vercel.app/"}
+    ]
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

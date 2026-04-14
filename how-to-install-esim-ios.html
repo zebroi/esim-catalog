@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как установить eSIM на iPhone: пошаговая инструкция 2026</title>
+  <meta name="description" content="Пошаговая инструкция по установке eSIM на iPhone: покупка eSIM, активация через QR-код, перенос eSIM на новый iPhone и типичные ошибки.">
+  <meta name="keywords" content="как установить esim на iphone, активация esim ios, esim инструкция iphone, перенос esim, esim qr код ios">
+  <meta property="og:title" content="Как установить eSIM на iPhone — пошаговая инструкция">
+  <meta property="og:description" content="Разбираем установку eSIM на iPhone: через QR-код, вручную и через приложение оператора. Плюс ответы на частые вопросы.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://esim-catalog.vercel.app/how-to-install-esim-ios.html">
+  <link rel="icon" href="https://esim-catalog.vercel.app/favicon.ico">
+
+  <style>
+    :root{
+      --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;
+      --accent:#10b981;--accent-dark:#059669;
+      --warn:#f59e0b;--danger:#ef4444;
+      --bg:#f8fafc;--card:#ffffff;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+      --radius:12px;--shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow-md:0 4px 20px rgba(0,0,0,.1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{display:block;max-width:100%;}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+    .section{padding:56px 0;}
+    .section-header{margin-bottom:24px;}
+    .section-header h2{font-size:1.65rem;font-weight:800;line-height:1.25;}
+    .section-header p{color:var(--muted);margin-top:6px;font-size:.95rem;}
+
+    /* NAV */
+    nav{background:#fff;border-bottom:1px solid var(--border);height:62px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm);transition:transform .3s;}
+    .nav-logo{font-size:1.2rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px;text-decoration:none;}
+    .nav-links{display:flex;gap:24px;list-style:none;}
+    .nav-links a{color:var(--text);font-size:.88rem;font-weight:500;transition:color .15s;}
+    .nav-links a:hover{color:var(--primary);text-decoration:none;}
+    .nav-cta{background:var(--primary);color:#fff !important;padding:7px 16px;border-radius:8px;font-weight:600 !important;}
+    .nav-cta:hover{background:var(--primary-dark);text-decoration:none !important;}
+    .nav-dropdown{position:relative;}
+    .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-md);min-width:180px;z-index:300;list-style:none;padding:6px 0;}
+    .dropdown li a{display:block;padding:9px 16px;font-size:.87rem;color:var(--text);white-space:nowrap;}
+    .dropdown li a:hover{background:var(--bg);color:var(--primary);text-decoration:none;}
+    .nav-dropdown:hover .dropdown{display:block;}
+
+    /* HERO */
+    .page-hero{background:linear-gradient(135deg,#0f2460 0%,#1d4ed8 45%,#0ea5e9 100%);color:#fff;padding:60px 20px 42px;position:relative;overflow:hidden;}
+    .page-hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+    .page-hero-inner{position:relative;z-index:1;}
+    .page-hero-eyebrow{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;font-weight:600;}
+    .page-hero h1{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:900;line-height:1.15;margin-bottom:12px;letter-spacing:-.02em;}
+    .page-hero-sub{font-size:.98rem;opacity:.9;max-width:640px;line-height:1.6;}
+    .page-hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;font-size:.82rem;opacity:.9;}
+    .page-hero-meta span{background:rgba(15,23,42,.32);border-radius:20px;padding:5px 12px;}
+
+    /* BREADCRUMBS */
+    .breadcrumbs{background:#fff;border-bottom:1px solid var(--border);padding:10px 0;font-size:.82rem;color:var(--muted);}
+    .breadcrumbs a{color:var(--muted);}
+    .breadcrumbs a:hover{color:var(--primary);}
+    .breadcrumbs span{color:var(--text);font-weight:600;}
+
+    /* CONTENT */
+    .lead{font-size:.98rem;color:var(--muted);margin-bottom:18px;}
+    .info-box{background:#ecfeff;border:1px solid #bae6fd;border-radius:14px;padding:16px 18px;font-size:.9rem;color:#075985;margin-bottom:24px;}
+    .info-box strong{color:#0369a1;}
+    .warn-box{background:#fffbeb;border:1px solid #fef3c7;border-radius:14px;padding:14px 16px;font-size:.88rem;color:#92400e;margin-bottom:16px;}
+    .warn-box strong{color:#b45309;}
+
+    .steps-list{display:flex;flex-direction:column;gap:0;counter-reset:steps;margin-top:18px;}
+    .step-item{display:flex;gap:18px;position:relative;padding-bottom:28px;}
+    .step-item:last-child{padding-bottom:0;}
+    .step-item::before{
+      content:counter(steps);
+      counter-increment:steps;
+      min-width:36px;height:36px;border-radius:50%;
+      background:var(--primary);color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:.95rem;flex-shrink:0;
+      position:relative;z-index:1;
+    }
+    .step-item:not(:last-child)::after{
+      content:"";position:absolute;left:18px;top:36px;bottom:0;
+      width:2px;background:var(--border);
+    }
+    .step-body{padding-top:6px;}
+    .step-title{font-weight:700;font-size:1rem;margin-bottom:4px;}
+    .step-body p{font-size:.9rem;color:var(--muted);}
+    .step-body code{background:var(--primary-light);color:var(--primary);padding:2px 6px;border-radius:5px;font-size:.85rem;font-family:monospace;}
+
+    .split-grid{display:grid;grid-template-columns:2fr 1.4fr;gap:26px;margin-top:8px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow-sm);font-size:.9rem;}
+    .card h3{font-size:1.05rem;font-weight:800;margin-bottom:10px;}
+    .card ul{margin-top:6px;padding-left:18px;display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:.9rem;}
+
+    .faq-section{padding:56px 0;}
+    .faq-list{display:flex;flex-direction:column;gap:10px;}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 22px;font-size:.97rem;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .faq-q:hover{background:var(--bg);}
+    .faq-icon{font-size:1.3rem;font-weight:300;color:var(--primary);transition:transform .25s;flex-shrink:0;}
+    .faq-item.open .faq-icon{transform:rotate(45deg);}
+    .faq-a{display:none;padding:0 22px 18px;font-size:.9rem;color:var(--muted);line-height:1.65;}
+    .faq-item.open .faq-a{display:block;}
+
+    .cta-box{background:linear-gradient(135deg,#1e40af,#2563eb);color:#fff;border-radius:16px;padding:26px 24px;margin-top:32px;text-align:left;}
+    .cta-box h2{font-size:1.25rem;font-weight:800;margin-bottom:8px;}
+    .cta-box p{font-size:.95rem;opacity:.9;margin-bottom:16px;max-width:520px;}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:12px;}
+    .cta-primary{background:var(--accent);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.95rem;}
+    .cta-secondary{background:rgba(15,23,42,.3);color:#e5e7eb;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.9rem;border:1px solid rgba(148,163,184,.5);}
+
+    /* FOOTER */
+    footer{background:#0f172a;color:#94a3b8;padding:56px 20px 28px;margin-top:60px;}
+    .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:36px;max-width:1120px;margin:0 auto 40px;}
+    .footer-brand .logo{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:10px;}
+    .footer-brand p{font-size:.84rem;line-height:1.65;max-width:240px;}
+    .partner-links{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+    .partner-links a{font-size:.75rem;background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:5px 10px;border-radius:6px;}
+    .partner-links a:hover{color:#fff;text-decoration:none;}
+    .footer-col h4{color:#e2e8f0;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .footer-col ul a{color:#94a3b8;font-size:.85rem;transition:color .15s;}
+    .footer-col ul a:hover{color:#fff;text-decoration:none;}
+    .footer-bottom{max-width:1120px;margin:0 auto;border-top:1px solid #1e293b;padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;flex-wrap:wrap;gap:10px;}
+    .footer-bottom a{color:#64748b;}
+    .footer-bottom a:hover{color:#fff;}
+
+    #backTop{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.2rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.4);opacity:0;transition:opacity .3s;pointer-events:none;}
+
+    @media(max-width:900px){
+      .footer-grid{grid-template-columns:1fr 1fr;}
+      .split-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:640px){
+      .nav-links{display:none;}
+      .footer-grid{grid-template-columns:1fr;}
+      .cta-box{text-align:left;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">📱 eSIM-каталог</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#countries">Страны ▾</a>
+      <ul class="dropdown">
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </li>
+    <li><a href="rating.html">Рейтинг</a></li>
+    <li><a href="promo.html">Промокоды</a></li>
+    <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+    <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+    <li><a href="index.html#providers" class="nav-cta">Подобрать eSIM</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="page-hero-eyebrow">Пошаговая инструкция</div>
+    <h1>Как установить eSIM на iPhone</h1>
+    <p class="page-hero-sub">Разбираем, как купить и активировать eSIM на iPhone через QR‑код, вручную и через приложение оператора. Плюс подсказки по переносу eSIM на новый iPhone.</p>
+    <div class="page-hero-meta">
+      <span>Обновлено: апрель 2026</span>
+      <span>iPhone XS и новее</span>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="index.html">Главная</a> &nbsp;›&nbsp;
+    <a href="chto-takoe-esim.html">Гайды по eSIM</a> &nbsp;›&nbsp;
+    <span>Установка eSIM на iPhone</span>
+  </div>
+</div>
+
+<div class="container">
+  <!-- ОБЩИЕ ШАГИ -->
+  <section class="section">
+    <p class="lead">
+      На iPhone eSIM добавляется через раздел «Сотовая связь»: чаще всего достаточно отсканировать QR‑код от провайдера и выбрать, какая линия будет использоваться для интернета и звонков.
+    </p>
+
+    <div class="info-box">
+      <strong>Проверьте поддержку eSIM:</strong> откройте <code>Настройки → Сотовая связь</code> и посмотрите, есть ли кнопка <code>Добавить eSIM</code> или <code>Добавить тариф сотовой связи</code>. Если её нет, модель или регион iPhone могут не поддерживать eSIM.
+    </div>
+
+    <div class="warn-box">
+      <strong>Не спешите удалять eSIM:</strong> многие провайдеры ограничивают количество переустановок. Удалив профиль с iPhone, вы можете потерять возможность повторной активации без обращения в поддержку.
+    </div>
+
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Купите eSIM у провайдера</div>
+          <p>Выберите страну и тариф в каталоге, оплатите и получите QR‑код вместе с данными для ручной активации (SM‑DP+ адрес и активационный код). Обычно всё приходит на почту и дублируется в личном кабинете.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Откройте «Настройки → Сотовая связь»</div>
+          <p>На iOS 15+ путь выглядит так: <code>Настройки → Сотовая связь → Добавить eSIM</code> или <code>Добавить тариф сотовой связи</code>. На английском — <code>Settings → Cellular → Add eSIM</code>.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Нажмите «Использовать QR‑код»</div>
+          <p>Наведите камеру на QR‑код от провайдера. iPhone автоматически прочитает настройки и предложит добавить тариф. Если QR‑код не распознаётся, используйте ручной ввод: <code>Ввести детали вручную</code>.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Назовите линию и выберите, для чего её использовать</div>
+          <p>После добавления eSIM iPhone попросит выбрать метку (например, «Путешествия») и решить, какая линия будет использоваться по умолчанию для звонков, сообщений и мобильных данных.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-body">
+          <div class="step-title">Включите eSIM для мобильного интернета</div>
+          <p>В разделе <code>Сотовая связь → Сотовые данные</code> выберите вашу eSIM. При необходимости включите «Роуминг данных» для этой линии (обычно это нужно для работы eSIM за границей).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ДЕТАЛИ: iPHONE + WATCH -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Отдельно: iPhone, Dual SIM и Apple Watch</h2>
+      <p>Разберём типичные вопросы: как правильно настроить две линии и зачем eSIM может понадобиться на Apple Watch.</p>
+    </div>
+
+    <div class="split-grid">
+      <div class="card">
+        <h3>Как настроить две линии на iPhone (Dual SIM)</h3>
+        <ul>
+          <li>Оставьте российскую SIM как линию по умолчанию для звонков и SMS‑банка</li>
+          <li>Назначьте eSIM линией по умолчанию для мобильных данных</li>
+          <li>В iMessage и FaceTime можно выбрать, с какого номера отправлять сообщения</li>
+          <li>При исходящем звонке iPhone позволяет сменить линию прямо на экране набора</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>eSIM на Apple Watch (если поддерживается)</h3>
+        <ul>
+          <li>Часы используют тот же тариф, что и iPhone, через функцию «Сотовая связь»</li>
+          <li>Поддержка зависит от оператора: не все дают eSIM‑профиль для Apple Watch</li>
+          <li>Активация делается через приложение «Watch» → «Сотовая связь» → «Настроить сотовую связь»</li>
+          <li>Для поездок за границу eSIM на часах редко нужна — достаточно eSIM на iPhone</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Частые вопросы по eSIM на iPhone</h2>
+        <p>Коротко отвечаем на самые популярные вопросы, которые возникают при установке eSIM на iOS.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            На моём iPhone нет пункта «Добавить eSIM» — почему?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Возможные причины: 1) iPhone старше XS/XR и не поддерживает eSIM, 2) модель для определённого рынка (например, Китай) без eSIM, 3) очень старая версия iOS. Проверьте модель в «Настройки → Основные → Об этом устройстве» и список совместимых устройств в нашем справочнике.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Можно ли использовать одну eSIM на двух iPhone?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Обычно нет. Большинство провайдеров привязывают eSIM к одному устройству. Иногда разрешено перенести eSIM на новый iPhone через личный кабинет или обращение в поддержку, но одновременно на двух устройствах одна eSIM, как правило, не работает.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Как перенести eSIM на новый iPhone?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Есть два варианта: 1) через функцию переноса eSIM в мастере настройки нового iPhone (если оператор поддерживает), 2) через личный кабинет eSIM‑провайдера — получаете новый QR‑код и активируете eSIM уже на новом устройстве. Перед переносом убедитесь, что старый профиль можно удалить.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            После установки eSIM нет интернета — что проверить?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Проверьте: 1) в «Сотовые данные» выбрана именно eSIM‑линия, 2) включён «Роуминг данных» для этой линии, 3) eSIM‑пакет активирован у провайдера, 4) при необходимости прописан правильный APN (параметры доступа в интернет выдаёт провайдер). Иногда помогает перезагрузка iPhone.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Что будет с eSIM, если сделать сброс iPhone?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>При полном сбросе настроек eSIM‑профили могут удалиться. Перед сбросом уточните у провайдера, можно ли будет выписать новый QR‑код. Если да — сохраните данные авторизации в личном кабинете и будьте готовы переустановить eSIM после сброса.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="cta-box">
+      <h2>Что дальше: выбрать eSIM‑тариф под ваш iPhone</h2>
+      <p>Когда eSIM на iPhone настроена, осталось выбрать выгодный тариф под страну поездки. Мы собрали провайдеров с понятными условиями и проверенными отзывами.</p>
+      <div class="cta-actions">
+        <a href="rating.html" class="cta-primary">Открыть рейтинг eSIM‑провайдеров</a>
+        <a href="promo.html" class="cta-secondary">Посмотреть промокоды и скидки</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">📱 eSIM-каталог</div>
+      <p>Независимый русскоязычный агрегатор eSIM-провайдеров. Сравниваем тарифы, помогаем экономить на роуминге.</p>
+      <div class="partner-links">
+        <a href="https://yesim.tpm.lv/2jNJ45jK?erid=2Vtzqv8Sjij" target="_blank" rel="nofollow">Yesim</a>
+        <a href="https://airalo.tpm.lv/UyXPSw12?erid=2Vtzqvk3ARB" target="_blank" rel="nofollow">Airalo</a>
+        <a href="https://esim365.ru/?partner=ruesim" target="_blank" rel="nofollow">esim365</a>
+        <a href="https://esim.world?refid=b5355b68-013f-4b39-8883-43ab7384d309" target="_blank" rel="nofollow">eSIM World</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Страны</h4>
+      <ul>
+        <li><a href="esim-thailand.html">eSIM Таиланд</a></li>
+        <li><a href="esim-turkey.html">eSIM Турция</a></li>
+        <li><a href="esim-uae.html">eSIM ОАЭ</a></li>
+        <li><a href="esim-egypt.html">eSIM Египет</a></li>
+        <li><a href="esim-europe.html">eSIM Европа</a></li>
+        <li><a href="esim-usa.html">eSIM США</a></li>
+        <li><a href="esim-georgia.html">eSIM Грузия</a></li>
+        <li><a href="esim-indonesia.html">eSIM Индонезия</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Сценарии</h4>
+      <ul>
+        <li><a href="esim-for-tourists.html">Обычный отпуск</a></li>
+        <li><a href="esim-digital-nomads.html">Диджитал-номады</a></li>
+        <li><a href="esim-business-travel.html">Командировки</a></li>
+        <li><a href="esim-unlimited-data.html">Безлимитный интернет</a></li>
+        <li><a href="esim-cheapest.html">Самый дешёвый</a></li>
+        <li><a href="esim-multi-country.html">Несколько стран</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Провайдеры</h4>
+      <ul>
+        <li><a href="airalo.html">Airalo</a></li>
+        <li><a href="yesim.html">Yesim</a></li>
+        <li><a href="holafly.html">Holafly</a></li>
+        <li><a href="nomad.html">Nomad</a></li>
+        <li><a href="esim365.html">esim365</a></li>
+        <li><a href="rating.html">Рейтинг 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>О eSIM</h4>
+      <ul>
+        <li><a href="chto-takoe-esim.html">Что такое eSIM</a></li>
+        <li><a href="how-to-install-esim-ios.html">Установка на iOS</a></li>
+        <li><a href="how-to-install-esim-android.html">Установка на Android</a></li>
+        <li><a href="esim-vs-roaming.html">eSIM vs роуминг</a></li>
+        <li><a href="esim-compatible-devices.html">Совместимые устройства</a></li>
+        <li><a href="o-nas.html">О нас</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 eSIM-каталог. Все права защищены.</span>
+    <div style="display:flex;gap:16px;">
+      <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- КНОПКА ВВЕРХ -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- JS -->
+<script>
+  // Back to top
+  var backBtn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    var show = window.scrollY > 400;
+    backBtn.style.opacity = show ? 1 : 0;
+    backBtn.style.pointerEvents = show ? 'auto' : 'none';
+  }, { passive: true });
+
+  // Sticky nav hide on scroll down
+  var lastY = 0;
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (y < 100) {
+      navEl.style.transform = 'translateY(0)';
+    } else if (y > lastY) {
+      navEl.style.transform = 'translateY(-100%)';
+    } else {
+      navEl.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+
+  // FAQ accordion
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function() {
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Как установить eSIM на iPhone: пошаговая инструкция",
+  "description": "Подробный гид по установке eSIM на iPhone: покупка eSIM, активация через QR-код и вручную, Dual SIM на iOS и ответы на частые вопросы.",
+  "url": "https://esim-catalog.vercel.app/how-to-install-esim-ios.html",
+  "mainEntityOfPage": "https://esim-catalog.vercel.app/how-to-install-esim-ios.html",
+  "about": {
+    "@type": "Thing",
+    "name": "Установка eSIM на iPhone"
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
